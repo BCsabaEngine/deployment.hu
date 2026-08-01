@@ -7,4 +7,4 @@ _Ez az oldal hamarosan elkészül._
 
 Az Általános Szerződési Feltételek végleges, jogi szövege még nincs megírva — külön feladatként készül el.
 
-Kérdés esetén keressen az [hello@deployment.hu](mailto:hello@deployment.hu) címen.
+Kérdés esetén keress az [hello@deployment.hu](mailto:hello@deployment.hu) címen.

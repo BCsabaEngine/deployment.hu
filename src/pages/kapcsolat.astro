@@ -4,21 +4,21 @@ import Contact from '~/components/widgets/Contact.astro';
 
 const metadata = {
   title: 'Kapcsolat',
-  description: 'Vegye fel velem a kapcsolatot egy 15–30 perces, díjmentes online konzultációra.',
+  description: 'Vedd fel velem a kapcsolatot egy 15–30 perces, díjmentes online konzultációra.',
 };
 ---
 
 <Layout metadata={metadata}>
   <Contact
     title="Beszéljünk!"
-    subtitle="Vegye fel velem a kapcsolatot, hívjon fel, vagy kérjen egy időpontot egy 15–30 perces, természetesen díjmentes online konzultációra. Ismerjük meg egymást nulladik lépésben — utána hívjon meg egy mélyebb beszélgetésre a cégéhez."
+    subtitle="Vedd fel velem a kapcsolatot, hívj fel, vagy kérj egy időpontot egy 15–30 perces, természetesen díjmentes online konzultációra. Ismerjük meg egymást nulladik lépésben — utána hívj meg egy mélyebb beszélgetésre a cégedhez."
     inputs={[
       { type: 'text', name: 'name', label: 'Név', autocomplete: 'name' },
       { type: 'email', name: 'email', label: 'Email', autocomplete: 'email' },
       {
         type: 'select',
         name: 'reason',
-        label: 'Miért keres?',
+        label: 'Miért keresel?',
         options: [
           { value: 'tech-lead', label: 'Tech-Lead bérlés / mentorálás' },
           { value: 'platform', label: 'Platform-építés' },
