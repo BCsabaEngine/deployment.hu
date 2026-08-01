@@ -241,6 +241,7 @@ export interface Steps extends Omit<Headline, 'classes'>, Widget {
 
 export interface Content extends Omit<Headline, 'classes'>, Widget {
   content?: string;
+  content2?: string;
   image?: string | unknown;
   items?: Array<Item>;
   columns?: number;

@@ -11,6 +11,7 @@ const {
   subtitle = await Astro.slots.render('subtitle'),
   tagline,
   content = await Astro.slots.render('content'),
+  content2 = await Astro.slots.render('content2'),
   callToAction,
   items = [],
   columns,
@@ -128,5 +129,6 @@ const columnsClass =
         }
       </div>
     </div>
+    {content2 && <div class="mt-8 md:mt-12 text-lg dark:text-slate-400" set:html={content2} />}
   </div>
 </WidgetWrapper>
