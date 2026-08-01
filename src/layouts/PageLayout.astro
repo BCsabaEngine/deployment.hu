@@ -4,6 +4,8 @@ import Header from '~/components/widgets/Header.astro';
 import Footer from '~/components/widgets/Footer.astro';
 
 import { headerData, footerData } from '~/navigation';
+import { findLatestPosts } from '~/utils/blog';
+import { getPermalink } from '~/utils/permalinks';
 
 import type { MetaData } from '~/types';
 
@@ -12,6 +14,17 @@ export interface Props {
 }
 
 const { metadata } = Astro.props;
+
+const latestPosts = await findLatestPosts({ count: 5 });
+const footerLinks = latestPosts.length
+  ? [
+      {
+        title: 'Legutóbbi bejegyzések',
+        links: latestPosts.map((post) => ({ text: post.title, href: getPermalink(post.permalink, 'post') })),
+      },
+      ...footerData.links,
+    ]
+  : footerData.links;
 ---
 
 <Layout metadata={metadata}>
@@ -22,6 +35,6 @@ const { metadata } = Astro.props;
     <slot />
   </main>
   <slot name="footer">
-    <Footer {...footerData} />
+    <Footer {...footerData} links={footerLinks} />
   </slot>
 </Layout>

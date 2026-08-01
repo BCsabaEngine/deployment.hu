@@ -1,0 +1,112 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import { getPermalink } from '~/utils/permalinks';
+import { placeholderImage } from '~/utils/placeholder';
+
+const metadata = {
+  title: 'Tech-Lead bérlés',
+  description:
+    'Squad Tech-Lead bérlés: projektindítás, csapatösszerakás, mentorálás — személyes garanciával a prod-ra juttatásra.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero image={placeholderImage('Tech-Lead bérlés hero kép', 'aspect-video')}>
+    <Fragment slot="title">Tech-Lead bérlés</Fragment>
+    <Fragment slot="subtitle">Szakmai irányító, aki nem ül a nyakadon — de garantálja, hogy célba érsz.</Fragment>
+  </Hero>
+
+  <Content image={placeholderImage('Mi az a tech lead')}>
+    <Fragment slot="title">Mi az a tech lead?</Fragment>
+    <Fragment slot="content">
+      <p>
+        A tech lead a terméket szállító csapat szakmai vezetője — nem a "legerősebb fejlesztő", bár gyakran összemossák
+        vele. Sokkal mélyebb tudása van, mint amire az adott helyzetben szükség lenne, ezért tud válogatni a lehetőségek
+        közül, és nem ijed meg semmitől. Karmesterként mentálisan is vezeti a csapatot: figyeli, ha valaki letér a
+        kijelölt útról, és az irányt konszenzus alapján jelöli ki — mindenkinek a szintjéhez mért szavazati jogot adva,
+        majd felelősségteljesen dönt, és vállalja is a döntés súlyát.
+      </p>
+      <p>
+        Naprakész, azonnali tapasztalata van az alkalmazott technológiáról — kapacitáshiány esetén bármely fejlesztői
+        feladatot el is tudná látni. De a valódi feladata más: olyan irányt kijelölni, amelyen haladva 2–6 negyedév
+        alatt célba érünk, úgy, hogy a csapatnak csak egy negyedévet kell előre látnia. Hónapokkal korábban észreveszi,
+        amikor egy technológia kezd elavulni.
+      </p>
+      <p>
+        Ehhez olyan ember kell, aki folyamatosan képzi magát, egyszerre több projektben dolgozik, és nemcsak fizetős,
+        hanem nyílt forráskódú projekteket is visz — ahol szabadon ki is próbálhatja, amit tanul. Aki élesben is mer
+        hibázni, a hibáit felismeri vagy elfogadja, ha más veszi észre — és ez csak megerősíti, pontosabbá teszi.
+        Emberileg a simulékony és a servant leader között helyezkedik el: nem parancsol, de nem is hódol be. Leveszi a
+        döntés és a felelősség terhét a végrehajtó kollégákról, szívesen dolgozik együtt Engineering Managerekkel,
+        riportál a PM felé, a PO-val pedig nemcsak jó viszonyt ápol, de segít is a termék tervezésében, hogy az
+        hatékonyan fejleszthető legyen.
+      </p>
+    </Fragment>
+  </Content>
+
+  <Content
+    isReversed
+    image={placeholderImage('Miért bérelj tech leadet')}
+    items={[
+      {
+        title: 'Állandó rendelkezésre állás, nem állandó jelenlét.',
+        description:
+          'A csapat egészsége látványosan jobb lesz, ha nem ülnek a nyakukon minden nap — 2-3 naponkénti irányítás és felügyelet sokkal hatékonyabb, mint a folyamatos kontroll.',
+      },
+      {
+        title: 'Külső szem, szélesebb merítés.',
+        description:
+          'Egy külsős tech lead a világ technológiáiból dolgozik, nem egyetlen cég falai közül — más cégeknél kipróbált gyakorlatokkal színesíti és teszi stabilabbá a fejlesztési módszertant és a prod-ra telepítést. Egy belsős csapat könnyen leragad ott, ameddig eddig látott; a külsős szem új elveket és gyakorlatokat hoz be.',
+      },
+    ]}
+  >
+    <Fragment slot="title">Miért éri meg bérelni — és nem alkalmazni?</Fragment>
+    <Fragment slot="content">
+      <p>
+        A tech lead szerepkör nem feltétlenül heti 40 órás, folyamatos jelenlétet igénylő feladat. Projektindításkor
+        fontos a célok kijelölése — utána egy jól beállított csapat hetekig is önállóan dolgozik a kijelölt célokon,
+        anélkül hogy a módszeren változtatni kellene. A mikromenedzsment megölheti a kreativitást: hagyni kell dolgozni
+        a végrehajtó réteget a lefektetett elvek mentén.
+      </p>
+      <p>
+        Az üresjáratokat gyakran tényleges üzleti feladatok töltik fel: ez naprakészen tartja a valós tennivalókban, és
+        a legkritikusabb feladatokat — az alaprendszer építését — saját maga végzi el, bizonyítva a rátermettségét. Ezt
+        mindig edukációs céllal teszi: megmutatja és megérteti a körülötte lévőkkel, mit és miért csinált, hogy
+        legközelebb ők is el tudják végezni. Eközben transzparens kapcsolatot tart a cégen belüli software architekttel,
+        akinek a szerepe gátnak és védőhálónak lenni.
+      </p>
+      <p>Két fő oka van annak, miért érdemesebb bérelni, mint alkalmazni:</p>
+    </Fragment>
+  </Content>
+
+  <Content image={placeholderImage('A garancia')}>
+    <Fragment slot="title">A garancia</Fragment>
+    <Fragment slot="content">
+      <p>
+        Személyesen garantálom, hogy az általam tervezett és épített rendszer eljut a prod telepítésig — és ott nemcsak
+        megmozdul, de hatékonyan is működik. Ehhez külvilágból hozott gyakorlati tapasztalat, útközben beépített
+        metrika-pontok (nem a végén, négy hónappal később derül ki, hogy rossz volt az irány), és rendes infrastruktúra
+        tartozik: nemcsak az üzletileg igényelt megoldás készül el, hanem annak vezérlése — irányítása és monitorozása —
+        is, már fejlesztés közben. Emiatt a fejlesztés látszólag 120%-nyi hosszúnak tűnik — a valóságban 80% idő alatt
+        készül el és indul el.
+      </p>
+      <p>
+        Nemcsak egy üzleti POC-ot, egy "épphogy működő" MVP-t készítünk a célközönség reakciójának leméréséhez —
+        fejlesztés közben folyamatosan MVP-k születnek, hogy a fejlesztői élmény (developer experience) megvalósulása is
+        látható legyen.
+      </p>
+    </Fragment>
+  </Content>
+
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Kérj egy díjmentes konzultációt', href: getPermalink('/kapcsolat') }]}
+  >
+    <Fragment slot="title">Szeretnéd, hogy a te rendszered is prod-ra jusson — garantáltan?</Fragment>
+    <Fragment slot="subtitle">Beszéljünk arról, hol tart most a csapatod, és mi lenne az első lépés.</Fragment>
+  </CallToAction>
+</Layout>

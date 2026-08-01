@@ -1,0 +1,77 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import { getPermalink } from '~/utils/permalinks';
+import { placeholderImage } from '~/utils/placeholder';
+
+const metadata = {
+  title: 'AI hibrid megoldások',
+  description: 'Bizalmas adat helyben, a többi hibrid felhőben — egyedi AI megoldás, ami valóban a tiéd.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero image={placeholderImage('AI hibrid megoldások hero kép', 'aspect-video')}>
+    <Fragment slot="title">AI hibrid megoldások</Fragment>
+    <Fragment slot="subtitle">
+      Bizalmas adat helyben, a többi hibrid felhőben — egyedi AI megoldás, ami valóban a tiéd.
+    </Fragment>
+  </Hero>
+
+  <Features
+    id="features"
+    tagline="Két üzemmód"
+    title="Chat és automatizált folyamat"
+    columns={2}
+    items={[
+      {
+        title: 'Chat',
+        description:
+          'Direkt beszélgetés ad-hoc feladatok támogatására — amikor egy kollégának gyors, kontextusban lévő válaszra van szüksége.',
+        icon: 'tabler:message-circle',
+      },
+      {
+        title: 'Automatizált folyamat',
+        description:
+          'Pontosan definiált, térképszerűen leírt út automatikus végrehajtása — a folyamat leírását is nyugodtan az LLM-re bízzuk, hiszen ő ért legjobban szót önmagával.',
+        icon: 'tabler:route-2',
+      },
+    ]}
+  />
+
+  <Content image={placeholderImage('Adatpillérek')}>
+    <Fragment slot="title">Helyben futó modell, hibrid megközelítés</Fragment>
+    <Fragment slot="content">
+      <p>
+        Elkötelezett vagyok a helyben futó megoldások mellett. Szinte naponta jelenik meg valami izgalmas, új fejlesztés
+        a publikus, előfizetős AI világban — de amit én kínálok, az más: egy ingyenes (előfizetés nélküli, vagy csak
+        részben fizetős), a cég telephelyén futó megoldás, sallangoktól mentesen, kifejezetten a cég érdekeit szolgálva.
+        Ahol az adat kritikus, ott a modell is nálatok fut; ahol a feladat nem érzékeny, ott a hibrid megoldás egy
+        nem-lokál AI-t is bevonhat — mindig a feladathoz mérten, sosem alapból.
+      </p>
+      <p>
+        A megoldás lényege egy helyben futó LLM modell képességeinek összefűzése a cég bizalmas, ki nem juttatható
+        adataiból szintetizált data-lake-kel: ERP adatok, CRM adatok, szerződések, levelezési információk, céges
+        intranet, vagy akár publikus weboldalról gyűjtött vélemények. Mindezt egy egyedi megoldás fogja össze, amely
+        minden esetben a megrendelő cég tulajdonát képezi — forráskódként.
+      </p>
+      <p>
+        Mindent nem lehet automatizálni — és ez így van rendjén: ahogy az Office bevezetésekor sem volt igaz, hogy
+        "mindenre az Office csomagot használjuk", ma sem létezik egy modell, ami mindenre jó. A célhoz kell megtalálni a
+        megfelelő eszközt.
+      </p>
+    </Fragment>
+  </Content>
+
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Kérj egy díjmentes konzultációt', href: getPermalink('/kapcsolat') }]}
+  >
+    <Fragment slot="title">Szeretnéd tudni, mi automatizálható nálatok biztonságosan?</Fragment>
+    <Fragment slot="subtitle">Nézzük meg együtt, hol fut a legjobban a modell, és hol elég a hibrid megoldás.</Fragment>
+  </CallToAction>
+</Layout>

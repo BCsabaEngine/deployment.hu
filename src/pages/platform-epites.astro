@@ -1,0 +1,101 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import { getPermalink } from '~/utils/permalinks';
+import { placeholderImage } from '~/utils/placeholder';
+
+const metadata = {
+  title: 'Platform-építés',
+  description: 'Egy erős alap, amin minden csapat egyformán gyorsan halad.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero image={placeholderImage('Platform-építés hero kép', 'aspect-video')}>
+    <Fragment slot="title">Platform-építés</Fragment>
+    <Fragment slot="subtitle">Egy erős alap, amin minden csapat egyformán gyorsan halad.</Fragment>
+  </Hero>
+
+  <Content
+    image={placeholderImage('Mit ad egy jó platform képesség')}
+    items={[
+      {
+        title: 'Elrejti, aminek nem kell látszania.',
+        description:
+          'Az üzleti fejlesztőnek nem kell ismernie a logolási szabályokat, nem kell találkoznia az SRE csapattal, nem kell tudnia, pontosan hogyan kerül ki a kód prod-ra. Elég tudnia, melyik platform-modult kötelező használnia — a fájdalommentes működés a többi.',
+      },
+      {
+        title: 'Cserélhetővé teszi a bázist.',
+        description:
+          'Ha jogszabály változik, hiba derül ki, vagy egyszerűen jobb megoldás születik, az alkalmazásoknak elég újrafordulniuk és újra kiállniuk — a platform frissített verziója alatta már kompatibilis marad a környezettel.',
+      },
+      {
+        title: 'Nem csak backend kérdés.',
+        description:
+          'Az egységes szín, forma és felhasználói élmény is platform-elem: egy márkaváltás (új font, új színvilág) így lassan és fájdalommentesen vezethető át a teljes rendszeren.',
+      },
+    ]}
+  >
+    <Fragment slot="title">Mit ad egy jó platform képesség</Fragment>
+    <Fragment slot="content">
+      <p>
+        Kevés cég épít ma már egyetlen terméket. A legtöbb rendszer microservice- vagy nanoservice-halmaz: önálló
+        forráskód, gyakran párhuzamos vagy időben nagyon eltolt fejlesztéssel. Mégis közös nevezőre kell hozni őket —
+        különben minden csapat a saját nyelvét beszéli, és a fenntartás lassan ellehetetlenül.
+      </p>
+      <p>
+        A platform-építés erről szól: egy közös alap lerakásáról, amitől minden elkészült alkalmazás egyforma jellegű és
+        minőségű lesz. Ha ez megvan, bármely cross-funkcionális csapat az üzleti leírás alapján hozzá tud nyúlni egy
+        másik csapat kódjához.
+      </p>
+    </Fragment>
+  </Content>
+
+  <Content isReversed image={placeholderImage('Szoros kapcsolat az SRE-vel')}>
+    <Fragment slot="title">Szoros kapcsolat az SRE-vel</Fragment>
+    <Fragment slot="content">
+      <p>
+        A platform csapat gyakran átveszi az SRE feladatait is: irányítja a kitelepítést, felügyeli a rendszert, reagál,
+        ha valami elakad. Ez azt is jelenti, hogy nem elég <em>tudni</em>, mit kell csinálni — <em>érteni</em> is kell, miért.
+        A platform csapat ezért folyamatosan egyeztet az SRE-vel, nem csak akkor, ha baj van, hanem a mindennapi működés részeként
+        is.
+      </p>
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mt-8 mb-2">
+        Dokumentáció, ami a cég vagyona
+      </h3>
+      <p>
+        A platform csapat szigorúbban dokumentál, mint egy fejlesztői csapat valaha is fog. Nem csak a kód számít, hanem
+        az is, mikor, mit és miért döntöttek úgy, ahogy — hónapokkal vagy akár évekkel korábbi döntések indoklása is
+        visszakereshető kell legyen. Ez a tudás és ez az artifact-állomány nem mellékes: a cég tulajdona, és fontosabb,
+        mint maga az üzleti forráskód.
+      </p>
+    </Fragment>
+  </Content>
+
+  <Content image={placeholderImage('A guild-modell')}>
+    <Fragment slot="title">A guild-modell</Fragment>
+    <Fragment slot="content">
+      <p>
+        Egyre több platform csapat guild-ként működik: egy vezető irányítása alatt az üzleti csapatok 1-2 fejlesztőt
+        delegálnak 1-2 hónapra. Ez csökkenti a kiégést és a fluktuációt, az üzleti tapasztalat visszaszivárog a
+        platformba, a kollégák pedig testközelből tanulják meg, miért számít a low-level réteg. Aki egyszer megélte ezt
+        a rotációt, másképp tekint a saját csapata munkájára is.
+      </p>
+    </Fragment>
+  </Content>
+
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Kérj egy díjmentes konzultációt', href: getPermalink('/kapcsolat') }]}
+  >
+    <Fragment slot="title">Platform csapatra van szükséged, vagy csak szeretnéd tudni, hol tart most a tiétek?</Fragment
+    >
+    <Fragment slot="subtitle">
+      Segítek feltérképezni, hol vagytok most, és mi lenne az első lépés, ami már a következő negyedévben mérhető
+      változást hoz.
+    </Fragment>
+  </CallToAction>
+</Layout>

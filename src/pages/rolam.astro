@@ -1,0 +1,117 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import { getPermalink } from '~/utils/permalinks';
+import { placeholderImage } from '~/utils/placeholder';
+
+const metadata = {
+  title: 'Rólam',
+  description:
+    'Balázs Csaba szabadúszó termékfejlesztő — a Ferihegy-1-es kezdetektől a bankszektor legszigorúbb éveiig, és azon túl.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero image={placeholderImage('Portré fotó', 'aspect-video')}>
+    <Fragment slot="title">Balázs Csaba</Fragment>
+    <Fragment slot="subtitle">Szabadúszó termékfejlesztő vagyok, erős hands-on tapasztalattal.</Fragment>
+  </Hero>
+
+  <Content>
+    <Fragment slot="content">
+      <p>
+        Pályafutásomat Ferihegy-1-en kezdtem — akkor még így hívták —, egy olyan cégnél, amely speditőröket kötött össze
+        légitársaságokkal. A külföldi légitársaságok magyar leányvállalatainál már akkor megismertem azt a kultúrát,
+        amit ma „multis” jelzővel illetünk: a pontosságot, a szabályszerűséget és a nagy terhelhetőséget.
+      </p>
+      <p>
+        Egy rövid, de felelősségteljes pénzpiaci kitérő után 15 évig voltam az egyik vezető hazai ERP-rendszert szállító
+        cég alapítója és szakmai irányítója. Itt tanultam meg igazán, hogyan kell emberekkel bánni, és hogyan lehet az
+        üzleti igényeket nem csak megvalósítani, hanem valóban kiszolgálni. Az elköteleződésem a bankszektor felé vitt
+        tovább.
+      </p>
+      <p>
+        Szakmai életem legfeszítettebb és legszabályozottabb időszaka a banki környezetben következett. Öt év alatt a
+        valódi nagyvállalati gondolkodásmód az életem részévé vált — és számos sikeres projekten végigmenve elmondhatom:
+        nem volt olyan projekt, amely a fejlesztői vagy szakértői csapat miatt hiúsult volna meg. Mindenhol és mindenkor
+        odatettem magamat. Ezt semmi nem példázza jobban, mint hogy a több száz fős szervezet egyszer a negyedév
+        dolgozójává választott.
+      </p>
+      <p>
+        Kevesen voltunk, akik a tech lead munka mellett több hónapot töltöttünk a platform csapatban és annak
+        támogatásában, szervesen beépülve az SRE üzletággal való együttműködésbe. Sok rendszert a mi felügyeletünk alatt
+        telepített ki a pénzintézet éles környezetbe.
+      </p>
+      <p>
+        A szakmai spektrum egyre szélesebb, az új technológiák száma hónapról hónapra nő, az AI világ pedig hétről hétre
+        tartogat újdonságokat. 2026-ban döntöttem el, hogy szabadúszó termékfejlesztőként segítem cégek munkáját. Minden
+        esetben több céggel dolgozom együtt egyszerre, egyensúlyt tartva a techLead és az AI vonal között. Egy kis
+        háttércsapat segíti a munkámat — időpontot egyeztetnek, figyelmeztetnek a határidőkre —, de az ügyfelek szinte
+        mindig velem találkoznak.
+      </p>
+    </Fragment>
+  </Content>
+
+  <Steps
+    title="Szakmai állomások"
+    items={[
+      {
+        title: 'Ferihegy-1',
+        description: 'Speditőröket légitársaságokkal összekötő cégnél — a „multis” pontosság és szabályszerűség.',
+        icon: 'tabler:plane',
+      },
+      {
+        title: 'ERP-cég alapítása és 15 év szakmai irányítás',
+        description: 'Egy vezető hazai ERP-rendszert szállító cég alapítója és szakmai irányítója.',
+        icon: 'tabler:building-skyscraper',
+      },
+      {
+        title: 'Bankszektor, 5 év',
+        description: 'A legfeszítettebb és legszabályozottabb időszak — a negyedév dolgozója elismeréssel.',
+        icon: 'tabler:building-bank',
+      },
+      {
+        title: 'Platform csapat és SRE együttműködés',
+        description: 'Tech lead munka mellett a platform csapat támogatása, rendszerek éles kitelepítése.',
+        icon: 'tabler:server',
+      },
+      {
+        title: '2026 — szabadúszó termékfejlesztő',
+        description: 'TechLead és AI vonal egyensúlyban, több céggel egyszerre dolgozva.',
+        icon: 'tabler:rocket',
+      },
+    ]}
+  />
+
+  <Content
+    image={placeholderImage('Munka közben')}
+    isReversed
+    items={[
+      { title: 'Stabil, több évtizedes szakmai háttér' },
+      { title: 'Hands-on, naprakész szakmai tudás és tudásátadási képesség' },
+      { title: 'TechLead segítségnyújtás, szakmai beilleszkedés, egybeforrott szakmai munka' },
+      { title: 'AI kerekasztal egyeztetés könnyed stílusban' },
+      { title: '…és egy jó beszélgetés a világ dolgairól, szabad stílusban' },
+    ]}
+  >
+    <Fragment slot="title">Amit nyújtani tudok</Fragment>
+  </Content>
+
+  <Testimonials
+    testimonials={[
+      {
+        testimonial: 'Egyszer a negyedév dolgozójává választott egy több száz fős szervezet.',
+      },
+    ]}
+  />
+
+  <CallToAction actions={[{ variant: 'primary', text: 'Beszéljünk!', href: getPermalink('/kapcsolat') }]}>
+    <Fragment slot="title">Beszéljünk!</Fragment>
+  </CallToAction>
+</Layout>

@@ -9,7 +9,7 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
   {
     inputs &&
       inputs.map(
-        ({ type = 'text', name, label = '', autocomplete = 'on', placeholder = '' }) =>
+        ({ type = 'text', name, label = '', autocomplete = 'on', placeholder = '', options = [] }) =>
           name && (
             <div class="mb-6">
               {label && (
@@ -17,14 +17,27 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
                   {label}
                 </label>
               )}
-              <input
-                type={type}
-                name={name}
-                id={name}
-                autocomplete={autocomplete}
-                placeholder={placeholder}
-                class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
-              />
+              {type === 'select' ? (
+                <select
+                  name={name}
+                  id={name}
+                  autocomplete={autocomplete}
+                  class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+                >
+                  {options.map(({ value, label: optionLabel }) => (
+                    <option value={value}>{optionLabel}</option>
+                  ))}
+                </select>
+              ) : (
+                <input
+                  type={type}
+                  name={name}
+                  id={name}
+                  autocomplete={autocomplete}
+                  placeholder={placeholder}
+                  class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+                />
+              )}
             </div>
           )
       )

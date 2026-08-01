@@ -1,0 +1,78 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import { getPermalink } from '~/utils/permalinks';
+import { placeholderImage } from '~/utils/placeholder';
+
+const metadata = {
+  title: 'AI kerekasztal',
+  description: 'Nem előadás, hanem kerekasztal — standup-os lazasággal.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero image={placeholderImage('AI kerekasztal hero kép', 'aspect-video')}>
+    <Fragment slot="title">AI kerekasztal</Fragment>
+    <Fragment slot="subtitle">Nem előadás, hanem kerekasztal — standup-os lazasággal.</Fragment>
+  </Hero>
+
+  <Content image={placeholderImage('A közös vonat')}>
+    <Fragment slot="content">
+      <p>
+        Ez nem egy száraz előadás, ez nem egy képzés — nincs színpad, nincs taps. Van helyette egy
+        kerekasztal-beszélgetés, amelyre hivatalos minden csoportvezető, bárki, aki a folyamatokhoz ért, és egy
+        döntéshozó, aki validálja és mederben tartja az álmokat. Mert szoktak álmok lenni: mindenki szeretne felülni az
+        AI-vonatra, de kevesen tudják, merre tart a vonat, és mi lesz a következő állomás.
+      </p>
+      <p>
+        Mi viszont ismerjük a közös menetrendünket — mert nem jegyet veszünk a vonatra, hanem lesz egy saját vonatunk.
+        Ti választjátok ki, mire használjátok a hibrid AI megoldást, milyen folyamatokat támogattok vele, mit
+        automatizáltok. Ez folyamatos munka: az automatizálások lépésről lépésre épülnek be a cég életébe, jellemzően
+        negyedévente ülünk le újra átbeszélni, hova jutottunk, és mi legyen a következő állomás. Mindehhez nem kell
+        önálló csapatot létrehoznotok és fenntartanotok.
+      </p>
+      <p>
+        Nincs kész termék — van helyette egyedi megoldás, amely minden esetben a cég szellemi tulajdona, a cég
+        infrastruktúráján fut, és a cég érdekeit szolgálja. Ahelyett hogy egy végletekig csiszolt, fancy nevű, közös
+        terméket telepítenénk le, célirányosan gondolkodunk: a saját LLM, a hibrid megoldás és a RAG-adatok
+        szinergiájából épül egy öntanuló rendszer.
+      </p>
+    </Fragment>
+  </Content>
+
+  <Steps
+    title="Negyedéves ritmus"
+    items={[
+      {
+        title: 'Első kerekasztal',
+        description: 'Hozzatok 3-4 valódi, mindennapi folyamatot — végigbeszéljük, mi automatizálható és mi nem.',
+        icon: 'tabler:users-group',
+      },
+      {
+        title: 'Fokozatos bevezetés',
+        description: 'Az automatizálások lépésről lépésre épülnek be a cég életébe.',
+        icon: 'tabler:route',
+      },
+      {
+        title: 'Újra leülünk negyedévente',
+        description: 'Átbeszéljük, hova jutottunk, és mi legyen a következő állomás.',
+        icon: 'tabler:calendar-event',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Kérj egy díjmentes konzultációt', href: getPermalink('/kapcsolat') }]}
+  >
+    <Fragment slot="title">A garancia</Fragment>
+    <Fragment slot="subtitle">
+      Minden kerekasztalról legalább 3 folyamatot viszünk el úgy, hogy tudjuk, miként oldható meg — és legalább 1-ről
+      kimondjuk, ha nem érdemes automatizálni. Hozzatok 3-4 valódi, mindennapi folyamatot — a többit onnantól én viszem.
+    </Fragment>
+  </CallToAction>
+</Layout>

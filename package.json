@@ -19,7 +19,8 @@
     "check:prettier": "prettier --check .",
     "fix": "npm run fix:eslint && npm run fix:prettier",
     "fix:eslint": "eslint --fix .",
-    "fix:prettier": "prettier -w --list-different ."
+    "fix:prettier": "prettier -w --list-different .",
+    "all": "npm run fix && npm run build"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.18",
@@ -29,6 +30,7 @@
     "astro-embed": "^0.13.0",
     "astro-icon": "^1.1.5",
     "astro-seo": "^1.1.0",
+    "flowbite": "^4.0.2",
     "limax": "4.2.3",
     "lodash.merge": "^4.6.2",
     "unpic": "^4.2.2"
