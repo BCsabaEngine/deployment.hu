@@ -22,29 +22,28 @@ const metadata = {
   </Hero>
 
   <Content image={placeholderImage('Mi az a tech lead')}>
-    <Fragment slot="title">Mi az a tech lead?</Fragment>
+    <Fragment slot="title">Mi az a tech lead, valójában?</Fragment>
     <Fragment slot="content">
       <p>
-        A tech lead a terméket szállító csapat szakmai vezetője — nem a "legerősebb fejlesztő", bár gyakran összemossák
-        vele. Sokkal mélyebb tudása van, mint amire az adott helyzetben szükség lenne, ezért tud válogatni a lehetőségek
-        közül, és nem ijed meg semmitől. Karmesterként mentálisan is vezeti a csapatot: figyeli, ha valaki letér a
-        kijelölt útról, és az irányt konszenzus alapján jelöli ki — mindenkinek a szintjéhez mért szavazati jogot adva,
-        majd felelősségteljesen dönt, és vállalja is a döntés súlyát.
+        Sokan összemossák a „legerősebb fejlesztővel” — pedig a tech lead egészen más szerep. Ő a csapat szakmai
+        irányítója, a karmester: annyival mélyebb tudással rendelkezik, mint amire az adott pillanatban szükség van,
+        hogy nyugodtan tud válogatni a lehetőségek közt, és semmi nem éri felkészületlenül. Nem parancsol felülről — az
+        irányt konszenzussal jelöli ki, mindenkinek a szintjéhez mérten adva beleszólást —, aztán felelősségteljesen
+        dönt, és a döntés súlyát is vállalja.
       </p>
       <p>
-        Naprakész, azonnali tapasztalata van az alkalmazott technológiáról — kapacitáshiány esetén bármely fejlesztői
-        feladatot el is tudná látni. De a valódi feladata más: olyan irányt kijelölni, amelyen haladva 2–6 negyedév
-        alatt célba érünk, úgy, hogy a csapatnak csak egy negyedévet kell előre látnia. Hónapokkal korábban észreveszi,
-        amikor egy technológia kezd elavulni.
+        Naprakész, azonnali tapasztalata van a használt technológiáról, és kapacitáshiány esetén bármelyik fejlesztői
+        feladatot át tudná venni. De a valódi értéke máshol van: egy 2–6 negyedévre szóló irányt jelöl ki úgy, hogy a
+        csapatnak elég csak egy negyedévet előre látnia — és hónapokkal korábban észreveszi, ha egy technológia kezd
+        kimenni a divatból.
       </p>
       <p>
-        Ehhez olyan ember kell, aki folyamatosan képzi magát, egyszerre több projektben dolgozik, és nemcsak fizetős,
-        hanem nyílt forráskódú projekteket is visz — ahol szabadon ki is próbálhatja, amit tanul. Aki élesben is mer
-        hibázni, a hibáit felismeri vagy elfogadja, ha más veszi észre — és ez csak megerősíti, pontosabbá teszi.
-        Emberileg a simulékony és a servant leader között helyezkedik el: nem parancsol, de nem is hódol be. Leveszi a
-        döntés és a felelősség terhét a végrehajtó kollégákról, szívesen dolgozik együtt Engineering Managerekkel,
-        riportál a PM felé, a PO-val pedig nemcsak jó viszonyt ápol, de segít is a termék tervezésében, hogy az
-        hatékonyan fejleszthető legyen.
+        Ehhez olyan emberre van szükség, aki folyamatosan tanul, egyszerre több projektben dolgozik, és nemcsak fizetős,
+        hanem nyílt forráskódú munkákat is visz — ott szabadon kísérletezhet azzal, amit később élesben alkalmaz. Aki
+        élesben is mer hibázni, felismeri vagy elfogadja a hibáit, és ettől csak pontosabb lesz. Emberileg valahol a
+        simulékony és a servant leader között helyezkedik el: nem hódol be, de nem is parancsol — leveszi a döntés
+        terhét a végrehajtókról, jól együttműködik az Engineering Managerrel, riportál a PM felé, és a PO-val nemcsak
+        jóban van, de a termék tervezésébe is besegít, hogy az valóban fejleszthető legyen.
       </p>
     </Fragment>
   </Content>
@@ -54,33 +53,34 @@ const metadata = {
     image={placeholderImage('Miért bérelj tech leadet')}
     items={[
       {
-        title: 'Állandó rendelkezésre állás, nem állandó jelenlét.',
+        title: 'Rendelkezésre állás, nem állandó jelenlét.',
         description:
-          'A csapat egészsége látványosan jobb lesz, ha nem ülnek a nyakukon minden nap — 2-3 naponkénti irányítás és felügyelet sokkal hatékonyabb, mint a folyamatos kontroll.',
+          'A csapat láthatóan egészségesebb lesz, ha nem ülnek a nyakán minden nap — a 2-3 naponkénti irányítás és felügyelet a gyakorlatban hatékonyabb, mint a folyamatos kontroll.',
       },
       {
-        title: 'Külső szem, szélesebb merítés.',
+        title: 'Külső nézőpont, szélesebb tapasztalat.',
         description:
-          'Egy külsős tech lead a világ technológiáiból dolgozik, nem egyetlen cég falai közül — más cégeknél kipróbált gyakorlatokkal színesíti és teszi stabilabbá a fejlesztési módszertant és a prod-ra telepítést. Egy belsős csapat könnyen leragad ott, ameddig eddig látott; a külsős szem új elveket és gyakorlatokat hoz be.',
+          'Egy külsős tech lead nem egyetlen cég falai közt gondolkodik, hanem a piac egészéből merít — más cégeknél bevált gyakorlatokkal frissíti fel és stabilizálja a fejlesztési módszertant és a prod-ra telepítést. Egy belső csapat könnyen leragad azon a szinten, ameddig eddig eljutott; a külső szem viszi be az új elveket.',
       },
     ]}
   >
-    <Fragment slot="title">Miért éri meg bérelni — és nem alkalmazni?</Fragment>
+    <Fragment slot="title">Miért éri meg bérelni — nem alkalmazni?</Fragment>
     <Fragment slot="content">
       <p>
-        A tech lead szerepkör nem feltétlenül heti 40 órás, folyamatos jelenlétet igénylő feladat. Projektindításkor
-        fontos a célok kijelölése — utána egy jól beállított csapat hetekig is önállóan dolgozik a kijelölt célokon,
-        anélkül hogy a módszeren változtatni kellene. A mikromenedzsment megölheti a kreativitást: hagyni kell dolgozni
-        a végrehajtó réteget a lefektetett elvek mentén.
+        A tech lead szerep nem igényel heti 40 órás, folyamatos jelenlétet. A célok kijelölése projektindításkor számít
+        igazán — utána egy jól beállt csapat hetekig önállóan halad a kitűzött irányban, anélkül hogy a módszeren bármit
+        is kellene változtatni. A mikromenedzsment épp az ellenkezőjét éri el annak, amit szeretnénk: megöli a
+        kreativitást. Hagyni kell dolgozni a csapatot a lefektetett elvek mentén — ahogy egy jó szónok sem beszél
+        folyamatosan, hagy időt a hallgatóságnak, hogy megértse és alkalmazza is, amit hallott.
       </p>
       <p>
-        Az üresjáratokat gyakran tényleges üzleti feladatok töltik fel: ez naprakészen tartja a valós tennivalókban, és
-        a legkritikusabb feladatokat — az alaprendszer építését — saját maga végzi el, bizonyítva a rátermettségét. Ezt
-        mindig edukációs céllal teszi: megmutatja és megérteti a körülötte lévőkkel, mit és miért csinált, hogy
-        legközelebb ők is el tudják végezni. Eközben transzparens kapcsolatot tart a cégen belüli software architekttel,
-        akinek a szerepe gátnak és védőhálónak lenni.
+        A felszabaduló időt jellemzően valós, üzleti feladatok töltik ki: ettől a tech lead naprakész marad a napi
+        munkában, és a legkritikusabb részeket — az alaprendszer felépítését — maga végzi el, bizonyítva a
+        rátermettségét. Ez mindig tanító jelleggel történik: megmutatja és elmagyarázza, mit és miért csinált, hogy
+        legközelebb már a csapat is el tudja végezni. Eközben átlátható kapcsolatot tart a cégen belüli
+        szoftver-architekttel, akinek a szerepe gátnak és védőhálónak lenni.
       </p>
-      <p>Két fő oka van annak, miért érdemesebb bérelni, mint alkalmazni:</p>
+      <p>Két oka van annak, hogy a bérlés jobban megéri, mint az alkalmazás:</p>
     </Fragment>
   </Content>
 

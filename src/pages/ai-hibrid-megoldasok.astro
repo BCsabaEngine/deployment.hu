@@ -25,45 +25,53 @@ const metadata = {
 
   <Features
     id="features"
-    tagline="Két üzemmód"
-    title="Chat és automatizált folyamat"
+    title="Két mód, egy rendszer"
     columns={2}
     items={[
       {
         title: 'Chat',
         description:
-          'Direkt beszélgetés ad-hoc feladatok támogatására — amikor egy kollégának gyors, kontextusban lévő válaszra van szüksége.',
+          'Direkt beszélgetés ad-hoc kérdésekre — amikor egy kollégának gyors, kontextusban lévő válasz kell.',
         icon: 'tabler:message-circle',
       },
       {
         title: 'Automatizált folyamat',
         description:
-          'Pontosan definiált, térképszerűen leírt út automatikus végrehajtása — a folyamat leírását is nyugodtan az LLM-re bízzuk, hiszen ő ért legjobban szót önmagával.',
+          'Pontosan meghatározott, térképként leírt út végigfuttatása — a folyamat leírását nyugodtan rábízzuk az LLM-re, hiszen ő ért legjobban szót saját magával.',
         icon: 'tabler:route-2',
       },
     ]}
   />
 
   <Content image={placeholderImage('Adatpillérek')}>
-    <Fragment slot="title">Helyben futó modell, hibrid megközelítés</Fragment>
+    <Fragment slot="title">Miért nem csak felhő</Fragment>
     <Fragment slot="content">
       <p>
-        Elkötelezett vagyok a helyben futó megoldások mellett. Szinte naponta jelenik meg valami izgalmas, új fejlesztés
-        a publikus, előfizetős AI világban — de amit én kínálok, az más: egy ingyenes (előfizetés nélküli, vagy csak
-        részben fizetős), a cég telephelyén futó megoldás, sallangoktól mentesen, kifejezetten a cég érdekeit szolgálva.
-        Ahol az adat kritikus, ott a modell is nálatok fut; ahol a feladat nem érzékeny, ott a hibrid megoldás egy
-        nem-lokál AI-t is bevonhat — mindig a feladathoz mérten, sosem alapból.
+        Szinte naponta jön valami új és izgalmas a publikus, előfizetéses AI-világból — mégis elköteleződtem a helyben
+        futó megoldások mellett. Amit kínálok, az ehhez képest más: egy ingyenes, vagy csak részben fizetős, a cég saját
+        telephelyén futó rendszer, sallang nélkül, kizárólag a cég érdekét szolgálva. Ahol az adat érzékeny, ott a
+        modell is nálatok fut; ahol a feladat nem az, ott a hibrid réteg bevonhat egy nem-lokál AI-t is — mindig a
+        feladathoz igazítva, sosem alapértelmezésből.
       </p>
       <p>
-        A megoldás lényege egy helyben futó LLM modell képességeinek összefűzése a cég bizalmas, ki nem juttatható
-        adataiból szintetizált data-lake-kel: ERP adatok, CRM adatok, szerződések, levelezési információk, céges
-        intranet, vagy akár publikus weboldalról gyűjtött vélemények. Mindezt egy egyedi megoldás fogja össze, amely
-        minden esetben a megrendelő cég tulajdonát képezi — forráskódként.
+        A technika lényege egyszerű: egy helyben futó LLM képességeit összefűzöm a cég bizalmas, ki nem kerülő adataiból
+        épített data-lake-kel. Az eredmény egy egyedi rendszer, ami — forráskóddal együtt — mindig a megrendelő
+        tulajdona marad.
+      </p>
+
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mt-8 mb-2">
+        Mit érdemes automatizálni — és mit nem
+      </h3>
+      <p>
+        Hogy mit érdemes automatizálni, mindig az egyeztetés közben derül ki. Nem lehet — és nem is kell — mindent:
+        ahogy az Office megjelenésekor sem volt igaz, hogy "mindenre az Office csomagot használjuk", ma sincs egyetlen
+        modell, ami minden feladatra jó. A cél diktálja az eszközt, nem fordítva.
       </p>
       <p>
-        Mindent nem lehet automatizálni — és ez így van rendjén: ahogy az Office bevezetésekor sem volt igaz, hogy
-        "mindenre az Office csomagot használjuk", ma sem létezik egy modell, ami mindenre jó. A célhoz kell megtalálni a
-        megfelelő eszközt.
+        Az adatpillér tipikusan ERP- és CRM-adatokból, szerződésekből, levelezésből, céges intranetből, vagy akár
+        nyilvános vélemény-oldalakról gyűjtött visszajelzésekből áll — ezeket struktúráltan tároljuk, és elérhetővé
+        tesszük a belső LLM számára. A modellt ezután a céges szabályokra instruáljuk: figyelembe vesszük a kívánt
+        hangvételt, és azt is, hogy a rendszer tegezze-e a felhasználókat.
       </p>
     </Fragment>
   </Content>

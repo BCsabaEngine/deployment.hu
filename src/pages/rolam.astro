@@ -20,40 +20,55 @@ const metadata = {
 <Layout metadata={metadata}>
   <Hero image={placeholderImage('Portré fotó', 'aspect-video')}>
     <Fragment slot="title">Balázs Csaba</Fragment>
-    <Fragment slot="subtitle">Szabadúszó termékfejlesztő vagyok, erős hands-on tapasztalattal.</Fragment>
+    <Fragment slot="subtitle">
+      Nem egyenes vonalban jutottam el a tech-lead és AI munkáig — de visszanézve pontosan összeáll a kép.
+    </Fragment>
   </Hero>
 
   <Content>
     <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        A kezdetek: pontosság és terhelhetőség
+      </h3>
       <p>
-        Pályafutásomat Ferihegy-1-en kezdtem — akkor még így hívták —, egy olyan cégnél, amely speditőröket kötött össze
-        légitársaságokkal. A külföldi légitársaságok magyar leányvállalatainál már akkor megismertem azt a kultúrát,
-        amit ma „multis” jelzővel illetünk: a pontosságot, a szabályszerűséget és a nagy terhelhetőséget.
+        A pályámat Ferihegy-1-en kezdtem — akkor még így hívták a reptért —, egy olyan cégnél, amely speditőröket kötött
+        össze légitársaságokkal. A külföldi légitársaságok magyar leányvállalatainál már akkor testközelből megismertem
+        azt, amit ma „multis kultúrának” hívunk: a pontosságot, a szabályszerűséget, és azt, hogy egy rendszernek nagy
+        terhelés alatt is helyt kell állnia.
       </p>
+
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mt-8 mb-2">
+        15 év egy hazai ERP-cég élén
+      </h3>
       <p>
         Egy rövid, de felelősségteljes pénzpiaci kitérő után 15 évig voltam az egyik vezető hazai ERP-rendszert szállító
-        cég alapítója és szakmai irányítója. Itt tanultam meg igazán, hogyan kell emberekkel bánni, és hogyan lehet az
-        üzleti igényeket nem csak megvalósítani, hanem valóban kiszolgálni. Az elköteleződésem a bankszektor felé vitt
-        tovább.
+        cég alapítója és szakmai irányítója. Itt tanultam meg igazán, hogyan kell emberekkel bánni — és, ami legalább
+        ennyire fontos, hogyan lehet az üzleti igényeket nemcsak megvalósítani, hanem valóban kiszolgálni. Innen vitt
+        tovább az utam a bankszektor felé.
       </p>
+
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mt-8 mb-2">
+        Öt év a szakma legszigorúbb terepén
+      </h3>
       <p>
-        Szakmai életem legfeszítettebb és legszabályozottabb időszaka a banki környezetben következett. Öt év alatt a
-        valódi nagyvállalati gondolkodásmód az életem részévé vált — és számos sikeres projekten végigmenve elmondhatom:
-        nem volt olyan projekt, amely a fejlesztői vagy szakértői csapat miatt hiúsult volna meg. Mindenhol és mindenkor
-        odatettem magamat. Ezt semmi nem példázza jobban, mint hogy a több száz fős szervezet egyszer a negyedév
+        A banki környezet lett szakmai életem legfeszítettebb és legszabályozottabb időszaka. Öt év alatt a valódi
+        nagyvállalati gondolkodásmód az életem részévé vált, és számos sikeres projekten végigmenve elmondhatom: nem
+        volt olyan projekt, amely a fejlesztői vagy szakértői csapat miatt hiúsult volna meg. Mindenhol és mindenkor
+        odatettem magamat — ezt talán semmi nem mutatja jobban annál, hogy a több száz fős szervezet egyszer a negyedév
         dolgozójává választott.
       </p>
       <p>
-        Kevesen voltunk, akik a tech lead munka mellett több hónapot töltöttünk a platform csapatban és annak
-        támogatásában, szervesen beépülve az SRE üzletággal való együttműködésbe. Sok rendszert a mi felügyeletünk alatt
-        telepített ki a pénzintézet éles környezetbe.
+        Kevesen voltunk, akik a tech-lead munka mellett hónapokat töltöttünk a platform csapatban is, szervesen beépülve
+        az SRE üzletággal való együttműködésbe — számos rendszert a mi felügyeletünk alatt telepített ki a pénzintézet
+        éles környezetbe.
       </p>
+
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mt-8 mb-2">2026 óta szabadúszóként</h3>
       <p>
-        A szakmai spektrum egyre szélesebb, az új technológiák száma hónapról hónapra nő, az AI világ pedig hétről hétre
-        tartogat újdonságokat. 2026-ban döntöttem el, hogy szabadúszó termékfejlesztőként segítem cégek munkáját. Minden
-        esetben több céggel dolgozom együtt egyszerre, egyensúlyt tartva a techLead és az AI vonal között. Egy kis
-        háttércsapat segíti a munkámat — időpontot egyeztetnek, figyelmeztetnek a határidőkre —, de az ügyfelek szinte
-        mindig velem találkoznak.
+        A szakmai spektrum egyre szélesebb, az új technológiák száma hónapról hónapra nő, az AI-világ pedig hétről hétre
+        hoz újat. 2026-ban döntöttem el, hogy ezt a tempót szabadúszó termékfejlesztőként kövessem: mindig több céggel
+        dolgozom párhuzamosan, egyensúlyban tartva a tech-lead és az AI vonalat. A háttérben egy kis csapat segít —
+        időpontot egyeztet, határidőre figyelmeztet —, de a munka során szinte mindig velem találkozol.
       </p>
     </Fragment>
   </Content>
@@ -93,14 +108,14 @@ const metadata = {
     image={placeholderImage('Munka közben')}
     isReversed
     items={[
-      { title: 'Stabil, több évtizedes szakmai háttér' },
-      { title: 'Hands-on, naprakész szakmai tudás és tudásátadási képesség' },
-      { title: 'TechLead segítségnyújtás, szakmai beilleszkedés, egybeforrott szakmai munka' },
-      { title: 'AI kerekasztal egyeztetés könnyed stílusban' },
-      { title: '…és egy jó beszélgetés a világ dolgairól, szabad stílusban' },
+      { title: 'Több évtizedes, stabil szakmai háttér' },
+      { title: 'Hands-on, naprakész tudás — és képesség rá, hogy át is adjam' },
+      { title: 'TechLead segítségnyújtás, valódi szakmai beilleszkedés' },
+      { title: 'AI kerekasztal, könnyed stílusban' },
+      { title: 'És egy jó beszélgetés a világ dolgairól, ha épp arra van szükség' },
     ]}
   >
-    <Fragment slot="title">Amit nyújtani tudok</Fragment>
+    <Fragment slot="title">Amit ehhez hozok</Fragment>
   </Content>
 
   <Testimonials
