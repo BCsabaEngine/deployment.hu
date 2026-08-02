@@ -134,6 +134,12 @@ Amennyiben az Adatkezelőnek a 3.1–3.6. pontok szerinti kérelem előterjeszt�
 
 Az Adatkezelő fenntartja a jogot, hogy a Tájékoztatót bármikor módosítsa. A módosításról az Érintettet a honlapon való közzététel útján, a módosítás hatálybalépését megelőzően legalább 3 nappal értesíti.
 
+## 5. Sütik (cookie-k) használata
+
+A honlap kizárólag a működéséhez feltétlenül szükséges, technikai jellegű adatokat tárol a látogató böngészőjében (helyi tárolás — localStorage), amelyek a megjelenítési mód (világos/sötét téma) és a jelen tájékoztatóval kapcsolatos tájékoztatás megjelenítésének megjegyzésére szolgálnak. Ezek az adatok nem alkalmasak a látogató személyének azonosítására, és nem kerülnek harmadik fél részére továbbításra.
+
+A honlap jelenleg nem használ statisztikai, marketing- vagy egyéb harmadik féltől származó sütit. Amennyiben az Adatkezelő a jövőben ilyet vezetne be, a jelen Tájékoztatót előzetesen frissíti, és a honlapon a látogató hozzájárulását kéri.
+
 ---
 
 Dunakeszi, 2026. augusztus 1.
