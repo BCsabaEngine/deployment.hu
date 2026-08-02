@@ -6,6 +6,7 @@ import Content from '~/components/widgets/Content.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import ContentHeading from '~/components/ui/ContentHeading.astro';
 
 import { getPermalink } from '~/utils/permalinks';
 import { placeholderImage } from '~/utils/placeholder';
@@ -27,9 +28,7 @@ const metadata = {
 
   <Content>
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        A kezdetek: pontosság és terhelhetőség
-      </h3>
+      <ContentHeading>A kezdetek: pontosság és terhelhetőség</ContentHeading>
       <p>
         A pályámat Ferihegy-1-en kezdtem — akkor még így hívták a reptért —, egy olyan cégnél, amely speditőröket kötött
         össze légitársaságokkal. A külföldi légitársaságok magyar leányvállalatainál már akkor testközelből megismertem
@@ -37,9 +36,7 @@ const metadata = {
         terhelés alatt is helyt kell állnia.
       </p>
 
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mt-8 mb-2">
-        15 év egy hazai ERP-cég élén
-      </h3>
+      <ContentHeading>15 év egy hazai ERP-cég élén</ContentHeading>
       <p>
         Egy rövid, de felelősségteljes pénzpiaci kitérő után 15 évig voltam az egyik vezető hazai ERP-rendszert szállító
         cég alapítója és szakmai irányítója. Itt tanultam meg igazán, hogyan kell emberekkel bánni — és, ami legalább
@@ -47,9 +44,7 @@ const metadata = {
         tovább az utam a bankszektor felé.
       </p>
 
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mt-8 mb-2">
-        Öt év a szakma legszigorúbb terepén
-      </h3>
+      <ContentHeading>Öt év a szakma legszigorúbb terepén</ContentHeading>
       <p>
         A banki környezet lett szakmai életem legfeszítettebb és legszabályozottabb időszaka. Öt év alatt a valódi
         nagyvállalati gondolkodásmód az életem részévé vált, és számos sikeres projekten végigmenve elmondhatom: nem
@@ -63,7 +58,7 @@ const metadata = {
         éles környezetbe.
       </p>
 
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mt-8 mb-2">2026 óta szabadúszóként</h3>
+      <ContentHeading>2026 óta szabadúszóként</ContentHeading>
       <p>
         A szakmai spektrum egyre szélesebb, az új technológiák száma hónapról hónapra nő, az AI-világ pedig hétről hétre
         hoz újat. 2026-ban döntöttem el, hogy ezt a tempót szabadúszó termékfejlesztőként kövessem: mindig több céggel

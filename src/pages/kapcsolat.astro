@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Contact from '~/components/widgets/Contact.astro';
+import Notice from '~/components/ui/Notice.astro';
 
 const metadata = {
   title: 'Kapcsolat',
@@ -33,12 +34,10 @@ const metadata = {
   />
 
   <div class="max-w-xl mx-auto px-4 sm:px-6 -mt-4 mb-16">
-    <div class="rounded-lg border border-amber-300 bg-amber-50 dark:border-amber-700 dark:bg-amber-950/40 p-4 sm:p-6">
-      <p class="text-sm text-amber-900 dark:text-amber-200">
-        Folyamatban lévő szerződéseim és lejárt szerződéseim titoktartási klauzulái fényében fenn kell tartanom a jogot,
-        hogy a céget jobban megismerve, az egyeztetések állapotában nemet mondhassak a megkeresésre és szerződéskötésre.
-      </p>
-    </div>
+    <Notice>
+      Folyamatban lévő szerződéseim és lejárt szerződéseim titoktartási klauzulái fényében fenn kell tartanom a jogot,
+      hogy a céget jobban megismerve, az egyeztetések állapotában nemet mondhassak a megkeresésre és szerződéskötésre.
+    </Notice>
 
     <div class="mt-8 text-center text-muted dark:text-slate-400">
       <p>

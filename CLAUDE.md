@@ -48,7 +48,9 @@ All internal links must go through `src/utils/permalinks.ts` (`getPermalink`, `g
 
 ### Page composition: widgets
 
-Pages (`src/pages/*.astro`) are built by composing components from `src/components/widgets/` (Hero, Features, Content, Pricing, Testimonials, FAQs, CallToAction, BlogLatestPosts, etc.) inside `PageLayout.astro`. Widgets take structured props (e.g. `items`, `actions`, `image`) rather than being hand-written markup per page — when adding a new page, prefer assembling existing widgets over writing new bespoke markup. `src/components/ui/` holds lower-level building blocks (Button, Headline, WidgetWrapper, Timeline) that widgets are built from.
+Pages (`src/pages/*.astro`) are built by composing components from `src/components/widgets/` (Hero, Features, Content, Pricing, Testimonials, FAQs, CallToAction, BlogLatestPosts, etc.) inside `PageLayout.astro`. Widgets take structured props (e.g. `items`, `actions`, `image`) rather than being hand-written markup per page — when adding a new page, prefer assembling existing widgets over writing new bespoke markup. `src/components/ui/` holds lower-level building blocks (Button, Headline, WidgetWrapper, Timeline, ContentHeading, Notice) that widgets are built from.
+
+Before writing markup inline in a page, check whether an existing widget/ui component already covers it. If a block is reused across pages (even a small one, like a subheading or a notice box) or is a self-contained visual unit, extract it into a new component under `src/components/widgets/` or `src/components/ui/` rather than leaving it inline.
 
 ### Layouts
 

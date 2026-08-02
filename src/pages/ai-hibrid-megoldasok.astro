@@ -5,6 +5,7 @@ import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
 import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import ContentHeading from '~/components/ui/ContentHeading.astro';
 
 import { getPermalink } from '~/utils/permalinks';
 import { placeholderImage } from '~/utils/placeholder';
@@ -59,9 +60,7 @@ const metadata = {
         tulajdona marad.
       </p>
 
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mt-8 mb-2">
-        Mit érdemes automatizálni — és mit nem
-      </h3>
+      <ContentHeading>Mit érdemes automatizálni — és mit nem</ContentHeading>
       <p>
         Hogy mit érdemes automatizálni, mindig az egyeztetés közben derül ki. Nem lehet — és nem is kell — mindent:
         ahogy az Office megjelenésekor sem volt igaz, hogy "mindenre az Office csomagot használjuk", ma sincs egyetlen

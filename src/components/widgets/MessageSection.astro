@@ -1,0 +1,31 @@
+---
+export interface Props {
+  srLabel: string;
+  title: string;
+  message: string;
+  description?: string;
+  action?: { href: string; text: string };
+}
+
+const { srLabel, title, message, description, action } = Astro.props;
+---
+
+<section class="flex items-center h-full p-16">
+  <div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
+    <div class="max-w-md text-center">
+      <h2 class="mb-8 font-bold text-9xl">
+        <span class="sr-only">{srLabel}</span>
+        <span class="text-primary">{title}</span>
+      </h2>
+      <p class="text-3xl font-semibold md:text-3xl">{message}</p>
+      {description && <p class="mt-4 mb-8 text-lg text-muted dark:text-slate-400">{description}</p>}
+      {
+        action && (
+          <a rel="noopener noreferrer" href={action.href} class="btn ml-4">
+            {action.text}
+          </a>
+        )
+      }
+    </div>
+  </div>
+</section>

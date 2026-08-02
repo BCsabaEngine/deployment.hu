@@ -5,6 +5,7 @@ import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import ContentHeading from '~/components/ui/ContentHeading.astro';
 
 import { getPermalink } from '~/utils/permalinks';
 import { placeholderImage } from '~/utils/placeholder';
@@ -23,7 +24,7 @@ const metadata = {
 
   <Content image={placeholderImage('A közös vonat')}>
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Nincs színpad, nincs taps</h3>
+      <ContentHeading>Nincs színpad, nincs taps</ContentHeading>
       <p>
         Ez nem száraz előadás, és nem is képzés — nincs kivetítő, nincs jegyzetelős hangulat, nincs „kérdés a végén”
         blokk. Kerekasztal-beszélgetés van helyette, amelyre hivatalos minden csoportvezető, aki nap mint nap a
@@ -32,7 +33,7 @@ const metadata = {
         merre tart, és mi lesz a következő állomás.
       </p>
 
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mt-8 mb-2">Saját vonat, nem jegy</h3>
+      <ContentHeading>Saját vonat, nem jegy</ContentHeading>
       <p>
         Mi ismerjük a menetrendet — mert nem jegyet váltunk egy közös vonatra, hanem nektek épül egy saját. Ti döntitek
         el, mire használjátok a hibrid AI-megoldást, milyen folyamatokat támogattok vele, és mit automatizáltok belőle.
@@ -41,9 +42,7 @@ const metadata = {
         nem kell külön csapatot felépítenetek és fenntartanotok — ez az én dolgom marad.
       </p>
 
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mt-8 mb-2">
-        Nem termék, hanem megoldás
-      </h3>
+      <ContentHeading>Nem termék, hanem megoldás</ContentHeading>
       <p>
         Nincs polcról levehető, egy az egyben letelepíthető termékünk — helyette egyedi megoldás készül, ami mindig a
         cég szellemi tulajdona marad, a cég saját infrastruktúráján fut, és kizárólag a cég érdekeit szolgálja. Nem egy
