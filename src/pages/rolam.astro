@@ -4,7 +4,6 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
 import Steps from '~/components/widgets/Steps.astro';
-import Testimonials from '~/components/widgets/Testimonials.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import ContentHeading from '~/components/ui/ContentHeading.astro';
 
@@ -26,7 +25,7 @@ const metadata = {
     </Fragment>
   </Hero>
 
-  <Content>
+  <Content alignTop>
     <Fragment slot="content">
       <ContentHeading>A kezdetek: pontosság és terhelhetőség</ContentHeading>
       <p>
@@ -43,28 +42,37 @@ const metadata = {
         ennyire fontos, hogyan lehet az üzleti igényeket nemcsak megvalósítani, hanem valóban kiszolgálni. Innen vitt
         tovább az utam a bankszektor felé.
       </p>
-
-      <ContentHeading>Öt év a szakma legszigorúbb terepén</ContentHeading>
-      <p>
-        A banki környezet lett szakmai életem legfeszítettebb és legszabályozottabb időszaka. Öt év alatt a valódi
-        nagyvállalati gondolkodásmód az életem részévé vált, és számos sikeres projekten végigmenve elmondhatom: nem
-        volt olyan projekt, amely a fejlesztői vagy szakértői csapat miatt hiúsult volna meg. Mindenhol és mindenkor
-        odatettem magamat — ezt talán semmi nem mutatja jobban annál, hogy a több száz fős szervezet egyszer a negyedév
-        dolgozójává választott.
-      </p>
-      <p class="mt-4">
-        Kevesen voltunk, akik a tech-lead munka mellett hónapokat töltöttünk a platform csapatban is, szervesen beépülve
-        az SRE üzletággal való együttműködésbe — számos rendszert a mi felügyeletünk alatt telepített ki a pénzintézet
-        éles környezetbe.
-      </p>
-
-      <ContentHeading>2026 óta szabadúszóként</ContentHeading>
-      <p>
-        A szakmai spektrum egyre szélesebb, az új technológiák száma hónapról hónapra nő, az AI-világ pedig hétről hétre
-        hoz újat. 2026-ban döntöttem el, hogy ezt a tempót szabadúszó termékfejlesztőként kövessem: mindig több céggel
-        dolgozom párhuzamosan, egyensúlyban tartva a tech-lead és az AI vonalat. A háttérben egy kis csapat segít —
-        időpontot egyeztet, határidőre figyelmeztet —, de a munka során szinte mindig velem találkozol.
-      </p>
+    </Fragment>
+    <Fragment slot="image">
+      <div class="text-lg dark:text-slate-400">
+        <ContentHeading>Öt év a szakma legszigorúbb terepén</ContentHeading>
+        <p>
+          A banki környezet lett szakmai életem legfeszítettebb és legszabályozottabb időszaka. Öt év alatt a valódi
+          nagyvállalati gondolkodásmód az életem részévé vált, és számos sikeres projekten végigmenve elmondhatom: nem
+          volt olyan projekt, amely a fejlesztői vagy szakértői csapat miatt hiúsult volna meg. Mindenhol és mindenkor
+          odatettem magamat — ezt talán semmi nem mutatja jobban annál, hogy a több száz fős szervezet egy alkalommal a
+          negyedév dolgozójává választott.
+        </p>
+        <p class="mt-4">
+          Kevesen voltunk, akik a tech-lead munka mellett hónapokat töltöttünk a platform csapatban is, szervesen
+          beépülve az SRE üzletággal való együttműködésbe — számos rendszert a mi felügyeletünk alatt telepített ki a
+          pénzintézet éles környezetbe.
+        </p>
+        <p class="mt-4">
+          <strong>„A több száz fős szervezet a negyedév dolgozójává választott.”</strong>
+        </p>
+      </div>
+    </Fragment>
+    <Fragment slot="content2">
+      <div class="max-w-2xl mx-auto text-center">
+        <ContentHeading>2026 óta szabadúszóként</ContentHeading>
+        <p>
+          A szakmai spektrum egyre szélesebb, az új technológiák száma hónapról hónapra nő, az AI-világ pedig hétről
+          hétre hoz újat. 2026-ban döntöttem el, hogy ezt a tempót szabadúszó termékfejlesztőként kövessem: mindig több
+          céggel dolgozom párhuzamosan, egyensúlyban tartva a tech-lead és az AI vonalat. A háttérben egy kis csapat
+          segít — időpontot egyeztet, határidőre figyelmeztet —, de a munka során szinte mindig velem találkozol.
+        </p>
+      </div>
     </Fragment>
   </Content>
 
@@ -100,7 +108,7 @@ const metadata = {
   />
 
   <Content
-    image={placeholderImage('Munka közben')}
+    image={{ src: '~/assets/images/rolam-amit-en-hozok.jpg', alt: 'Amit ehhez hozok' }}
     isReversed
     items={[
       { title: 'Több évtizedes, stabil szakmai háttér' },
@@ -112,14 +120,6 @@ const metadata = {
   >
     <Fragment slot="title">Amit ehhez hozok</Fragment>
   </Content>
-
-  <Testimonials
-    testimonials={[
-      {
-        testimonial: 'Egyszer a negyedév dolgozójává választott egy több száz fős szervezet.',
-      },
-    ]}
-  />
 
   <CallToAction actions={[{ variant: 'primary', text: 'Beszéljünk!', href: getPermalink('/kapcsolat') }]}>
     <Fragment slot="title">Beszéljünk!</Fragment>

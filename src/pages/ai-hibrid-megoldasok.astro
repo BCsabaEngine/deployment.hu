@@ -8,7 +8,6 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import ContentHeading from '~/components/ui/ContentHeading.astro';
 
 import { getPermalink } from '~/utils/permalinks';
-import { placeholderImage } from '~/utils/placeholder';
 
 const metadata = {
   title: 'AI hibrid megoldások',
@@ -17,7 +16,7 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <Hero image={placeholderImage('AI hibrid megoldások hero kép', 'aspect-video')}>
+  <Hero image={{ src: '~/assets/images/ai-hibrid.jpg', alt: 'AI hibrid megoldások' }}>
     <Fragment slot="title">AI hibrid megoldások</Fragment>
     <Fragment slot="subtitle">
       Bizalmas adat helyben, a többi hibrid felhőben — egyedi AI megoldás, ami valóban a tiéd.
@@ -44,7 +43,7 @@ const metadata = {
     ]}
   />
 
-  <Content image={placeholderImage('Adatpillérek')}>
+  <Content image={{ src: '~/assets/images/ai-hibrid-mit-erdemes.jpg', alt: 'Mit érdemes automatizálni — és mit nem' }}>
     <Fragment slot="title">Miért nem csak felhő</Fragment>
     <Fragment slot="content">
       <p>

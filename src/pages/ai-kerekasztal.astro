@@ -8,7 +8,6 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import ContentHeading from '~/components/ui/ContentHeading.astro';
 
 import { getPermalink } from '~/utils/permalinks';
-import { placeholderImage } from '~/utils/placeholder';
 
 const metadata = {
   title: 'AI kerekasztal',
@@ -17,12 +16,12 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <Hero image={placeholderImage('AI kerekasztal hero kép', 'aspect-video')}>
+  <Hero image={{ src: '~/assets/images/ai-kerekasztal.jpg', alt: 'AI kerekasztal' }}>
     <Fragment slot="title">AI kerekasztal</Fragment>
     <Fragment slot="subtitle">Nem előadás, hanem kerekasztal — standup-os lazasággal.</Fragment>
   </Hero>
 
-  <Content image={placeholderImage('A közös vonat')}>
+  <Content image={{ src: '~/assets/images/ai-kerekasztal-nincs-szinpad.jpg', alt: 'Nincs színpad, nincs taps' }}>
     <Fragment slot="content">
       <ContentHeading>Nincs színpad, nincs taps</ContentHeading>
       <p>

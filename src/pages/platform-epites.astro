@@ -7,7 +7,6 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import ContentHeading from '~/components/ui/ContentHeading.astro';
 
 import { getPermalink } from '~/utils/permalinks';
-import { placeholderImage } from '~/utils/placeholder';
 
 const metadata = {
   title: 'Platform-építés',
@@ -16,13 +15,13 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <Hero image={placeholderImage('Platform-építés hero kép', 'aspect-video')}>
+  <Hero image={{ src: '~/assets/images/platform.jpg', alt: 'Platform-építés' }}>
     <Fragment slot="title">Platform-építés</Fragment>
     <Fragment slot="subtitle">Egy erős alap, amin minden csapat egyformán gyorsan halad.</Fragment>
   </Hero>
 
   <Content
-    image={placeholderImage('Mit ad egy jó platform képesség')}
+    image={{ src: '~/assets/images/platform-kepesseg.jpg', alt: 'Mit ad egy jó platform képesség' }}
     items={[
       {
         title: 'Elrejti, aminek nem kell látszania.',
@@ -56,7 +55,7 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <Content isReversed image={placeholderImage('Szoros kapcsolat az SRE-vel')}>
+  <Content isReversed image={{ src: '~/assets/images/platform-sre.jpg', alt: 'Szoros kapcsolat az SRE-vel' }}>
     <Fragment slot="title">Szoros kapcsolat az SRE-vel</Fragment>
     <Fragment slot="content">
       <p>
@@ -75,7 +74,7 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <Content image={placeholderImage('A guild-modell')}>
+  <Content image={{ src: '~/assets/images/platform-guild.jpg', alt: 'A guild-modell' }}>
     <Fragment slot="title">A guild-modell</Fragment>
     <Fragment slot="content">
       <p>

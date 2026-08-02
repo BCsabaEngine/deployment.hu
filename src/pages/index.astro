@@ -20,7 +20,17 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <Hero
-    image={placeholderImage('Hero kép', 'aspect-video')}
+    image={[
+      {
+        src: '~/assets/images/ai-hibrid.jpg',
+        alt: 'Robotkar sakkozik egy szakállas férfi mellett — AI és emberi szakértelem együtt',
+      },
+      {
+        src: '~/assets/images/platform.jpg',
+        alt: 'Sportautó motorterének közelije — pontosan megépített, megbízható alap',
+      },
+      { src: '~/assets/images/platform-guild.jpg', alt: 'Fejhallgatós csapat közösen dolgozik egy megbeszélőben' },
+    ]}
     actions={[{ variant: 'primary', text: 'Foglalj időpontot', href: getPermalink('/kapcsolat') }]}
   >
     <Fragment slot="title">
