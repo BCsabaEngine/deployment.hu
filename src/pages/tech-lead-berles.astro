@@ -6,7 +6,6 @@ import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 import { getPermalink } from '~/utils/permalinks';
-import { placeholderImage } from '~/utils/placeholder';
 
 const metadata = {
   title: 'Tech-Lead bérlés',
@@ -16,12 +15,12 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <Hero image={placeholderImage('Tech-Lead bérlés hero kép', 'aspect-video')}>
+  <Hero image={{ src: '~/assets/images/tech-lead.jpg', alt: 'Tech-Lead bérlés' }}>
     <Fragment slot="title">Tech-Lead bérlés</Fragment>
     <Fragment slot="subtitle">Szakmai irányító, aki nem ül a nyakadon — de garantálja, hogy célba érsz.</Fragment>
   </Hero>
 
-  <Content image={placeholderImage('Mi az a tech lead')}>
+  <Content image={{ src: '~/assets/images/tech-lead-miaz.jpg', alt: 'Mi az a tech lead, valójában?' }}>
     <Fragment slot="title">Mi az a tech lead, valójában?</Fragment>
     <Fragment slot="content">
       <p>
@@ -53,7 +52,7 @@ const metadata = {
 
   <Content
     isReversed
-    image={placeholderImage('Miért bérelj tech leadet')}
+    image={{ src: '~/assets/images/tech-lead-berles.jpg', alt: 'Miért éri meg bérelni tech leadet' }}
     items={[
       {
         title: 'Rendelkezésre állás, nem állandó jelenlét.',
@@ -88,7 +87,7 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <Content image={placeholderImage('A garancia')}>
+  <Content image={{ src: '~/assets/images/tech-lead-garancia.jpg', alt: 'A garancia' }}>
     <Fragment slot="title">A garancia</Fragment>
     <Fragment slot="content">
       <p>
