@@ -2,6 +2,7 @@
 import Layout from '~/layouts/PageLayout.astro';
 import Contact from '~/components/widgets/Contact.astro';
 import Notice from '~/components/ui/Notice.astro';
+import { COMPANY } from '~/config';
 
 const metadata = {
   title: 'Kapcsolat',
@@ -43,7 +44,12 @@ const metadata = {
       <p>
         Email: <a class="hover:text-primary hover:underline" href="mailto:hello@deployment.hu">hello@deployment.hu</a>
       </p>
-      <p class="mt-1">Telefon: <em>pontosítandó</em></p>
+      <p class="mt-1">
+        Telefon:
+        <a class="hover:text-primary hover:underline" href={`tel:${COMPANY.phone.replace(/\s+/g, '')}`}>
+          {COMPANY.phone}
+        </a>
+      </p>
       <p class="mt-1">Válaszidő: <em>pontosítandó</em></p>
     </div>
   </div>

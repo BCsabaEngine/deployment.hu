@@ -1,4 +1,4 @@
-import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
+import { getPermalink, getBlogPermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
@@ -13,11 +13,11 @@ export const headerData = {
 };
 
 export const footerData = {
-  links: [],
+  tagline:
+    'Tech-Lead bérlés, platform-építés és egyedi, saját tulajdonú AI megoldások — Balázs Csaba szabadúszó termékfejlesztő oldala.',
+  pageLinks: headerData.links,
   secondaryLinks: [
     { text: 'ÁSZF', href: getPermalink('/aszf') },
     { text: 'Adatvédelem', href: getPermalink('/adatvedelem') },
   ],
-  socialLinks: [{ ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') }],
-  footNote: `© ${new Date().getFullYear()} deployment.hu · Balázs Csaba e.v. · hello@deployment.hu`,
 };

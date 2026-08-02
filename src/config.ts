@@ -51,6 +51,15 @@ export interface UIConfig {
   theme: string;
 }
 
+export interface CompanyConfig {
+  name: string;
+  legalForm: string;
+  address: string;
+  taxNumber: string;
+  email: string;
+  phone: string;
+}
+
 export interface AnalyticsConfig {
   vendors: {
     googleAnalytics: {
@@ -122,6 +131,15 @@ export const APP_BLOG: AppBlogConfig = {
 export const UI: UIConfig = {
   // Values: 'system' | 'light' | 'dark' | 'light:only' | 'dark:only'
   theme: 'system',
+};
+
+export const COMPANY: CompanyConfig = {
+  name: 'Balázs Csaba EV',
+  legalForm: 'Egyéni vállalkozó',
+  address: '2120 Dunakeszi, Szent László utca 3.',
+  taxNumber: '92251108-2-33',
+  email: 'hello@deployment.hu',
+  phone: '+36 70 773 4152',
 };
 
 export const ANALYTICS: AnalyticsConfig = {
