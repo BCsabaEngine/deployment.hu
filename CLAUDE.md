@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-`deployment.hu` is the Hungarian-language marketing/personal site for Balázs Csaba, a freelance product developer (tech-lead rental, platform building, custom AI solutions). It's built on the **AstroWind** template (Astro + Tailwind), statically generated (`output: 'static'`), Node.js ≥ 22.12.
+`deployment.hu` is the Hungarian-language marketing/personal site for Balázs Csaba, a freelance product developer (tech-lead rental, platform building, custom AI solutions). It's an Astro + Tailwind site, statically generated (`output: 'static'`), Node.js ≥ 22.12.
 
 `IDEA.md` and `RAW.md` are the content source of truth (marketing copy, sitemap, tone/style notes for each page) — treat them as authoritative when writing or editing page copy, not the rendered `.astro` files. If copy changes, both files are meant to stay in sync with each other.
 
@@ -28,9 +28,9 @@ There is no test suite (`check` is the closest to CI validation). There's no sin
 
 ## Architecture
 
-### Config-driven site (astrowind integration)
+### Config-driven site
 
-`src/config.yaml` is the source of truth for site-wide settings (site URL, i18n, SEO metadata defaults, blog behavior/paths, theme). It's loaded by the custom Astro integration in `vendor/integration/` (see `vendor/README.md` — this is pre-release scaffolding for a future "AstroWind v2" that will support updating template instances), which exposes it at build time as the virtual module `astrowind:config` (`SITE`, `I18N`, `METADATA`, `APP_BLOG`, `UI`, `ANALYTICS`). Don't hardcode values from `config.yaml` elsewhere — import them from `astrowind:config` instead (see `src/utils/permalinks.ts` for the pattern).
+`src/config.ts` is the source of truth for site-wide settings (site URL, i18n, SEO metadata defaults, blog behavior/paths, theme), exporting typed constants `SITE`, `I18N`, `METADATA`, `APP_BLOG`, `UI`, `ANALYTICS`. `astro.config.ts` derives its own `site`/`base`/`trailingSlash` from `SITE`. Don't hardcode values elsewhere — import them from `~/config` instead (see `src/utils/permalinks.ts` for the pattern).
 
 ### Permalinks
 
@@ -48,15 +48,15 @@ Pages (`src/pages/*.astro`) are built by composing components from `src/componen
 
 - `Layout.astro` — root HTML shell (head, meta, analytics, theme).
 - `PageLayout.astro` — wraps `Layout` with `Header`/`Footer`, and injects the latest blog posts into the footer links.
-- `LandingLayout.astro` / `MarkdownLayout.astro` — used for landing-style pages and Markdown/MDX content pages (e.g. `aszf.md`, `adatvedelem.md`) respectively.
+- `MarkdownLayout.astro` — used for Markdown/MDX content pages (e.g. `aszf.md`, `adatvedelem.md`).
 
 ### Blog (Astro Content Collections)
 
-Blog posts live in `src/data/post/` (`.md`/`.mdx`), defined by the `post` collection in `src/content.config.ts` (via `glob` loader). Routing for the blog index, pagination, categories, and tags is handled by the dynamic routes under `src/pages/[...blog]/`. Blog-related helpers (fetching, filtering, sorting, related posts) live in `src/utils/blog.ts`. Blog path segments (list/category/tag) and permalink pattern are configured under `apps.blog` in `config.yaml`, not hardcoded in the route files.
+Blog posts live in `src/data/post/` (`.md`/`.mdx`), defined by the `post` collection in `src/content.config.ts` (via `glob` loader). Routing for the blog index, pagination, categories, and tags is handled by the dynamic routes under `src/pages/[...blog]/`. Blog-related helpers (fetching, filtering, sorting, related posts) live in `src/utils/blog.ts`. Blog path segments (list/category/tag) and permalink pattern are configured under `APP_BLOG` in `src/config.ts`, not hardcoded in the route files.
 
 ### Images
 
-`src/components/common/Image.astro` routes most remote CDN images (Unsplash, Cloudinary, Imgix, etc.) through `unpic`, which rewrites URLs for CDN-side resizing without Astro downloading them. Astro's native image processing (Sharp) is only needed for local images and remote providers `unpic` can't detect — such domains must be added to `image.domains` in `astro.config.ts` (currently just `cdn.pixabay.com`).
+`src/components/common/Image.astro` routes most remote CDN images (Unsplash, Cloudinary, Imgix, etc.) through `unpic`, which rewrites URLs for CDN-side resizing without Astro downloading them. Astro's native image processing (Sharp) is only needed for local images and remote providers `unpic` can't detect — such domains must be added to `image.domains` in `astro.config.ts` (none configured currently).
 
 ### Path alias
 
@@ -64,4 +64,4 @@ Blog posts live in `src/data/post/` (`.md`/`.mdx`), defined by the `post` collec
 
 ## Language
 
-All user-facing copy is Hungarian (`i18n.language: hu` in `config.yaml`). Match existing tone/phrasing from `IDEA.md` when writing new copy.
+All user-facing copy is Hungarian (`I18N.language: 'hu'` in `src/config.ts`). Match existing tone/phrasing from `IDEA.md` when writing new copy.
