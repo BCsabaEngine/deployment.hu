@@ -1,0 +1,132 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import ContentHeading from '~/components/ui/ContentHeading.astro';
+
+import { getPermalink } from '~/utils/permalinks';
+import { placeholderImage } from '~/utils/placeholder';
+
+const metadata = {
+  title: 'Rólam',
+  description:
+    'Balázs Csaba szabadúszó termékfejlesztő — a Ferihegy-1-es kezdetektől a bankszektor legszigorúbb éveiig, és azon túl.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero image={placeholderImage('Portré fotó', 'aspect-video')}>
+    <Fragment slot="title">Balázs Csaba</Fragment>
+    <Fragment slot="subtitle">
+      Nem egyenes vonalban jutottam el a tech-lead és AI munkáig — de visszanézve pontosan összeáll a kép.
+    </Fragment>
+  </Hero>
+
+  <Content alignTop>
+    <Fragment slot="content">
+      <ContentHeading>A kezdetek: pontosság és terhelhetőség</ContentHeading>
+      <p>
+        A pályámat Ferihegy-1-en kezdtem — akkor még így hívták a reptért —, egy olyan cégnél, amely speditőröket kötött
+        össze légitársaságokkal. A külföldi légitársaságok magyar leányvállalatainál már akkor testközelből megismertem
+        azt, amit ma „multis kultúrának” hívunk: a pontosságot, a szabályszerűséget, és azt, hogy <strong
+          >egy rendszernek nagy terhelés alatt is helyt kell állnia</strong
+        >.
+      </p>
+
+      <ContentHeading>15 év egy hazai ERP-cég élén</ContentHeading>
+      <p>
+        Egy rövid, de felelősségteljes pénzpiaci kitérő után 15 évig voltam az egyik vezető hazai ERP-rendszert szállító
+        cég alapítója és szakmai irányítója. Itt tanultam meg igazán, hogyan kell emberekkel bánni — és, ami legalább
+        ennyire fontos, hogyan lehet az üzleti igényeket nemcsak megvalósítani, hanem <strong
+          >valóban kiszolgálni</strong
+        >. Innen vitt tovább az utam a bankszektor felé.
+      </p>
+    </Fragment>
+    <Fragment slot="image">
+      <div class="text-lg dark:text-slate-400">
+        <ContentHeading>Öt év a szakma legszigorúbb terepén</ContentHeading>
+        <p>
+          A banki környezet lett szakmai életem legfeszítettebb és legszabályozottabb időszaka. Öt év alatt a valódi
+          nagyvállalati gondolkodásmód az életem részévé vált, és számos sikeres projekten végigmenve elmondhatom:
+          <strong>nem volt olyan projekt, amely a fejlesztői vagy szakértői csapat miatt hiúsult volna meg</strong>.
+          Mindenhol és mindenkor odatettem magamat — ezt talán semmi nem mutatja jobban annál, hogy a több száz fős
+          szervezet egy alkalommal a negyedév dolgozójává választott.
+        </p>
+        <p class="mt-4">
+          Kevesen voltunk, akik a tech-lead munka mellett hónapokat töltöttünk a platform csapatban is, szervesen
+          beépülve az SRE üzletággal való együttműködésbe — <strong
+            >számos rendszert a mi felügyeletünk alatt telepített ki</strong
+          > a pénzintézet éles környezetbe.
+        </p>
+        <p class="mt-4">
+          <strong>„A több száz fős szervezet a negyedév dolgozójává választott.”</strong>
+        </p>
+      </div>
+    </Fragment>
+    <Fragment slot="content2">
+      <div class="max-w-2xl mx-auto text-center">
+        <ContentHeading>2026 óta szabadúszóként</ContentHeading>
+        <p>
+          A szakmai spektrum egyre szélesebb, az új technológiák száma hónapról hónapra nő, az AI-világ pedig hétről
+          hétre hoz újat. 2026-ban döntöttem el, hogy ezt a tempót szabadúszó termékfejlesztőként kövessem: mindig több
+          céggel dolgozom párhuzamosan, egyensúlyban tartva a tech-lead és az AI vonalat. A háttérben egy kis csapat
+          segít — időpontot egyeztet, határidőre figyelmeztet —, de a munka során <strong
+            >szinte mindig velem találkozol</strong
+          >.
+        </p>
+      </div>
+    </Fragment>
+  </Content>
+
+  <Steps
+    title="Szakmai állomások"
+    items={[
+      {
+        title: 'Ferihegy-1',
+        description: 'Speditőröket légitársaságokkal összekötő cégnél — a „multis” pontosság és szabályszerűség.',
+        icon: 'tabler:plane',
+      },
+      {
+        title: 'ERP-cég alapítása és 15 év szakmai irányítás',
+        description: 'Egy vezető hazai ERP-rendszert szállító cég alapítója és szakmai irányítója.',
+        icon: 'tabler:building-skyscraper',
+      },
+      {
+        title: 'Bankszektor, 5 év',
+        description: 'A legfeszítettebb és legszabályozottabb időszak — a negyedév dolgozója elismeréssel.',
+        icon: 'tabler:building-bank',
+      },
+      {
+        title: 'Platform csapat és SRE együttműködés',
+        description: 'Tech lead munka mellett a platform csapat támogatása, rendszerek éles kitelepítése.',
+        icon: 'tabler:server',
+      },
+      {
+        title: '2026 — szabadúszó termékfejlesztő',
+        description: 'TechLead és AI vonal egyensúlyban, több céggel egyszerre dolgozva.',
+        icon: 'tabler:rocket',
+      },
+    ]}
+  />
+
+  <Content
+    image={{ src: '~/assets/images/rolam-amit-en-hozok.jpg', alt: 'Amit ehhez hozok' }}
+    isReversed
+    items={[
+      { title: 'Több évtizedes, stabil szakmai háttér' },
+      { title: 'Hands-on, naprakész tudás — és képesség rá, hogy át is adjam' },
+      { title: 'TechLead segítségnyújtás, valódi szakmai beilleszkedés' },
+      { title: 'AI kerekasztal, könnyed stílusban' },
+      { title: 'És egy jó beszélgetés a világ dolgairól, ha épp arra van szükség' },
+    ]}
+  >
+    <Fragment slot="title">Amit ehhez hozok</Fragment>
+  </Content>
+
+  <CallToAction actions={[{ variant: 'primary', text: 'Beszéljünk!', href: getPermalink('/kapcsolat') }]}>
+    <Fragment slot="title">Beszéljünk!</Fragment>
+  </CallToAction>
+</Layout>

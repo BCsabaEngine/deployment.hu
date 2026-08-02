@@ -1,0 +1,50 @@
+---
+import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
+
+import Layout from '~/layouts/PageLayout.astro';
+import BlogListSection from '~/components/blog/BlogListSection.astro';
+// import PostTags from "~/components/blog/Tags.astro";
+
+import { blogListRobots, getStaticPathsBlogList } from '~/utils/blog';
+
+export const prerender = true;
+
+export const getStaticPaths = (async ({ paginate }) => {
+  return await getStaticPathsBlogList({ paginate });
+}) satisfies GetStaticPaths;
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { page } = Astro.props as Props;
+const currentPage = page.currentPage ?? 1;
+
+// const allCategories = await findCategories();
+// const allTags = await findTags();
+
+const metadata = {
+  title: `Blog${currentPage > 1 ? ` — ${currentPage}. oldal` : ''}`,
+  description: 'Amiről mostanában írok — tech-lead munka, platform-építés és AI a gyakorlatban.',
+  robots: {
+    index: blogListRobots?.index && currentPage === 1,
+    follow: blogListRobots?.follow,
+  },
+  openGraph: {
+    type: 'blog',
+  },
+};
+---
+
+<Layout metadata={metadata}>
+  <BlogListSection
+    subtitle="Amiről mostanában írok — tech-lead munka, platform-építés és AI a gyakorlatban."
+    posts={page.data}
+    prevUrl={page.url.prev}
+    nextUrl={page.url.next}
+  >
+    Blog
+  </BlogListSection>
+  <!--
+    <PostTags tags={allCategories} class="mb-2" title="Search by Categories:" isCategory />
+    <PostTags tags={allTags}  title="Search by Tags:" />
+  -->
+</Layout>

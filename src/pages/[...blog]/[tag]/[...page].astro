@@ -1,0 +1,34 @@
+---
+import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
+import { blogTagRobots, getStaticPathsBlogTag } from '~/utils/blog';
+
+import Layout from '~/layouts/PageLayout.astro';
+import BlogListSection from '~/components/blog/BlogListSection.astro';
+
+export const prerender = true;
+
+export const getStaticPaths = (async ({ paginate }) => {
+  return await getStaticPathsBlogTag({ paginate });
+}) satisfies GetStaticPaths;
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { page, tag } = Astro.props as Props;
+
+const currentPage = page.currentPage ?? 1;
+
+const metadata = {
+  title: `Címke: ${tag.title}${currentPage > 1 ? ` — ${currentPage}. oldal` : ''}`,
+  description: `Címke: ${tag.title} témájú bejegyzések a deployment.hu blogján.`,
+  robots: {
+    index: blogTagRobots?.index,
+    follow: blogTagRobots?.follow,
+  },
+};
+---
+
+<Layout metadata={metadata}>
+  <BlogListSection posts={page.data} prevUrl={page.url.prev} nextUrl={page.url.next}>
+    Címke: {tag.title}
+  </BlogListSection>
+</Layout>

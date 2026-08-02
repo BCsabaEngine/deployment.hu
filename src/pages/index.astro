@@ -1,0 +1,108 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import { getPermalink } from '~/utils/permalinks';
+import { placeholderImage } from '~/utils/placeholder';
+
+const metadata = {
+  title: 'deployment.hu — Tech-Lead bérlés, Platform-építés, AI megoldások',
+  ignoreTitleTemplate: true,
+  description:
+    'Tech-Lead bérlés, platform-építés és egyedi AI megoldások — egy emberrel, aki a döntéstől a prod-ig végig veled marad.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    image={[
+      {
+        src: '~/assets/images/ai-hibrid.jpg',
+        alt: 'Robotkar sakkozik egy szakállas férfi mellett — AI és emberi szakértelem együtt',
+      },
+      {
+        src: '~/assets/images/platform.jpg',
+        alt: 'Sportautó motorterének közelije — pontosan megépített, megbízható alap',
+      },
+      { src: '~/assets/images/platform-guild.jpg', alt: 'Fejhallgatós csapat közösen dolgozik egy megbeszélőben' },
+    ]}
+    actions={[{ variant: 'primary', text: 'Foglalj időpontot', href: getPermalink('/kapcsolat') }]}
+  >
+    <Fragment slot="title">
+      <span class="hero-rotate grid *:col-start-1 *:row-start-1 justify-items-center text-center">
+        <span class="hero-rotate-item">Prod-ra juttatom az alkalmazásod!</span>
+        <span class="hero-rotate-item">Eleged van a sablonos chat AI-okból?</span>
+      </span>
+    </Fragment>
+    <Fragment slot="subtitle">
+      Tech-Lead bérlés, platform-építés és egyedi, saját tulajdonú AI megoldások — Balázs Csaba szabadúszó
+      termékfejlesztő oldala.
+    </Fragment>
+  </Hero>
+
+  <Features
+    tagline="Szakmai szerepkör"
+    title="Amiben segíteni tudok"
+    columns={2}
+    items={[
+      {
+        title: 'Mi az a tech lead?',
+        description:
+          'Szakmai irányító, karmester, aki a csapatot mentálisan is vezeti — és garantálja, hogy a rendszer prod-ra is eljut.',
+        icon: 'tabler:route',
+        callToAction: { text: 'Részletek →', href: getPermalink('/tech-lead-berles') },
+      },
+      {
+        title: 'Platform csapatra van szükséged?',
+        description: 'Közös alap, amitől minden csapat egyformán gyorsan halad.',
+        icon: 'tabler:stack-2',
+        callToAction: { text: 'Részletek →', href: getPermalink('/platform-epites') },
+      },
+    ]}
+  />
+
+  <Features
+    tagline="AI szerepkörök"
+    columns={2}
+    classes={{ container: 'pt-0 md:pt-0 lg:pt-0' }}
+    items={[
+      {
+        title: 'AI kerekasztal.',
+        description: 'Nem előadás, hanem kerekasztal — standup-os lazasággal, konkrét garanciával.',
+        icon: 'tabler:message-circle',
+        callToAction: { text: 'Részletek →', href: getPermalink('/ai-kerekasztal') },
+      },
+      {
+        title: 'AI hibrid megoldás.',
+        description: 'Bizalmas adat helyben, a többi hibrid felhőben.',
+        icon: 'tabler:cloud-lock',
+        callToAction: { text: 'Részletek →', href: getPermalink('/ai-hibrid-megoldasok') },
+      },
+    ]}
+  />
+
+  <Content
+    image={placeholderImage('Portré fotó')}
+    callToAction={{ text: 'Ismerd meg a teljes utat', href: getPermalink('/rolam') }}
+  >
+    <Fragment slot="content">
+      <p>
+        Balázs Csaba vagyok, szabadúszó termékfejlesztő — a Ferihegy-1-es kezdetektől egy hazai ERP-cég alapításán át a
+        bankszektor legszigorúbb éveiig. 2026 óta azokat a cégeket segítem, akik komolyan gondolják a tech-lead munkát
+        és az AI bevezetést.
+      </p>
+    </Fragment>
+  </Content>
+
+  <BlogLatestPosts title="Amiről mostanában írok" linkText="Összes bejegyzés megtekintése" count={3} />
+
+  <CallToAction actions={[{ variant: 'primary', text: 'Foglalj időpontot', href: getPermalink('/kapcsolat') }]}>
+    <Fragment slot="title">Kérj egy díjmentes, 15–30 perces konzultációt</Fragment>
+    <Fragment slot="subtitle">Ismerjük meg egymást, mielőtt bármit is eldöntenénk.</Fragment>
+  </CallToAction>
+</Layout>

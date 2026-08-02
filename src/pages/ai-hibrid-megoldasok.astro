@@ -1,0 +1,84 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import ContentHeading from '~/components/ui/ContentHeading.astro';
+
+import { getPermalink } from '~/utils/permalinks';
+
+const metadata = {
+  title: 'AI hibrid megoldások',
+  description: 'Bizalmas adat helyben, a többi hibrid felhőben — egyedi AI megoldás, ami valóban a tiéd.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero image={{ src: '~/assets/images/ai-hibrid.jpg', alt: 'AI hibrid megoldások' }}>
+    <Fragment slot="title">AI hibrid megoldások</Fragment>
+    <Fragment slot="subtitle">
+      Bizalmas adat helyben, a többi hibrid felhőben — egyedi AI megoldás, ami valóban a tiéd.
+    </Fragment>
+  </Hero>
+
+  <Features
+    id="features"
+    title="Két mód, egy rendszer"
+    columns={2}
+    items={[
+      {
+        title: 'Chat',
+        description:
+          'Direkt beszélgetés ad-hoc kérdésekre — amikor egy kollégának gyors, kontextusban lévő válasz kell.',
+        icon: 'tabler:message-circle',
+      },
+      {
+        title: 'Automatizált folyamat',
+        description:
+          'Pontosan meghatározott, térképként leírt út végigfuttatása — a folyamat leírását nyugodtan rábízzuk az LLM-re, hiszen ő ért legjobban szót saját magával.',
+        icon: 'tabler:route-2',
+      },
+    ]}
+  />
+
+  <Content image={{ src: '~/assets/images/ai-hibrid-mit-erdemes.jpg', alt: 'Mit érdemes automatizálni — és mit nem' }}>
+    <Fragment slot="title">Miért nem csak felhő</Fragment>
+    <Fragment slot="content">
+      <p>
+        Szinte naponta jön valami új és izgalmas a publikus, előfizetéses AI-világból — mégis elköteleződtem a helyben
+        futó megoldások mellett. Amit kínálok, az ehhez képest más: egy ingyenes, vagy csak részben fizetős, a cég saját
+        telephelyén futó rendszer, sallang nélkül, <strong>kizárólag a cég érdekét szolgálva</strong>. Ahol az adat
+        érzékeny, ott a modell is nálatok fut; ahol a feladat nem az, ott a hibrid réteg bevonhat egy nem-lokál AI-t is
+        — mindig a feladathoz igazítva, sosem alapértelmezésből.
+      </p>
+      <p class="mt-4">
+        A technika lényege egyszerű: egy helyben futó LLM képességeit összefűzöm a cég bizalmas, ki nem kerülő adataiból
+        épített data-lake-kel. Az eredmény egy egyedi rendszer, ami — forráskóddal együtt — <strong
+          >mindig a megrendelő tulajdona marad</strong
+        >.
+      </p>
+
+      <ContentHeading>Mit érdemes automatizálni — és mit nem</ContentHeading>
+      <p>
+        Hogy mit érdemes automatizálni, mindig az egyeztetés közben derül ki. Nem lehet — és nem is kell — mindent:
+        ahogy az Office megjelenésekor sem volt igaz, hogy "mindenre az Office csomagot használjuk", ma sincs egyetlen
+        modell, ami minden feladatra jó. <strong>A cél diktálja az eszközt, nem fordítva.</strong>
+      </p>
+      <p class="mt-4">
+        Az adatpillér tipikusan ERP- és CRM-adatokból, szerződésekből, levelezésből, céges intranetből, vagy akár
+        nyilvános vélemény-oldalakról gyűjtött visszajelzésekből áll — ezeket struktúráltan tároljuk, és elérhetővé
+        tesszük a belső LLM számára. A modellt ezután a céges szabályokra instruáljuk: figyelembe vesszük a kívánt
+        hangvételt, és azt is, hogy a rendszer tegezze-e a felhasználókat.
+      </p>
+    </Fragment>
+  </Content>
+
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Kérj egy díjmentes konzultációt', href: getPermalink('/kapcsolat') }]}
+  >
+    <Fragment slot="title">Szeretnéd tudni, mi automatizálható nálatok biztonságosan?</Fragment>
+    <Fragment slot="subtitle">Nézzük meg együtt, hol fut a legjobban a modell, és hol elég a hibrid megoldás.</Fragment>
+  </CallToAction>
+</Layout>

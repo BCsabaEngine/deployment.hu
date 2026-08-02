@@ -1,0 +1,49 @@
+---
+import Button from '~/components/ui/Button.astro';
+import { getPermalink } from '~/utils/permalinks';
+---
+
+<div
+  id="cookie-consent"
+  hidden
+  class="fixed inset-x-0 bottom-0 z-[60] border-t border-gray-200 dark:border-slate-800 bg-gray-100 dark:bg-dark"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex flex-col sm:flex-row items-center gap-3 sm:gap-6">
+    <p class="text-sm text-muted dark:text-slate-400 leading-relaxed flex-1">
+      Weboldalunk a működéshez szükséges alapvető sütiket használ. Bővebb információ az
+      <a class="underline hover:text-gray-700 dark:hover:text-gray-300" href={getPermalink('/adatvedelem')}
+        >Adatvédelmi tájékoztatóban</a
+      > található.
+    </p>
+    <Button data-aw-accept-cookies type="button" variant="primary" class="shrink-0" text="Elfogadom" />
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    if (window.cookie_consent_script) return;
+    window.cookie_consent_script = true;
+
+    const STORAGE_KEY = 'cookieConsent';
+
+    function showBannerIfNeeded() {
+      const el = document.getElementById('cookie-consent');
+      if (!el) return;
+      el.hidden = localStorage.getItem(STORAGE_KEY) === 'accepted';
+    }
+
+    function acceptCookies() {
+      localStorage.setItem(STORAGE_KEY, 'accepted');
+      const el = document.getElementById('cookie-consent');
+      if (el) el.hidden = true;
+    }
+
+    showBannerIfNeeded();
+
+    document.addEventListener('click', function (e) {
+      if (e.target.closest('[data-aw-accept-cookies]')) acceptCookies();
+    });
+
+    document.addEventListener('astro:after-swap', showBannerIfNeeded);
+  })();
+</script>

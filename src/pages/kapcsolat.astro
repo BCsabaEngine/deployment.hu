@@ -1,0 +1,64 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Contact from '~/components/widgets/Contact.astro';
+import Notice from '~/components/ui/Notice.astro';
+import { COMPANY } from '~/config';
+
+const metadata = {
+  title: 'Kapcsolat',
+  description: 'Vedd fel velem a kapcsolatot egy 15–30 perces, díjmentes online konzultációra.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Contact
+    title="Beszéljünk!"
+    subtitle="Vedd fel velem a kapcsolatot, hívj fel, vagy kérj egy időpontot egy 15–30 perces, természetesen díjmentes online konzultációra. Ismerjük meg egymást nulladik lépésben — utána hívj meg egy mélyebb beszélgetésre a cégedhez."
+    inputs={[
+      { type: 'text', name: 'name', label: 'Név', autocomplete: 'name' },
+      { type: 'email', name: 'email', label: 'Email', autocomplete: 'email' },
+      {
+        type: 'select',
+        name: 'reason',
+        label: 'Miért keresel?',
+        options: [
+          { value: 'tech-lead', label: 'Tech-Lead bérlés / mentorálás' },
+          { value: 'platform', label: 'Platform-építés' },
+          { value: 'kerekasztal', label: 'AI kerekasztal' },
+          { value: 'ai-megoldas', label: 'AI megoldás kialakítása (lokál/hibrid)' },
+          { value: 'egyeb', label: 'Csak egy rövid beszélgetés / egyéb' },
+        ],
+      },
+    ]}
+    textarea={{ label: 'Üzenet', name: 'message', placeholder: 'Miben segíthetek?' }}
+    button="Küldés"
+  />
+
+  <div class="max-w-xl mx-auto px-4 sm:px-6 -mt-4 mb-16">
+    <Notice>
+      Fenntartom a jogot, hogy a folyamatban lévő és a lejárt szerződéseimből eredő titoktartási kötelezettségeimre
+      tekintettel — az érdeklődő cég és tevékenységi körének megismerését követően — a megkeresést vagy a
+      szerződéskötést indoklás nélkül visszautasítsam.
+    </Notice>
+
+    <div class="mt-8 text-center text-muted dark:text-slate-400">
+      <p>
+        Email: <a class="hover:text-primary hover:underline" href="mailto:hello@deployment.hu">hello@deployment.hu</a>
+      </p>
+      <p class="mt-1">
+        Telefon:
+        <a class="hover:text-primary hover:underline" href={`tel:${COMPANY.phone.replace(/\s+/g, '')}`}>
+          {COMPANY.phone}
+        </a>
+      </p>
+      <p class="mt-1">Válaszidő: 2 munkanapon belül</p>
+    </div>
+  </div>
+
+  <!-- TODO: statikus oldal, nincs backend bekötve — a submit egyelőre nem küld sehova. -->
+  <script>
+    document.querySelector('main form')?.addEventListener('submit', (event) => {
+      event.preventDefault();
+    });
+  </script>
+</Layout>
