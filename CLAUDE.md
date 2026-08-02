@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-`deployment.hu` is the Hungarian-language marketing/personal site for Balázs Csaba, a freelance product developer (tech-lead rental, platform building, custom AI solutions). It's an Astro + Tailwind site, statically generated (`output: 'static'`), Node.js ≥ 22.12.
+`deployment.hu` is the Hungarian-language marketing/personal site for Balázs Csaba, a freelance product developer (tech-lead rental, platform building, custom AI solutions). It's an Astro + Tailwind site, statically generated (`output: 'static'`, no adapter), Node.js ≥ 24 (per `package.json` `engines` and the CI workflow — `IDEA.md` still says ≥22.12, treat that as stale planning-doc info).
 
 `IDEA.md` and `RAW.md` are the content source of truth (marketing copy, sitemap, tone/style notes for each page) — treat them as authoritative when writing or editing page copy, not the rendered `.astro` files. If copy changes, both files are meant to stay in sync with each other.
 
@@ -24,9 +24,15 @@ npm run fix             # eslint --fix + prettier -w
 npm run all             # fix, then build
 ```
 
-There is no test suite (`check` is the closest to CI validation). There's no single-file/single-test runner to worry about.
+There is no test suite (`check` is the closest to CI validation, and is exactly what `.github/workflows/pr.yaml` runs on Node 24, followed by `npm run build`). There's no single-file/single-test runner to worry about.
 
 ## Architecture
+
+### Astro integrations
+
+`astro.config.ts` wires: `sitemap()`, `mdx()`, `icon()` (Tabler icons plus a curated `flat-color-icons` subset), and `compress()` (CSS/HTML/JS only — image/SVG compression is off). Tailwind is applied via the `@tailwindcss/vite` Vite plugin, not an Astro integration. A local `appendSitemapToRobotsTxt()` integration patches the built `robots.txt` to add a `Sitemap:` line after the sitemap integration runs, since Astro doesn't do this itself. The markdown processor also wires two custom plugins from `src/utils/frontmatter.ts`: a remark plugin for reading time and a rehype plugin for responsive tables.
+
+`@astrojs/partytown` is a dependency and `ANALYTICS.vendors.googleAnalytics.partytown` is `true` in config, but Partytown itself is only included when a `hasExternalScripts` flag in `astro.config.ts` is `true` — it's currently hardcoded `false`, so Partytown is not actually active despite the config implying otherwise. Flip that flag (not the analytics config) if third-party scripts need to move off the main thread.
 
 ### Config-driven site
 
@@ -52,7 +58,9 @@ Pages (`src/pages/*.astro`) are built by composing components from `src/componen
 
 ### Blog (Astro Content Collections)
 
-Blog posts live in `src/data/post/` (`.md`/`.mdx`), defined by the `post` collection in `src/content.config.ts` (via `glob` loader). Routing for the blog index, pagination, categories, and tags is handled by the dynamic routes under `src/pages/[...blog]/`. Blog-related helpers (fetching, filtering, sorting, related posts) live in `src/utils/blog.ts`. Blog path segments (list/category/tag) and permalink pattern are configured under `APP_BLOG` in `src/config.ts`, not hardcoded in the route files.
+Blog posts live in `src/data/post/` (`.md`/`.mdx`), defined by the `post` collection in `src/content.config.ts` (via `glob` loader). Routing for the blog index, pagination, categories, and tags is handled by the dynamic routes under `src/pages/[...blog]/`. Blog-related helpers (fetching, filtering, sorting, related posts) live in `src/utils/blog.ts`. Blog path segments (list/category/tag) and permalink pattern are configured under `APP_BLOG` in `src/config.ts`, not hardcoded in the route files. There's also an `rss.xml.ts` endpoint that feeds off the same collection.
+
+Note: `src/data/` doesn't exist yet — there are currently zero posts, so blog index/category/tag pages render empty until posts are added.
 
 ### Images
 
@@ -61,6 +69,10 @@ Blog posts live in `src/data/post/` (`.md`/`.mdx`), defined by the `post` collec
 ### Path alias
 
 `~/*` maps to `src/*` (configured in both `tsconfig.json` and the Vite alias in `astro.config.ts`). Use it instead of relative `../../` imports.
+
+### Formatting conventions
+
+Prettier is configured with `printWidth: 120`, single quotes, and `trailingComma: 'es5'` (`.prettierrc.mjs`) — match this rather than defaulting to 80/double-quote style. ESLint allows `_`-prefixed unused args/destructured vars.
 
 ## Language
 
