@@ -12,11 +12,23 @@ import tailwindcss from '@tailwindcss/vite';
 import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
 import icon from 'astro-icon';
-import compress from 'astro-compress';
+import slugify from 'limax';
 import type { AstroConfig, AstroIntegration } from 'astro';
 
 import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin } from './src/utils/frontmatter';
-import { SITE } from './src/config';
+import { APP_BLOG, SITE } from './src/config';
+
+// Tag-listing pages are marked noindex via APP_BLOG.tag.robots in src/config.ts —
+// keep them out of the sitemap too, so search engines don't get mixed signals.
+// Mirrors the TAG_BASE/definitivePermalink logic in src/utils/permalinks.ts, which
+// can't be imported here directly since it resolves the `~` alias this config defines.
+const trimSlashes = (s: string) => s.replace(/^\/+|\/+$/g, '');
+const tagBase =
+  trimSlashes(APP_BLOG.tag.pathname)
+    .split('/')
+    .map((s) => slugify(s))
+    .join('/') || 'tag';
+const tagBasePathname = `/${[trimSlashes(SITE.base ?? ''), tagBase].filter(Boolean).join('/')}`;
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -69,7 +81,9 @@ export default defineConfig({
   trailingSlash: SITE.trailingSlash ? 'always' : 'never',
 
   integrations: [
-    sitemap(),
+    sitemap({
+      filter: (page) => !new URL(page).pathname.startsWith(`${tagBasePathname}/`),
+    }),
     mdx(),
     icon({
       include: {
@@ -93,19 +107,6 @@ export default defineConfig({
         config: { forward: ['dataLayer.push'] },
       })
     ),
-
-    compress({
-      CSS: true,
-      HTML: {
-        'html-minifier-terser': {
-          removeAttributeQuotes: false,
-        },
-      },
-      Image: false,
-      JavaScript: true,
-      SVG: false,
-      Logger: 1,
-    }),
 
     appendSitemapToRobotsTxt(),
   ],
