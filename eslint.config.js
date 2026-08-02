@@ -3,7 +3,6 @@ import eslintPluginAstro from 'eslint-plugin-astro';
 import globals from 'globals';
 import js from '@eslint/js';
 import tseslint from 'typescript-eslint';
-import typescriptParser from '@typescript-eslint/parser';
 
 export default [
   js.configs.recommended,
@@ -37,9 +36,6 @@ export default [
     // Define the configuration for `<script>` tag.
     // Script in `<script>` is assigned a virtual file name with the `.js` extension.
     files: ['**/*.{ts,tsx}', '**/*.astro/*.js'],
-    languageOptions: {
-      parser: typescriptParser,
-    },
     rules: {
       // Note: you must disable the base rule as it can report incorrect errors
       'no-unused-vars': 'off',
