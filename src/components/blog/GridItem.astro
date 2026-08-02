@@ -15,6 +15,8 @@ const { post } = Astro.props;
 const image = await findImage(post.image);
 
 const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : '';
+const ImageWrapper = link ? 'a' : Fragment;
+const wrapperProps = link ? { href: link } : {};
 ---
 
 <article
@@ -22,23 +24,8 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
 >
   <div class="relative md:h-64 bg-gray-400 dark:bg-slate-700 rounded shadow-lg mb-6">
     {
-      image &&
-        (link ? (
-          <a href={link}>
-            <Image
-              src={image}
-              class="w-full md:h-full object-cover rounded shadow-lg bg-gray-400 dark:bg-slate-700"
-              widths={[400, 900]}
-              width={900}
-              height={506}
-              sizes="(max-width: 900px) 400px, 900px"
-              alt={post.title}
-              format="webp"
-              loading="lazy"
-              decoding="async"
-            />
-          </a>
-        ) : (
+      image && (
+        <ImageWrapper {...wrapperProps}>
           <Image
             src={image}
             class="w-full md:h-full object-cover rounded shadow-lg bg-gray-400 dark:bg-slate-700"
@@ -51,7 +38,8 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
             loading="lazy"
             decoding="async"
           />
-        ))
+        </ImageWrapper>
+      )
     }
   </div>
 

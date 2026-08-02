@@ -19,14 +19,12 @@ const {
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
 
-const columnsClass =
-  columns === 4
-    ? 'lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2'
-    : columns === 3
-      ? 'lg:grid-cols-3 sm:grid-cols-2'
-      : columns === 2
-        ? 'sm:grid-cols-2'
-        : '';
+const COLUMNS_CLASSES: Record<number, string> = {
+  2: 'sm:grid-cols-2',
+  3: 'lg:grid-cols-3 sm:grid-cols-2',
+  4: 'lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2',
+};
+const columnsClass = columns ? (COLUMNS_CLASSES[columns] ?? '') : '';
 ---
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl ${classes?.container ?? ''}`} bg={bg}>
