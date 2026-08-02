@@ -30,13 +30,13 @@ There is no test suite (`check` is the closest to CI validation, and is exactly 
 
 ### Astro integrations
 
-`astro.config.ts` wires: `sitemap()`, `mdx()`, `icon()` (Tabler icons plus a curated `flat-color-icons` subset), and `compress()` (CSS/HTML/JS only — image/SVG compression is off). Tailwind is applied via the `@tailwindcss/vite` Vite plugin, not an Astro integration. A local `appendSitemapToRobotsTxt()` integration patches the built `robots.txt` to add a `Sitemap:` line after the sitemap integration runs, since Astro doesn't do this itself. The markdown processor also wires two custom plugins from `src/utils/frontmatter.ts`: a remark plugin for reading time and a rehype plugin for responsive tables.
+`astro.config.ts` wires: `sitemap()`, `mdx()`, and `icon()` (Tabler icons plus a curated `flat-color-icons` subset). Tailwind is applied via the `@tailwindcss/vite` Vite plugin, not an Astro integration. A local `appendSitemapToRobotsTxt()` integration patches the built `robots.txt` to add a `Sitemap:` line after the sitemap integration runs, since Astro doesn't do this itself. The markdown processor also wires two custom plugins from `src/utils/frontmatter.ts`: a remark plugin for reading time and a rehype plugin for responsive tables.
 
 `@astrojs/partytown` is a dependency and `ANALYTICS.vendors.googleAnalytics.partytown` is `true` in config, but Partytown itself is only included when a `hasExternalScripts` flag in `astro.config.ts` is `true` — it's currently hardcoded `false`, so Partytown is not actually active despite the config implying otherwise. Flip that flag (not the analytics config) if third-party scripts need to move off the main thread.
 
 ### Config-driven site
 
-`src/config.ts` is the source of truth for site-wide settings (site URL, i18n, SEO metadata defaults, blog behavior/paths, theme), exporting typed constants `SITE`, `I18N`, `METADATA`, `APP_BLOG`, `UI`, `ANALYTICS`. `astro.config.ts` derives its own `site`/`base`/`trailingSlash` from `SITE`. Don't hardcode values elsewhere — import them from `~/config` instead (see `src/utils/permalinks.ts` for the pattern).
+`src/config.ts` is the source of truth for site-wide settings (site URL, i18n, SEO metadata defaults, blog behavior/paths, theme, company legal/contact details), exporting typed constants `SITE`, `I18N`, `METADATA`, `APP_BLOG`, `UI`, `COMPANY`, `ANALYTICS`. `astro.config.ts` derives its own `site`/`base`/`trailingSlash` from `SITE`. Don't hardcode values elsewhere — import them from `~/config` instead (see `src/utils/permalinks.ts` for the pattern).
 
 ### Permalinks
 
