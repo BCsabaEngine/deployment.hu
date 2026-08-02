@@ -1,0 +1,14 @@
+# deployment.hu
+
+> Tech-Lead bérlés, platform-építés és egyedi AI megoldások — Balázs Csaba szabadúszó termékfejlesztő oldala.
+
+## Oldalak
+
+- [Főoldal](https://deployment.hu/): Áttekintés a szolgáltatásokról és arról, kinek szól az oldal.
+- [Tech-Lead bérlés](https://deployment.hu/tech-lead-berles): Tapasztalt tech lead ideiglenes bérlése, aki mentorálja a csapatot és garantálja, hogy a rendszer prod-ra is eljut.
+- [Platform-építés](https://deployment.hu/platform-epites): Közös platform-alap kiépítése, hogy minden csapat egyformán gyorsan haladhasson.
+- [AI hibrid megoldások](https://deployment.hu/ai-hibrid-megoldasok): Egyedi AI/RAG megoldások, ahol a bizalmas adat helyben marad, a többi hibrid felhőben fut.
+- [AI kerekasztal](https://deployment.hu/ai-kerekasztal): Negyedéves, standup-hangulatú AI konzultáció konkrét garanciával.
+- [Rólam](https://deployment.hu/rolam): Balázs Csaba szakmai útja és háttere.
+- [Blog](https://deployment.hu/blog): Cikkek tech-lead munkáról, platform-építésről és AI bevezetésről.
+- [Kapcsolat](https://deployment.hu/kapcsolat): Elérhetőségek és időpontfoglalás egy díjmentes konzultációra.
