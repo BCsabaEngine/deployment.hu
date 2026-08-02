@@ -1,5 +1,6 @@
 ---
 title: 'Általános Szerződési Feltételek'
+description: 'Az Általános Szerződési Feltételek — hamarosan elérhető.'
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 

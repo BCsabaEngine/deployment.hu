@@ -3,10 +3,14 @@ import Layout from '~/layouts/Layout.astro';
 import MessageSection from '~/components/widgets/MessageSection.astro';
 import { getHomePermalink } from '~/utils/permalinks';
 
-const title = `404 — Az oldal nem található`;
+const metadata = {
+  title: `404 — Az oldal nem található`,
+  description: 'A keresett oldal nem található. Térj vissza a főoldalra.',
+  robots: { index: false, follow: true },
+};
 ---
 
-<Layout metadata={{ title }}>
+<Layout metadata={metadata}>
   <MessageSection
     srLabel="Hiba"
     title="404"

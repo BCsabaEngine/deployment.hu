@@ -1,5 +1,6 @@
 ---
 title: 'Adatvédelmi tájékoztató'
+description: 'Adatvédelmi tájékoztató — hamarosan elérhető.'
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 

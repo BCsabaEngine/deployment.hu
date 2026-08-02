@@ -19,6 +19,7 @@ const currentPage = page.currentPage ?? 1;
 
 const metadata = {
   title: `Címke: ${tag.title}${currentPage > 1 ? ` — ${currentPage}. oldal` : ''}`,
+  description: `Címke: ${tag.title} témájú bejegyzések a deployment.hu blogján.`,
   robots: {
     index: blogTagRobots?.index,
     follow: blogTagRobots?.follow,

@@ -23,6 +23,7 @@ const currentPage = page.currentPage ?? 1;
 
 const metadata = {
   title: `Blog${currentPage > 1 ? ` — ${currentPage}. oldal` : ''}`,
+  description: 'Amiről mostanában írok — tech-lead munka, platform-építés és AI a gyakorlatban.',
   robots: {
     index: blogListRobots?.index && currentPage === 1,
     follow: blogListRobots?.follow,
