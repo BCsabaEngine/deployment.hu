@@ -82,6 +82,35 @@
   animation-delay: 7s;
 }
 
+.hero-stripe {
+  background: linear-gradient(90deg, #8b5cf6 0%, #f43f5e 28%, #fb923c 50%, #fcd34d 66%, #38bdf8 84%, #8b5cf6 100%);
+  clip-path: polygon(0 66%, 100% 16%, 100% 40%, 0 94%);
+  opacity: 0.85;
+}
+.dark .hero-stripe {
+  opacity: 0.45;
+}
+@media (max-width: 767px) {
+  .hero-stripe {
+    clip-path: polygon(0 72%, 100% 48%, 100% 62%, 0 90%);
+  }
+}
+
+/* keskenyebb, ellenirányba dőlő, lejjebb ülő változat */
+.hero-stripe-alt {
+  background: linear-gradient(90deg, #2563eb 0%, #6366f1 25%, #06b6d4 55%, #34d399 80%, #a3e635 100%);
+  clip-path: polygon(0 74%, 100% 90%, 100% 96%, 0 80%);
+  opacity: 0.8;
+}
+.dark .hero-stripe-alt {
+  opacity: 0.4;
+}
+@media (max-width: 767px) {
+  .hero-stripe-alt {
+    clip-path: polygon(0 80%, 100% 90%, 100% 95%, 0 85%);
+  }
+}
+
 @utility bg-page {
   background-color: var(--aw-color-bg-page);
 }
@@ -107,7 +136,7 @@
 }
 
 @utility btn-primary {
-  @apply btn font-semibold bg-primary text-white border-primary hover:bg-secondary hover:border-secondary hover:text-white dark:text-white dark:bg-primary dark:border-primary dark:hover:border-secondary dark:hover:bg-secondary;
+  @apply btn font-semibold shadow-md shadow-primary/25 motion-safe:hover:-translate-y-px bg-primary text-white border-primary hover:bg-secondary hover:border-secondary hover:text-white dark:text-white dark:bg-primary dark:border-primary dark:hover:border-secondary dark:hover:bg-secondary;
 }
 
 @utility btn-secondary {

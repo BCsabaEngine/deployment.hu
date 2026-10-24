@@ -45,6 +45,7 @@ const metadata = {
   </Hero>
 
   <Features
+    isTinted
     tagline="Szakmai szerepkör"
     title="Amiben segíteni tudok"
     columns={2}
@@ -66,6 +67,7 @@ const metadata = {
   />
 
   <Features
+    isTinted
     tagline="AI szerepkörök"
     columns={2}
     classes={{ container: 'pt-0 md:pt-0 lg:pt-0' }}
@@ -98,7 +100,7 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <BlogLatestPosts title="Amiről mostanában írok" linkText="Összes bejegyzés megtekintése" count={3} />
+  <BlogLatestPosts isTinted title="Amiről mostanában írok" linkText="Összes bejegyzés megtekintése" count={3} />
 
   <CallToAction actions={[{ variant: 'primary', text: 'Foglalj időpontot', href: getPermalink('/kapcsolat') }]}>
     <Fragment slot="title">Kérj egy díjmentes, 15–30 perces konzultációt</Fragment>

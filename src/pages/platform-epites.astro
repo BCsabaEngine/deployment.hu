@@ -3,6 +3,7 @@ import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
+import Statement from '~/components/widgets/Statement.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import ContentHeading from '~/components/ui/ContentHeading.astro';
 
@@ -56,7 +57,7 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <Content isReversed image={{ src: '~/assets/images/platform-sre.jpg', alt: 'Szoros kapcsolat az SRE-vel' }}>
+  <Content isReversed isTinted image={{ src: '~/assets/images/platform-sre.jpg', alt: 'Szoros kapcsolat az SRE-vel' }}>
     <Fragment slot="title">Szoros kapcsolat az SRE-vel</Fragment>
     <Fragment slot="content">
       <p>
@@ -74,6 +75,12 @@ const metadata = {
       </p>
     </Fragment>
   </Content>
+
+  <Statement>
+    <Fragment slot="tagline">Dokumentáció</Fragment>
+    <Fragment slot="title">A tudás a cég tulajdona, és fontosabb, mint maga az üzleti forráskód.</Fragment>
+    <Fragment slot="subtitle">Nem csak a kód számít, hanem az is, mikor, mit és miért döntöttek úgy, ahogy.</Fragment>
+  </Statement>
 
   <Content image={{ src: '~/assets/images/platform-guild.jpg', alt: 'A guild-modell' }}>
     <Fragment slot="title">A guild-modell</Fragment>

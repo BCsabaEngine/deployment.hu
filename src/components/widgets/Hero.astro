@@ -8,6 +8,7 @@ const {
   title = await Astro.slots.render('title'),
   subtitle = await Astro.slots.render('subtitle'),
   tagline,
+  stripe = 'default',
 
   content = await Astro.slots.render('content'),
   actions = await Astro.slots.render('actions'),
@@ -19,8 +20,16 @@ const {
 ---
 
 <section class="relative md:-mt-[76px] not-prose" {...(id ? { id } : {})}>
-  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
-    <slot name="bg">{bg ? <Fragment set:html={bg} /> : null}</slot>
+  <div class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+    <slot name="bg">
+      {bg ? (
+        <Fragment set:html={bg} />
+      ) : (
+        <>
+          <div class:list={['absolute inset-0', stripe === 'alt' ? 'hero-stripe-alt' : 'hero-stripe']} />
+        </>
+      )}
+    </slot>
   </div>
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
     <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
@@ -70,7 +79,7 @@ const {
               <div class="grid *:col-start-1 *:row-start-1">
                 {image.map((img, index) => (
                   <Image
-                    class="hero-image-rotate-item mx-auto rounded-md w-full"
+                    class="hero-image-rotate-item mx-auto rounded-2xl w-full ring-1 ring-black/5 shadow-2xl shadow-primary/10 dark:ring-white/10"
                     widths={[400, 768, 1024, 2040]}
                     sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
                     loading={index === 0 ? 'eager' : 'lazy'}
@@ -84,7 +93,7 @@ const {
               </div>
             ) : (
               <Image
-                class="mx-auto rounded-md w-full"
+                class="mx-auto rounded-2xl w-full ring-1 ring-black/5 shadow-2xl shadow-primary/10 dark:ring-white/10"
                 widths={[400, 768, 1024, 2040]}
                 sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
                 loading="eager"

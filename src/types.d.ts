@@ -89,6 +89,7 @@ export interface Image {
 export interface Widget {
   id?: string;
   isDark?: boolean;
+  isTinted?: boolean;
   bg?: string;
   classes?: Record<string, string | Record<string, string>>;
 }
@@ -177,11 +178,14 @@ export interface Form {
 }
 
 // WIDGETS
-export interface Hero extends Omit<Headline, 'classes'>, Omit<Widget, 'isDark' | 'classes'> {
+export interface Hero extends Omit<Headline, 'classes'>, Omit<Widget, 'isDark' | 'isTinted' | 'classes'> {
   content?: string;
   actions?: string | CallToAction[];
   image?: string | Image | Image[];
+  stripe?: 'default' | 'alt';
 }
+
+export interface Statement extends Omit<Headline, 'classes'>, Omit<Widget, 'isDark' | 'isTinted' | 'bg'> {}
 
 export interface Team extends Omit<Headline, 'classes'>, Widget {
   team?: Array<TeamMember>;

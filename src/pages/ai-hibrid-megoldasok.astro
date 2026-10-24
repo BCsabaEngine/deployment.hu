@@ -4,6 +4,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
 import Content from '~/components/widgets/Content.astro';
+import Statement from '~/components/widgets/Statement.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import ContentHeading from '~/components/ui/ContentHeading.astro';
 
@@ -24,6 +25,7 @@ const metadata = {
   </Hero>
 
   <Features
+    isTinted
     id="features"
     title="Két mód, egy rendszer"
     columns={2}
@@ -73,6 +75,14 @@ const metadata = {
       </p>
     </Fragment>
   </Content>
+
+  <Statement>
+    <Fragment slot="tagline">Tulajdon</Fragment>
+    <Fragment slot="title">Az eredmény mindig a megrendelő tulajdona marad.</Fragment>
+    <Fragment slot="subtitle">
+      Egy egyedi rendszer forráskóddal együtt, a cég saját telephelyén futva, kizárólag a cég érdekét szolgálva.
+    </Fragment>
+  </Statement>
 
   <CallToAction
     actions={[{ variant: 'primary', text: 'Kérj egy díjmentes konzultációt', href: getPermalink('/kapcsolat') }]}

@@ -3,6 +3,7 @@ import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
+import Statement from '~/components/widgets/Statement.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 import { getPermalink } from '~/utils/permalinks';
@@ -15,7 +16,7 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <Hero image={{ src: '~/assets/images/tech-lead.jpg', alt: 'Tech-Lead bérlés' }}>
+  <Hero stripe="alt" image={{ src: '~/assets/images/tech-lead.jpg', alt: 'Tech-Lead bérlés' }}>
     <Fragment slot="title">Tech-Lead bérlés</Fragment>
     <Fragment slot="subtitle">Szakmai irányító, aki nem ül a nyakadon — de garantálja, hogy célba érsz.</Fragment>
   </Hero>
@@ -52,6 +53,7 @@ const metadata = {
 
   <Content
     isReversed
+    isTinted
     image={{ src: '~/assets/images/tech-lead-berles.jpg', alt: 'Miért éri meg bérelni tech leadet' }}
     items={[
       {
@@ -87,6 +89,14 @@ const metadata = {
       </p>
     </Fragment>
   </Content>
+
+  <Statement>
+    <Fragment slot="tagline">Garancia</Fragment>
+    <Fragment slot="title">Személyesen garantálom, hogy a rendszer eljut a prod-ig.</Fragment>
+    <Fragment slot="subtitle">
+      A fejlesztés látszólag 120%-nyi hosszúnak tűnik — a valóságban 80% idő alatt készül el és indul el.
+    </Fragment>
+  </Statement>
 
   <Content image={{ src: '~/assets/images/tech-lead-garancia.jpg', alt: 'A garancia' }}>
     <Fragment slot="title">A garancia</Fragment>

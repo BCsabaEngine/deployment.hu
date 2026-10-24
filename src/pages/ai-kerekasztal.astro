@@ -16,7 +16,7 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <Hero image={{ src: '~/assets/images/ai-kerekasztal.jpg', alt: 'AI kerekasztal' }}>
+  <Hero stripe="alt" image={{ src: '~/assets/images/ai-kerekasztal.jpg', alt: 'AI kerekasztal' }}>
     <Fragment slot="title">AI kerekasztal</Fragment>
     <Fragment slot="subtitle">Nem előadás, hanem kerekasztal — standup-os lazasággal.</Fragment>
   </Hero>
@@ -56,6 +56,7 @@ const metadata = {
   </Content>
 
   <Steps
+    isTinted
     title="Negyedéves ritmus"
     items={[
       {
