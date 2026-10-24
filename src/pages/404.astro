@@ -1,7 +1,8 @@
 ---
-import Layout from '~/layouts/Layout.astro';
+import Layout from '~/layouts/PageLayout.astro';
 import MessageSection from '~/components/widgets/MessageSection.astro';
-import { getHomePermalink } from '~/utils/permalinks';
+import { headerData } from '~/navigation';
+import { getHomePermalink, getPermalink } from '~/utils/permalinks';
 
 const metadata = {
   title: `404 — Az oldal nem található`,
@@ -15,7 +16,12 @@ const metadata = {
     srLabel="Hiba"
     title="404"
     message="Sajnos ez az oldal nem található."
-    description="Térj vissza a főoldalra."
-    action={{ href: getHomePermalink(), text: 'Vissza a főoldalra' }}
+    description="Lehet, hogy elírtad a címet, vagy az oldal már nem létezik. Innen könnyen visszatalálsz."
+    actions={[
+      { variant: 'primary', text: 'Vissza a főoldalra', href: getHomePermalink() },
+      { text: 'Kapcsolat', href: getPermalink('/kapcsolat') },
+    ]}
+    linksTitle="Erre kereshettél"
+    links={headerData.links}
   />
 </Layout>
