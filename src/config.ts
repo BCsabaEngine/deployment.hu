@@ -70,7 +70,6 @@ export interface AnalyticsConfig {
   vendors: {
     googleAnalytics: {
       id?: string;
-      partytown?: boolean;
     };
   };
 }
@@ -157,7 +156,6 @@ export const ANALYTICS: AnalyticsConfig = {
   vendors: {
     googleAnalytics: {
       id: undefined, // or 'G-XXXXXXXXXX'
-      partytown: true,
     },
   },
 };

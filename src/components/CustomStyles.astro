@@ -1,5 +1,6 @@
 ---
 import '~/assets/styles/manrope-fonts.css';
+import manropeLatin from '@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2?url';
 
 // 'DM Sans'
 // Nunito
@@ -18,6 +19,8 @@ import '~/assets/styles/manrope-fonts.css';
 // 'Space Grotesk'
 // Urbanist
 ---
+
+<link rel="preload" href={manropeLatin} as="font" type="font/woff2" crossorigin />
 
 <style is:inline>
   :root {

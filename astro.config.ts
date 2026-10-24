@@ -10,7 +10,6 @@ import { unified } from '@astrojs/markdown-remark';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 import mdx from '@astrojs/mdx';
-import partytown from '@astrojs/partytown';
 import icon from 'astro-icon';
 import slugify from 'limax';
 import type { AstroConfig, AstroIntegration } from 'astro';
@@ -31,10 +30,6 @@ const tagBase =
 const tagBasePathname = `/${[trimSlashes(SITE.base ?? ''), tagBase].filter(Boolean).join('/')}`;
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
-const hasExternalScripts = false;
-const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroIntegration)[] = []) =>
-  hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 // Appends/updates the `Sitemap:` line in the built robots.txt once @astrojs/sitemap
 // has written sitemap-index.xml — Astro itself doesn't wire the two together.
@@ -102,26 +97,12 @@ export default defineConfig({
       },
     }),
 
-    ...whenExternalScripts(() =>
-      partytown({
-        config: { forward: ['dataLayer.push'] },
-      })
-    ),
-
     appendSitemapToRobotsTxt(),
   ],
 
   image: {
-    // Astro's default Sharp service handles local images.
-    //
-    // Most remote CDN images (Unsplash, Cloudinary, Imgix…) are routed by
-    // src/components/common/Image.astro through `unpic`, which rewrites the
-    // URL with CDN-side query parameters and serves it straight from the
-    // provider — Astro never downloads it, so they don't need to be listed.
-    //
-    // `domains` only matters for remote URLs that fall through to Astro's
-    // native <Image /> (i.e. providers Unpic can't detect). None are in use
-    // currently — add a hostname here if such a provider gets used.
+    // Astro's default Sharp service handles local images. Remote images would need
+    // their hostname listed in `domains` (none are in use currently).
   },
 
   markdown: {

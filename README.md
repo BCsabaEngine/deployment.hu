@@ -8,12 +8,26 @@ deployment.hu presents services, background, and a blog for prospective clients 
 
 ## Development
 
+Requires Node.js ≥ 24.
+
 ```bash
 npm install
-npm run dev        # start local dev server
-npm run build       # build for production
+npm run dev        # start local dev server (http://localhost:4321)
+npm run build       # build for production (static output in dist/)
 npm run preview     # preview the production build
+npm run check       # astro check + eslint + prettier --check (also run by CI on pull requests)
+npm run fix         # eslint --fix + prettier --write
 ```
+
+## Structure
+
+- `src/pages/` — pages (`.astro`, plus Markdown for the legal pages `aszf.md` and `adatvedelem.md`)
+- `src/components/widgets/` and `src/components/ui/` — page building blocks
+- `src/config.ts` — site-wide settings; `src/navigation.ts` — header/footer links
+- `src/data/post/` — blog posts (Astro Content Collections)
+- `public/` — `robots.txt`, `_headers`, `llms.txt`
+
+All user-facing copy is Hungarian.
 
 ## License
 
