@@ -1,5 +1,6 @@
 ---
 import { COMPANY, SITE } from '~/config';
+import SocialLinks from '~/components/ui/SocialLinks.astro';
 import { getHomePermalink } from '~/utils/permalinks';
 
 interface Link {
@@ -24,15 +25,16 @@ const { tagline, pageLinks = [], secondaryLinks = [], theme = 'light' } = Astro.
   ]}
 >
   <div class="dark:bg-dark absolute inset-0 pointer-events-none" aria-hidden="true"></div>
-  <div
-    class="relative max-w-7xl mx-auto px-4 sm:px-6 dark:text-slate-300 intersect-once intersect-quarter intersect-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
-  >
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 dark:text-slate-300 intersect-once intersect-quarter intersect-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
     <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
       <div class="col-span-12 md:col-span-4">
         <div class="mb-2">
-          <a class="inline-block font-bold text-xl" href={getHomePermalink()}>{SITE?.name}</a>
+          <a class="inline-block font-bold text-xl" href={getHomePermalink()}>
+            {SITE?.name}
+          </a>
         </div>
         <p class="text-sm text-muted dark:text-slate-400 leading-relaxed">{tagline}</p>
+        <SocialLinks class="mt-4" />
       </div>
       <div class="col-span-12 md:col-span-4">
         <div class="dark:text-gray-300 font-medium mb-2">Információk</div>
@@ -60,34 +62,30 @@ const { tagline, pageLinks = [], secondaryLinks = [], theme = 'light' } = Astro.
           <li>Adószám: {COMPANY.taxNumber}</li>
         </ul>
         <ul class="text-sm text-muted dark:text-slate-400 space-y-1 mt-4">
-          {
-            secondaryLinks.map(({ text, href }) => (
-              <li>
-                <a
-                  class="hover:text-gray-700 dark:hover:text-gray-300 hover:underline transition duration-150 ease-in-out"
-                  href={href}
-                  set:html={text}
-                />
-              </li>
-            ))
-          }
+          {secondaryLinks.map(({ text, href }) => (
+            <li>
+              <a
+                class="hover:text-gray-700 dark:hover:text-gray-300 hover:underline transition duration-150 ease-in-out"
+                href={href}
+                set:html={text}
+              />
+            </li>
+          ))}
         </ul>
       </div>
       <div class="col-span-12 md:col-span-4">
         <div class="dark:text-gray-300 font-medium mb-2">Oldalak</div>
         <ul class="text-sm space-y-1">
-          {
-            pageLinks.map(({ text, href }) => (
-              <li>
-                <a
-                  class="text-muted hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out"
-                  href={href}
-                >
-                  {text}
-                </a>
-              </li>
-            ))
-          }
+          {pageLinks.map(({ text, href }) => (
+            <li>
+              <a
+                class="text-muted hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out"
+                href={href}
+              >
+                {text}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
     </div>

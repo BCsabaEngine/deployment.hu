@@ -12,3 +12,8 @@
 - [Rólam](https://deployment.hu/rolam): Balázs Csaba szakmai útja és háttere.
 - [Blog](https://deployment.hu/blog): Cikkek tech-lead munkáról, platform-építésről és AI bevezetésről.
 - [Kapcsolat](https://deployment.hu/kapcsolat): Elérhetőségek és időpontfoglalás egy díjmentes konzultációra.
+
+## Profilok
+
+- [LinkedIn](https://www.linkedin.com/in/balazscsaba/): Balázs Csaba szakmai profilja.
+- [Medium](https://medium.com/@balazs.csaba.diy): Balázs Csaba cikkei.

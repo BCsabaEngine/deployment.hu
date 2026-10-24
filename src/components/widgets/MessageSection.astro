@@ -19,13 +19,11 @@ const { srLabel, title, message, description, action } = Astro.props;
       </h2>
       <p class="text-3xl font-semibold md:text-3xl">{message}</p>
       {description && <p class="mt-4 mb-8 text-lg text-muted dark:text-slate-400">{description}</p>}
-      {
-        action && (
-          <a rel="noopener noreferrer" href={action.href} class="btn ml-4">
-            {action.text}
-          </a>
-        )
-      }
+      {action && (
+        <a rel="noopener noreferrer" href={action.href} class="btn ml-4">
+          {action.text}
+        </a>
+      )}
     </div>
   </div>
 </section>

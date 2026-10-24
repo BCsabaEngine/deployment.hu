@@ -2,6 +2,7 @@
 import Layout from '~/layouts/PageLayout.astro';
 import Contact from '~/components/widgets/Contact.astro';
 import Notice from '~/components/ui/Notice.astro';
+import SocialLinks from '~/components/ui/SocialLinks.astro';
 import { COMPANY } from '~/config';
 
 const metadata = {
@@ -43,7 +44,10 @@ const metadata = {
 
     <div class="mt-8 text-center text-muted dark:text-slate-400">
       <p>
-        Email: <a class="hover:text-primary hover:underline" href="mailto:hello@deployment.hu">hello@deployment.hu</a>
+        Email:{' '}
+        <a class="hover:text-primary hover:underline" href="mailto:hello@deployment.hu">
+          hello@deployment.hu
+        </a>
       </p>
       <p class="mt-1">
         Telefon:
@@ -52,6 +56,7 @@ const metadata = {
         </a>
       </p>
       <p class="mt-1">Válaszidő: 2 munkanapon belül</p>
+      <SocialLinks class="mt-4 justify-center" withText />
     </div>
   </div>
 

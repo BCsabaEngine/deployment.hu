@@ -1,0 +1,29 @@
+---
+import { Icon } from 'astro-icon/components';
+import { SOCIALS } from '~/config';
+
+export interface Props {
+  class?: string;
+  withText?: boolean;
+}
+
+const { class: className, withText = false } = Astro.props;
+---
+
+<ul class:list={['flex flex-wrap gap-4', className]}>
+  {SOCIALS.map(({ name, href, icon }) => (
+    <li>
+      <a
+        class="inline-flex items-center gap-2 text-muted dark:text-slate-400 hover:text-primary transition duration-150 ease-in-out"
+        href={href}
+        target="_blank"
+        rel="me noopener noreferrer"
+        aria-label={withText ? undefined : name}
+        title={name}
+      >
+        <Icon name={icon} class="w-6 h-6" />
+        {withText && <span>{name}</span>}
+      </a>
+    </li>
+  ))}
+</ul>

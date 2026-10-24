@@ -8,7 +8,6 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 import { getPermalink } from '~/utils/permalinks';
-import { placeholderImage } from '~/utils/placeholder';
 
 const metadata = {
   title: 'deployment.hu — Tech-Lead bérlés, Platform-építés, AI megoldások',
@@ -87,7 +86,7 @@ const metadata = {
   />
 
   <Content
-    image={placeholderImage('Portré fotó')}
+    image={{ src: '~/assets/images/portre.jpg', alt: 'Balázs Csaba, szabadúszó termékfejlesztő portréja' }}
     callToAction={{ text: 'Ismerd meg a teljes utat', href: getPermalink('/rolam') }}
   >
     <Fragment slot="content">

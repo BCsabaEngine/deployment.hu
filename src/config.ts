@@ -60,6 +60,12 @@ export interface CompanyConfig {
   phone: string;
 }
 
+export interface SocialLink {
+  name: string;
+  href: string;
+  icon: string;
+}
+
 export interface AnalyticsConfig {
   vendors: {
     googleAnalytics: {
@@ -141,6 +147,11 @@ export const COMPANY: CompanyConfig = {
   email: 'hello@deployment.hu',
   phone: '+36 70 773 4152',
 };
+
+export const SOCIALS: SocialLink[] = [
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/balazscsaba/', icon: 'tabler:brand-linkedin' },
+  { name: 'Medium', href: 'https://medium.com/@balazs.csaba.diy', icon: 'tabler:brand-medium' },
+];
 
 export const ANALYTICS: AnalyticsConfig = {
   vendors: {

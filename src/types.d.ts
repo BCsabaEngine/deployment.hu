@@ -79,6 +79,11 @@ export interface MetaDataTwitter {
 export interface Image {
   src: string;
   alt?: string;
+  width?: number;
+  height?: number;
+  widths?: number[];
+  sizes?: string;
+  style?: string;
 }
 
 export interface Widget {
