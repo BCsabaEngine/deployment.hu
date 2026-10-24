@@ -183,9 +183,12 @@ export interface Hero extends Omit<Headline, 'classes'>, Omit<Widget, 'isDark' |
   actions?: string | CallToAction[];
   image?: string | Image | Image[];
   stripe?: 'default' | 'alt';
+  drift?: boolean;
 }
 
-export interface Statement extends Omit<Headline, 'classes'>, Omit<Widget, 'isDark' | 'isTinted' | 'bg'> {}
+export interface Statement extends Omit<Headline, 'classes'>, Omit<Widget, 'isDark' | 'isTinted' | 'bg'> {
+  drift?: boolean;
+}
 
 export interface Team extends Omit<Headline, 'classes'>, Widget {
   team?: Array<TeamMember>;

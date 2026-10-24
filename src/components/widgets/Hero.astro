@@ -9,6 +9,7 @@ const {
   subtitle = await Astro.slots.render('subtitle'),
   tagline,
   stripe = 'default',
+  drift = false,
 
   content = await Astro.slots.render('content'),
   actions = await Astro.slots.render('actions'),
@@ -26,7 +27,13 @@ const {
         <Fragment set:html={bg} />
       ) : (
         <>
-          <div class:list={['absolute inset-0', stripe === 'alt' ? 'hero-stripe-alt' : 'hero-stripe']} />
+          <div
+            class:list={[
+              'absolute inset-0',
+              stripe === 'alt' ? 'hero-stripe-alt' : 'hero-stripe',
+              drift && 'hero-stripe-drift',
+            ]}
+          />
         </>
       )}
     </slot>

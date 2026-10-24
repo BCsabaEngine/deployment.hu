@@ -111,6 +111,64 @@
   }
 }
 
+/* nagyon lassú sodródás: csak a gradiens csúszik, a clip-path marad */
+.hero-stripe-drift {
+  background-size: 300% 100%;
+}
+
+.statement-blob {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 36rem;
+  height: 36rem;
+  border-radius: 9999px;
+  pointer-events: none;
+  background: radial-gradient(circle, rgb(109 40 217 / 0.35), transparent 65%);
+}
+.statement-blob-b {
+  width: 30rem;
+  height: 30rem;
+  background: radial-gradient(circle, rgb(1 97 239 / 0.3), transparent 65%);
+}
+
+@keyframes heroStripeDrift {
+  from {
+    background-position: 0% 0;
+  }
+  to {
+    background-position: 300% 0;
+  }
+}
+@keyframes statementBlobA {
+  from {
+    transform: translate(-10vw, -20%);
+  }
+  to {
+    transform: translate(55vw, 25%);
+  }
+}
+@keyframes statementBlobB {
+  from {
+    transform: translate(60vw, 30%);
+  }
+  to {
+    transform: translate(5vw, -15%);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-stripe-drift {
+    animation: heroStripeDrift 37.5s linear infinite;
+  }
+  .statement-blob-a {
+    animation: statementBlobA 22.5s ease-in-out infinite alternate;
+  }
+  .statement-blob-b {
+    animation: statementBlobB 30s ease-in-out infinite alternate;
+  }
+}
+
 @utility bg-page {
   background-color: var(--aw-color-bg-page);
 }

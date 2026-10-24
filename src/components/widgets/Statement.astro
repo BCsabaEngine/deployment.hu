@@ -9,17 +9,16 @@ const {
 
   id,
   classes = {},
+  drift = false,
 } = Astro.props;
+
+const blobs = drift
+  ? '<div class="statement-blob statement-blob-a"></div><div class="statement-blob statement-blob-b"></div>'
+  : '';
+const bg = `<div class="absolute inset-0 overflow-hidden bg-slate-900"><div class="absolute inset-0 bg-[radial-gradient(60rem_24rem_at_85%_0%,rgb(109_40_217/0.22),transparent)]"></div>${blobs}</div>`;
 ---
 
-<WidgetWrapper
-  id={id}
-  isDark
-  containerClass={`max-w-4xl py-16 md:py-24 lg:py-28 ${classes?.container ?? ''}`}
-  bg={
-    '<div class="absolute inset-0 bg-slate-900"><div class="absolute inset-0 bg-[radial-gradient(60rem_24rem_at_85%_0%,rgb(109_40_217/0.22),transparent)]"></div></div>'
-  }
->
+<WidgetWrapper id={id} isDark containerClass={`max-w-4xl py-16 md:py-24 lg:py-28 ${classes?.container ?? ''}`} bg={bg}>
   {tagline && <p class="mb-6 text-sm font-medium uppercase tracking-[0.25em] text-blue-300" set:html={tagline} />}
   {title && (
     <h2
