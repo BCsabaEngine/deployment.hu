@@ -58,5 +58,9 @@
     "prettier-plugin-astro": "^1.1.2",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.72.0"
+  },
+  "ripedeps": {
+    "minAgeDays": 7,
+    "maxBump": "minor"
   }
 }
