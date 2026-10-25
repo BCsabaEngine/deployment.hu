@@ -102,12 +102,12 @@ const metadata = {
     <Fragment slot="title">A garancia</Fragment>
     <Fragment slot="content">
       <p>
-        <strong>Személyesen garantálom</strong>, hogy az általam tervezett és épített rendszer eljut a prod telepítésig
-        — és ott nemcsak megmozdul, de hatékonyan is működik. Ehhez külvilágból hozott gyakorlati tapasztalat, útközben
-        beépített metrika-pontok (nem a végén, négy hónappal később derül ki, hogy rossz volt az irány), és rendes
-        infrastruktúra tartozik: nemcsak az üzletileg igényelt megoldás készül el, hanem annak vezérlése — irányítása és
-        monitorozása — is, már fejlesztés közben. Emiatt a fejlesztés látszólag 120%-nyi hosszúnak tűnik — a valóságban
-        80% idő alatt készül el és indul el.
+        <strong>Személyesen garantálom</strong>, hogy az általunk közösen tervezett és épített rendszer eljut a prod
+        telepítésig — és ott nemcsak megmozdul, de hatékonyan is működik. Ehhez külvilágból hozott gyakorlati
+        tapasztalat, útközben beépített metrika-pontok (nem a végén, négy hónappal később derül ki, hogy rossz volt az
+        irány), és rendes infrastruktúra tartozik: nemcsak az üzletileg igényelt megoldás készül el, hanem annak
+        vezérlése — irányítása és monitorozása — is, már fejlesztés közben. Emiatt a fejlesztés látszólag 120%-nyi
+        hosszúnak tűnik — a valóságban 80% idő alatt készül el és indul el.
       </p>
       <p class="mt-4">
         Nemcsak egy üzleti POC-ot, egy "épphogy működő" MVP-t készítünk a célközönség reakciójának leméréséhez —
@@ -117,10 +117,8 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <CallToAction
-    actions={[{ variant: 'primary', text: 'Kérj egy díjmentes konzultációt', href: getPermalink('/kapcsolat') }]}
-  >
-    <Fragment slot="title">Szeretnéd, hogy a te rendszered is prod-ra jusson — garantáltan?</Fragment>
+  <CallToAction actions={[{ variant: 'primary', text: 'Kérj egy online meetet', href: getPermalink('/kapcsolat') }]}>
+    <Fragment slot="title">Szeretnéd, hogy a Te rendszered is Prod-ra jusson — garantáltan?</Fragment>
     <Fragment slot="subtitle">Beszéljünk arról, hol tart most a csapatod, és mi lenne az első lépés.</Fragment>
   </CallToAction>
 </Layout>

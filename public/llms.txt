@@ -11,7 +11,7 @@
 - [AI kerekasztal](https://deployment.hu/ai-kerekasztal): Negyedéves, standup-hangulatú AI konzultáció konkrét garanciával.
 - [Rólam](https://deployment.hu/rolam): Balázs Csaba szakmai útja és háttere.
 - [Blog](https://deployment.hu/blog): Cikkek tech-lead munkáról, platform-építésről és AI bevezetésről.
-- [Kapcsolat](https://deployment.hu/kapcsolat): Elérhetőségek és időpontfoglalás egy díjmentes konzultációra.
+- [Kapcsolat](https://deployment.hu/kapcsolat): Elérhetőségek és időpontfoglalás egy online találkozóra.
 
 ## Profilok
 

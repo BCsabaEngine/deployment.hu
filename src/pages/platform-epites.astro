@@ -27,7 +27,7 @@ const metadata = {
       {
         title: 'Elrejti, aminek nem kell látszania.',
         description:
-          'Az üzleti fejlesztőnek nem kell ismernie a logolási szabályokat, nem kell találkoznia az SRE csapattal, nem kell tudnia, pontosan hogyan kerül ki a kód prod-ra. Elég tudnia, melyik platform-modult kötelező használnia — a fájdalommentes működés a többi.',
+          'Az üzleti fejlesztőnek nem kell ismernie a logolási szabályokat, nem kell találkoznia a DevOps csapattal, nem kell tudnia, pontosan hogyan kerül ki a kód prod-ra. Elég tudnia, melyik platform-modult kötelező használnia — a fájdalommentes működés a többi.',
       },
       {
         title: 'Cserélhetővé teszi a bázist.',
@@ -41,7 +41,7 @@ const metadata = {
       },
     ]}
   >
-    <Fragment slot="title">Mit ad egy jó platform képesség</Fragment>
+    <Fragment slot="title">Mit ad egy jó Platform Képesség</Fragment>
     <Fragment slot="content">
       <p>
         Kevés cég épít ma már egyetlen terméket. A legtöbb rendszer microservice- vagy nanoservice-halmaz: önálló
@@ -57,14 +57,18 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <Content isReversed isTinted image={{ src: '~/assets/images/platform-sre.jpg', alt: 'Szoros kapcsolat az SRE-vel' }}>
-    <Fragment slot="title">Szoros kapcsolat az SRE-vel</Fragment>
+  <Content
+    isReversed
+    isTinted
+    image={{ src: '~/assets/images/platform-sre.jpg', alt: 'Szoros kapcsolat a DevOps-szal' }}
+  >
+    <Fragment slot="title">Szoros kapcsolat a DevOps-szal</Fragment>
     <Fragment slot="content">
       <p>
-        A platform csapat gyakran átveszi az SRE feladatait is: irányítja a kitelepítést, felügyeli a rendszert, reagál,
-        ha valami elakad. Ez azt is jelenti, hogy nem elég <em>tudni</em>, mit kell csinálni — <em>érteni</em> is kell,
-        miért. A platform csapat ezért <strong>folyamatosan egyeztet az SRE-vel</strong>, nem csak akkor, ha baj van,
-        hanem a mindennapi működés részeként is.
+        A platform csapat gyakran átveszi a DevOps (SRE) feladatait is: irányítja a kitelepítést, felügyeli a rendszert,
+        reagál, ha valami elakad. Ez azt is jelenti, hogy nem elég <em>tudni</em>, mit kell csinálni — <em>érteni</em>{' '}
+        is kell, miért. A platform csapat ezért <strong>folyamatosan egyeztet a DevOps-szal</strong>, nem csak akkor, ha
+        baj van, hanem a mindennapi működés részeként is.
       </p>
       <ContentHeading>Dokumentáció, ami a cég vagyona</ContentHeading>
       <p>
@@ -94,14 +98,12 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <CallToAction
-    actions={[{ variant: 'primary', text: 'Kérj egy díjmentes konzultációt', href: getPermalink('/kapcsolat') }]}
-  >
+  <CallToAction actions={[{ variant: 'primary', text: 'Kérj egy találkozót', href: getPermalink('/kapcsolat') }]}>
     <Fragment slot="title">
       Platform csapatra van szükséged, vagy csak szeretnéd tudni, hol tart most a tiétek?
     </Fragment>
     <Fragment slot="subtitle">
-      Segítek feltérképezni, hol vagytok most, és mi lenne az első lépés, ami már a következő negyedévben mérhető
+      Együtt feltérképezzük, hol vagytok most, és mi lenne az első lépés, ami már a következő negyedévben mérhető
       változást hoz.
     </Fragment>
   </CallToAction>
