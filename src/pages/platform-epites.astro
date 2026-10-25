@@ -27,17 +27,17 @@ const metadata = {
       {
         title: 'Elrejti, aminek nem kell látszania.',
         description:
-          'Az üzleti fejlesztőnek nem kell ismernie a logolási szabályokat, nem kell találkoznia a DevOps csapattal, nem kell tudnia, pontosan hogyan kerül ki a kód prod-ra. Elég tudnia, melyik platform-modult kötelező használnia — a fájdalommentes működés a többi.',
+          'Az üzleti fejlesztőnek nem kell ismernie a logolási szabályokat, nem kell találkoznia a DevOps csapattal, nem kell tudnia, pontosan hogyan kerül ki a kód prod-ra. Elég tudnia, melyik platformmodult kötelező használnia – a többit a platform intézi.',
       },
       {
         title: 'Cserélhetővé teszi a bázist.',
         description:
-          'Ha jogszabály változik, hiba derül ki, vagy egyszerűen jobb megoldás születik, az alkalmazásoknak elég újrafordulniuk és újra kiállniuk — a platform frissített verziója alatta már kompatibilis marad a környezettel.',
+          'Ha jogszabály változik, hiba derül ki, vagy egyszerűen jobb megoldás születik, az alkalmazásokat elég újrafordítani és újra kitelepíteni – a platform frissített verziója alatta már kompatibilis marad a környezettel.',
       },
       {
-        title: 'Nem csak backend kérdés.',
+        title: 'Nemcsak backend kérdés.',
         description:
-          'Az egységes szín, forma és felhasználói élmény is platform-elem: egy márkaváltás (új font, új színvilág) így lassan és fájdalommentesen vezethető át a teljes rendszeren.',
+          'Az egységes szín, forma és felhasználói élmény is platformelem: egy márkaváltás (új font, új színvilág) így fokozatosan és fájdalommentesen vezethető át a teljes rendszeren.',
       },
     ]}
   >
@@ -46,12 +46,12 @@ const metadata = {
       <p>
         Kevés cég épít ma már egyetlen terméket. A legtöbb rendszer microservice- vagy nanoservice-halmaz: önálló
         forráskód, gyakran párhuzamos vagy időben nagyon eltolt fejlesztéssel. Mégis{' '}
-        <strong>közös nevezőre kell hozni</strong> őket — különben minden csapat a saját nyelvét beszéli, és a
+        <strong>közös nevezőre kell hozni</strong> őket – különben minden csapat a saját nyelvét beszéli, és a
         fenntartás lassan ellehetetlenül.
       </p>
       <p class="mt-4">
         A platform-építés erről szól: egy közös alap lerakásáról, amitől minden elkészült alkalmazás egyforma jellegű és
-        minőségű lesz. Ha ez megvan, bármely cross-funkcionális csapat az üzleti leírás alapján{' '}
+        minőségű lesz. Ha ez megvan, bármely cross-functional csapat az üzleti leírás alapján{' '}
         <strong>hozzá tud nyúlni egy másik csapat kódjához</strong>.
       </p>
     </Fragment>
@@ -66,15 +66,15 @@ const metadata = {
     <Fragment slot="content">
       <p>
         A platform csapat gyakran átveszi a DevOps (SRE) feladatait is: irányítja a kitelepítést, felügyeli a rendszert,
-        reagál, ha valami elakad. Ez azt is jelenti, hogy nem elég <em>tudni</em>, mit kell csinálni — <em>érteni</em>{' '}
-        is kell, miért. A platform csapat ezért <strong>folyamatosan egyeztet a DevOps-szal</strong>, nem csak akkor, ha
+        reagál, ha valami elakad. Ez azt is jelenti, hogy nem elég <em>tudni</em>, mit kell csinálni – <em>érteni</em>{' '}
+        is kell, miért. A platform csapat ezért <strong>folyamatosan egyeztet a DevOps-szal</strong>, nemcsak akkor, ha
         baj van, hanem a mindennapi működés részeként is.
       </p>
       <ContentHeading>Dokumentáció, ami a cég vagyona</ContentHeading>
       <p>
-        A platform csapat szigorúbban dokumentál, mint egy fejlesztői csapat valaha is fog. Nem csak a kód számít, hanem
-        az is, mikor, mit és miért döntöttek úgy, ahogy — hónapokkal vagy akár évekkel korábbi döntések indoklása is
-        visszakereshető kell legyen. Ez a tudás és ez az artifact-állomány nem mellékes:{' '}
+        A platform csapat szigorúbban dokumentál, mint egy fejlesztői csapat valaha is fog. Nemcsak a kód számít, hanem
+        az is, mikor, mit és miért döntöttek úgy, ahogy – hónapokkal vagy akár évekkel korábbi döntések indoklása is
+        visszakereshetőnek kell lennie. Ez a tudás és ez az artifact-állomány nem mellékes:{' '}
         <strong>a cég tulajdona, és fontosabb, mint maga az üzleti forráskód</strong>.
       </p>
     </Fragment>
@@ -83,15 +83,15 @@ const metadata = {
   <Statement drift>
     <Fragment slot="tagline">Dokumentáció</Fragment>
     <Fragment slot="title">A tudás a cég tulajdona, és fontosabb, mint maga az üzleti forráskód.</Fragment>
-    <Fragment slot="subtitle">Nem csak a kód számít, hanem az is, mikor, mit és miért döntöttek úgy, ahogy.</Fragment>
+    <Fragment slot="subtitle">Nemcsak a kód számít, hanem az is, mikor, mit és miért döntöttek úgy, ahogy.</Fragment>
   </Statement>
 
   <Content image={{ src: '~/assets/images/platform-guild.jpg', alt: 'A guild-modell' }}>
     <Fragment slot="title">A guild-modell</Fragment>
     <Fragment slot="content">
       <p>
-        Egyre több platform csapat guild-ként működik: egy vezető irányítása alatt az üzleti csapatok 1-2 fejlesztőt
-        delegálnak 1-2 hónapra. Ez <strong>csökkenti a kiégést és a fluktuációt</strong>, az üzleti tapasztalat
+        Egyre több platform csapat guild-ként működik: egy vezető irányítása alatt az üzleti csapatok 1–2 fejlesztőt
+        delegálnak 1–2 hónapra. Ez <strong>csökkenti a kiégést és a fluktuációt</strong>, az üzleti tapasztalat
         visszaszivárog a platformba, a kollégák pedig testközelből tanulják meg, miért számít a low-level réteg. Aki
         egyszer megélte ezt a rotációt, másképp tekint a saját csapata munkájára is.
       </p>
@@ -99,7 +99,7 @@ const metadata = {
   </Content>
 
   <ContactCta
-    title="Platform csapatra van szükséged, vagy csak szeretnéd tudni, hol tart most a tiétek?"
+    title="Platform csapatra van szükséged, vagy csak szeretnéd tudni, hol tart most a ti platformotok?"
     subtitle="Együtt feltérképezzük, hol vagytok most, és mi lenne az első lépés, ami már a következő negyedévben mérhető változást hoz."
     button="Kérj egy találkozót"
   />

@@ -14,10 +14,15 @@ export const headerData = {
 
 export const footerData = {
   tagline:
-    'Tech-Lead bérlés, platform-építés és egyedi, saját tulajdonú AI megoldások — Balázs Csaba szabadúszó termékfejlesztő oldala.',
+    'Tech-Lead bérlés, platform-építés és egyedi, saját tulajdonú AI-megoldások – Balázs Csaba szabadúszó termékfejlesztő oldala.',
   pageLinks: headerData.links,
   secondaryLinks: [
     { text: 'ÁSZF', href: getPermalink('/aszf') },
     { text: 'Adatvédelem', href: getPermalink('/adatvedelem') },
+  ],
+  openSourceLinks: [
+    { text: 'svstate', href: 'https://github.com/BCsabaEngine/svstate' },
+    { text: 'svelteesp32', href: 'https://github.com/BCsabaEngine/svelteesp32' },
+    { text: 'pcb-tht-holder', href: 'https://segmentcontroller.github.io/pcb-tht-holder/' },
   ],
 };

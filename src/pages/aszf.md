@@ -4,7 +4,7 @@ description: 'A deployment.hu szolgáltatásainak igénybevételére vonatkozó 
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 
-Jelen Általános Szerződési Feltételek („ÁSZF”) a Szolgáltató és a Megrendelő között a deployment.hu weboldalon kínált szolgáltatások igénybevétele kapcsán létrejövő jogviszonyokra vonatkozik.
+Jelen Általános Szerződési Feltételek („ÁSZF”) a Szolgáltató és a Megrendelő között a deployment.hu weboldalon kínált szolgáltatások igénybevétele kapcsán létrejövő jogviszonyokra vonatkoznak.
 
 ## 1. Bevezető rendelkezések
 
@@ -14,7 +14,7 @@ A jelen ÁSZF-ben nem szabályozott kérdésekben a Polgári Törvénykönyvről
 
 ## 2. A Szolgáltató adatai
 
-**A Szolgáltató neve:** Balázs Csaba E.V. (a továbbiakban: „Szolgáltató”)
+**A Szolgáltató neve:** Balázs Csaba e.v. (a továbbiakban: „Szolgáltató”)
 
 - Székhelye: 2120 Dunakeszi, Szent László utca 3.
 - Adószám: 92251108-2-33
@@ -23,7 +23,7 @@ A jelen ÁSZF-ben nem szabályozott kérdésekben a Polgári Törvénykönyvről
 
 ## 3. A szolgáltatások köre
 
-A Szolgáltató az alábbi szolgáltatásokat nyújtja: Tech-Lead bérlés, Platform-építés, AI hibrid megoldások kialakítása, valamint az ezekhez kapcsolódó AI kerekasztal konzultáció. A Szolgáltató nem polcról levehető, egységesített terméket értékesít — minden megbízás a Megrendelő egyedi igényeihez igazodó, egyedileg meghatározott tartalmú szolgáltatás, amelynek pontos terjedelmét, ütemezését és eredménytermékeit a felek a szerződéskötéskor egyedileg határozzák meg.
+A Szolgáltató az alábbi szolgáltatásokat nyújtja: Tech-Lead bérlés, Platform-építés, AI hibrid megoldások kialakítása, valamint az ezekhez kapcsolódó AI kerekasztal konzultáció. A Szolgáltató nem polcról levehető, egységesített terméket értékesít – minden megbízás a Megrendelő egyedi igényeihez igazodó, egyedileg meghatározott tartalmú szolgáltatás, amelynek pontos terjedelmét, ütemezését és eredménytermékeit a felek a szerződéskötéskor egyedileg határozzák meg.
 
 ## 4. A szerződéskötés menete
 
@@ -33,7 +33,7 @@ A kapcsolatfelvételt egy díjmentes, 15–30 perces online konzultáció követ
 
 A szerződés aláírására személyesen kerül sor; az aláírást megelőzően, vagy azzal egyidejűleg a felek titoktartási nyilatkozatot írnak alá.
 
-A Szolgáltató fenntartja a jogot, hogy a folyamatban lévő és a lejárt szerződéseiből eredő titoktartási kötelezettségeire tekintettel — a Megrendelő és annak tevékenységi köre megismerését követően — a megkeresést vagy a szerződéskötést indoklás nélkül visszautasítsa.
+A Szolgáltató fenntartja a jogot, hogy a folyamatban lévő és a lejárt szerződéseiből eredő titoktartási kötelezettségeire tekintettel – a Megrendelő és annak tevékenységi köre megismerését követően – a megkeresést vagy a szerződéskötést indoklás nélkül visszautasítsa.
 
 ## 5. Díjazás és fizetési feltételek
 
@@ -59,7 +59,7 @@ Eltérő írásbeli megállapodás hiányában a Megrendelő számára a szerző
 
 ## 10. Felelősség
 
-A Szolgáltató felelőssége — szándékos vagy súlyosan gondatlan magatartás esetét kivéve — a szerződés szerinti díj összegére korlátozódik. A Szolgáltató nem felel a vis maior eseményekből, illetve a Megrendelő által szolgáltatott hibás, hiányos vagy késedelmesen átadott információból eredő károkért.
+A Szolgáltató felelőssége – szándékos vagy súlyosan gondatlan magatartás esetét kivéve – a szerződés szerinti díj összegére korlátozódik. A Szolgáltató nem felel a vis maior eseményekből, illetve a Megrendelő által szolgáltatott hibás, hiányos vagy késedelmesen átadott információból eredő károkért.
 
 ## 11. A szerződés módosítása és megszűnése
 

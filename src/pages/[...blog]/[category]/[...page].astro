@@ -18,7 +18,7 @@ const { page, category } = Astro.props as Props;
 const currentPage = page.currentPage ?? 1;
 
 const metadata = {
-  title: `Kategória: ${category.title}${currentPage > 1 ? ` — ${currentPage}. oldal` : ''}`,
+  title: `Kategória: ${category.title}${currentPage > 1 ? ` – ${currentPage}. oldal` : ''}`,
   description: `Kategória: ${category.title} témájú bejegyzések a deployment.hu blogján.`,
   robots: {
     index: blogCategoryRobots?.index,

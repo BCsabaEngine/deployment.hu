@@ -4,11 +4,11 @@ description: 'A deployment.hu adatkezelési gyakorlatáról szóló tájékoztat
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 
-Jelen Adatkezelési Tájékoztató („Tájékoztató”) az alábbiakban pontokba szedett adatkezelési tevékenységek során kezelt személyes adatokkal kapcsolatban tájékoztatja az érintettet az Európai Parlament és a Tanács (EU) 2016/679 rendelete („GDPR”) 13. és 14. cikke alapján.
+Jelen Adatvédelmi tájékoztató („Tájékoztató”) az alábbiakban pontokba szedett adatkezelési tevékenységek során kezelt személyes adatokkal kapcsolatban tájékoztatja az érintettet az Európai Parlament és a Tanács (EU) 2016/679 rendelete („GDPR”) 13. és 14. cikke alapján.
 
 ## 1. Az adatkezelő és elérhetőségei
 
-**Az adatkezelő neve:** Balázs Csaba E.V. (a továbbiakban: „Adatkezelő”)
+**Az adatkezelő neve:** Balázs Csaba e.v. (a továbbiakban: „Adatkezelő”)
 
 - Székhelye: 2120 Dunakeszi, Szent László utca 3.
 - Adószám: 92251108-2-33
@@ -19,7 +19,7 @@ Jelen Adatkezelési Tájékoztató („Tájékoztató”) az alábbiakban pontok
 
 ### 2.1. A szolgáltatás leírása
 
-Az Adatkezelő a deployment.hu honlapon keresztül történő kapcsolatfelvétel, ajánlatkérés, illetve a szolgáltatásai (tech-lead bérlés, platform-építés, egyedi AI megoldások) igénybevétele esetén az érdeklődők és ügyfelek személyes adatait kezeli abból a célból, hogy a megkeresésre válaszoljon, ajánlatot adjon, a felek közötti szerződést létrehozza és teljesítse, valamint az ebből eredő számlázási kötelezettségének eleget tegyen.
+Az Adatkezelő a deployment.hu honlapon keresztül történő kapcsolatfelvétel, ajánlatkérés, illetve a szolgáltatásai (tech-lead bérlés, platform-építés, egyedi AI-megoldások) igénybevétele esetén az érdeklődők és ügyfelek személyes adatait kezeli abból a célból, hogy a megkeresésre válaszoljon, ajánlatot adjon, a felek közötti szerződést létrehozza és teljesítse, valamint az ebből eredő számlázási kötelezettségének eleget tegyen.
 
 ### 2.2. Az érintettek köre
 
@@ -62,7 +62,7 @@ Az Adatkezelő a kezelt adatok helyességéért nem vállal felelősséget, az a
 - **Jogi igények érvényesítése:** az Adatkezelő jogos érdeke, azaz a szerződésből eredő jogai és követelései érvényesítése, illetve az ilyen igényekkel szembeni védekezés.
 - **Hozzájárulás:** az Érintett megfelelő tájékoztatáson alapuló, önkéntes hozzájárulása.
 
-### 2.8. Az adatokhoz az Adatkezelő részéről hozzáfér
+### 2.8. Az adatokhoz hozzáférők köre
 
 Az adatokhoz kizárólag az Adatkezelő, azaz Balázs Csaba egyéni vállalkozó fér hozzá.
 
@@ -72,7 +72,7 @@ Az adatokhoz kizárólag az Adatkezelő, azaz Balázs Csaba egyéni vállalkozó
 | --------------------------- | ------------------------------------------ | -------------------------- |
 | Rackforest Kft.             | 1132 Budapest, Victor Hugo utca 11. 5. em. | Tárhely-szolgáltatás       |
 | KBOSS.hu Kft. (Szamlazz.hu) | 1031 Budapest, Záhony utca 7.              | Számlázó rendszer          |
-| Nemzeti Adó- és Vámhivatal  | 1054 Budapest, Széchenyi u. 2.             | Adóhatóság                 |
+| Nemzeti Adó- és Vámhivatal  | 1054 Budapest, Széchenyi utca 2.           | Adóhatóság                 |
 
 ### 2.10. Automatizált döntéshozatal és profilalkotás
 
@@ -82,13 +82,13 @@ Az Adatkezelő nem végez automatizált döntéshozatalt, ideértve a profilalko
 
 ### 3.1. A hozzáféréshez való jog
 
-Az Érintett jogosult arra, hogy az Adatkezelőtől visszajelzést kapjon arra vonatkozóan, hogy személyes adatainak kezelése folyamatban van-e, és ha ilyen adatkezelés folyamatban van, jogosult arra, hogy a személyes adatokhoz és a következő információkhoz hozzáférést kapjon: az adatkezelés céljai, az érintett adatok kategóriái, azon címzettek köre, akikkel az adatokat közölték vagy közölni fogják, a tárolás tervezett időtartama, az Érintettet megillető jogok, a felügyeleti hatósághoz címzett panasz benyújtásának joga, valamint — ha az adatot nem az Érintettől szerezték — a forrásra vonatkozó információk.
+Az Érintett jogosult arra, hogy az Adatkezelőtől visszajelzést kapjon arra vonatkozóan, hogy személyes adatainak kezelése folyamatban van-e, és ha ilyen adatkezelés folyamatban van, jogosult arra, hogy a személyes adatokhoz és a következő információkhoz hozzáférést kapjon: az adatkezelés céljai, az érintett adatok kategóriái, azon címzettek köre, akikkel az adatokat közölték vagy közölni fogják, a tárolás tervezett időtartama, az Érintettet megillető jogok, a felügyeleti hatósághoz címzett panasz benyújtásának joga, valamint – ha az adatot nem az Érintettől szerezték – a forrásra vonatkozó információk.
 
 Ha az Érintett elektronikus úton nyújtotta be kérelmét, a kért információkat széles körben használt elektronikus formában kell rendelkezésre bocsátani, kivéve, ha az Érintett másként kéri. Amennyiben az Érintett a tájékoztatást több példányban kéri, az Adatkezelő jogosult a többletpéldányok elkészítésének adminisztratív költségeivel arányos, ésszerű díjat felszámítani.
 
 ### 3.2. A helyesbítéshez való jog
 
-Az Érintett jogosult a rá vonatkozó személyes adatok helyesbítését, illetve — hiányos adatok esetén — kiegészítését kérni. A kérést kizárólag írásban, postai úton a 2120 Dunakeszi, Szent László utca 3. címre küldött levélben, vagy a [hello@deployment.hu](mailto:hello@deployment.hu) címre küldött e-mailben lehet előterjeszteni; telefonos kérés esetén azt írásban is meg kell erősíteni. A kérelemben meg kell jelölni, mely adatok pontatlanok vagy hiányosak, és mi a pontos, teljes körű adat.
+Az Érintett jogosult a rá vonatkozó személyes adatok helyesbítését, illetve – hiányos adatok esetén – kiegészítését kérni. A kérést kizárólag írásban, postai úton a 2120 Dunakeszi, Szent László utca 3. címre küldött levélben, vagy a [hello@deployment.hu](mailto:hello@deployment.hu) címre küldött e-mailben lehet előterjeszteni; telefonos kérés esetén azt írásban is meg kell erősíteni. A kérelemben meg kell jelölni, mely adatok pontatlanok vagy hiányosak, és mi a pontos, teljes körű adat.
 
 Az Adatkezelő a helyesbítés, kiegészítés teljesítését követően haladéktalanul tájékoztatja azokat, akikkel az Érintett adatait korábban közölte, kivéve, ha ez lehetetlen vagy aránytalan erőfeszítést igényelne.
 
@@ -110,18 +110,18 @@ A tiltakozás joga a jogos érdeken alapuló profilalkotásra is kiterjed; direk
 
 ### 3.6. Az adathordozhatósághoz való jog
 
-Az Érintett jogosult arra, hogy a rá vonatkozó, hozzájáruláson vagy szerződéses jogalapon, automatizált módon kezelt személyes adatokat tagolt, széles körben használt, géppel olvasható formátumban megkapja, illetve — amennyiben ez technikailag megvalósítható — kérje azok másik adatkezelőhöz történő közvetlen továbbítását. Az adathordozhatóság gyakorlása nem jár az adatok törlésével.
+Az Érintett jogosult arra, hogy a rá vonatkozó, hozzájáruláson vagy szerződéses jogalapon, automatizált módon kezelt személyes adatokat tagolt, széles körben használt, géppel olvasható formátumban megkapja, illetve – amennyiben ez technikailag megvalósítható – kérje azok másik adatkezelőhöz történő közvetlen továbbítását. Az adathordozhatóság gyakorlása nem jár az adatok törlésével.
 
 ### 3.7. Jogorvoslathoz való jog
 
 **3.7.1. Az Adatkezelő felkeresése:** Az Érintett a jelen Tájékoztató 1. pontjában megadott elérhetőségeken fordulhat az Adatkezelőhöz, aki minden beérkezett megkeresést kivizsgál, és annak eredményéről tájékoztatja az Érintettet.
 
-**3.7.2. A bírósághoz fordulás joga:** Az Érintett — panasztételi jogától függetlenül — bírósághoz fordulhat, ha megítélése szerint a személyes adatainak kezelése során megsértették a GDPR szerinti jogait. A per az Érintett lakóhelye szerint illetékes törvényszék előtt is megindítható; a törvényszékek elérhetősége a [birosag.hu](https://birosag.hu/torvenyszekek) oldalon található.
+**3.7.2. A bírósághoz fordulás joga:** Az Érintett – panasztételi jogától függetlenül – bírósághoz fordulhat, ha megítélése szerint a személyes adatainak kezelése során megsértették a GDPR szerinti jogait. A per az Érintett lakóhelye szerint illetékes törvényszék előtt is megindítható; a törvényszékek elérhetősége a [birosag.hu](https://birosag.hu/torvenyszekek) oldalon található.
 
 **3.7.3. Panasztételhez való jog:** Az Érintett a Nemzeti Adatvédelmi és Információszabadság Hatóságnál (NAIH) nyújthat be panaszt.
 
 - Honlap: [naih.hu](https://naih.hu)
-- Cím: 1055 Budapest, Falk Miksa utca 9-11.
+- Cím: 1055 Budapest, Falk Miksa utca 9–11.
 - Postacím: 1363 Budapest, Pf.: 9.
 
 Az Érintett a szokásos tartózkodási helye, munkahelye vagy a feltételezett jogsértés helye szerinti más európai uniós tagállami felügyeleti hatóságnál is panaszt tehet.
@@ -136,7 +136,7 @@ Az Adatkezelő fenntartja a jogot, hogy a Tájékoztatót bármikor módosítsa.
 
 ## 5. Sütik (cookie-k) használata
 
-A honlap kizárólag a működéséhez feltétlenül szükséges, technikai jellegű adatokat tárol a látogató böngészőjében (helyi tárolás — localStorage), amelyek a megjelenítési mód (világos/sötét téma) és a jelen tájékoztatóval kapcsolatos tájékoztatás megjelenítésének megjegyzésére szolgálnak. Ezek az adatok nem alkalmasak a látogató személyének azonosítására, és nem kerülnek harmadik fél részére továbbításra.
+A honlap kizárólag a működéséhez feltétlenül szükséges, technikai jellegű adatokat tárol a látogató böngészőjében (helyi tárolás – localStorage), amelyek a megjelenítési mód (világos/sötét téma) és a sütikről szóló tájékoztatás elfogadásának megjegyzésére szolgálnak. Ezek az adatok nem alkalmasak a látogató személyének azonosítására, és nem kerülnek harmadik fél részére továbbításra.
 
 A honlap jelenleg nem használ statisztikai, marketing- vagy egyéb harmadik féltől származó sütit. Amennyiben az Adatkezelő a jövőben ilyet vezetne be, a jelen Tájékoztatót előzetesen frissíti, és a honlapon a látogató hozzájárulását kéri.
 

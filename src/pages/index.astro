@@ -6,14 +6,18 @@ import Features from '~/components/widgets/Features.astro';
 import Content from '~/components/widgets/Content.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import ContactCta from '~/components/widgets/ContactCta.astro';
+import OpenSourceNote from '~/components/ui/OpenSourceNote.astro';
 
+import { SOCIALS } from '~/config';
 import { getPermalink } from '~/utils/permalinks';
 
+const mediumUrl = SOCIALS.find(({ name }) => name === 'Medium')?.href;
+
 const metadata = {
-  title: 'deployment.hu — Tech-Lead bérlés, Platform-építés, AI megoldások',
+  title: 'deployment.hu – Tech-Lead bérlés, Platform-építés, AI megoldások',
   ignoreTitleTemplate: true,
   description:
-    'Tech-Lead bérlés, platform-építés és egyedi AI megoldások — egy emberrel, aki a döntéstől a prod-ig végig veled marad.',
+    'Tech-Lead bérlés, platform-építés és egyedi AI-megoldások – egy emberrel, aki a döntéstől a prod-ig végig veled marad.',
 };
 ---
 
@@ -23,24 +27,24 @@ const metadata = {
     image={[
       {
         src: '~/assets/images/ai-hibrid.jpg',
-        alt: 'Robotkar sakkozik egy szakállas férfi mellett — AI és emberi szakértelem együtt',
+        alt: 'Robotkar sakkozik egy szakállas férfi mellett – AI és emberi szakértelem együtt',
       },
       {
         src: '~/assets/images/platform.jpg',
-        alt: 'Sportautó motorterének közelije — pontosan megépített, megbízható alap',
+        alt: 'Sportautó motorterének közeli képe – pontosan megépített, megbízható alap',
       },
-      { src: '~/assets/images/platform-guild.jpg', alt: 'Fejhallgatós csapat közösen dolgozik egy megbeszélőben' },
+      { src: '~/assets/images/platform-guild.jpg', alt: 'Fejhallgatós csapat közösen dolgozik egy tárgyalóban' },
     ]}
     actions={[{ variant: 'primary', text: 'Foglalj időpontot', href: getPermalink('/kapcsolat') }]}
   >
     <Fragment slot="title">
       <span class="hero-rotate grid *:col-start-1 *:row-start-1 justify-items-center text-center">
-        <span class="hero-rotate-item">Prod-ra juttatjuk az alkalmazásod!</span>
+        <span class="hero-rotate-item">Prod-ra juttatjuk az alkalmazásodat!</span>
         <span class="hero-rotate-item">Eleged van a sablonos chat AI-okból?</span>
       </span>
     </Fragment>
     <Fragment slot="subtitle">
-      Tech-Lead bérlés, platform-építés és egyedi, saját tulajdonú AI megoldások — Balázs Csaba szabadúszó
+      Tech-Lead bérlés, platform-építés és egyedi, saját tulajdonú AI-megoldások – Balázs Csaba szabadúszó
       termékfejlesztő oldala.
     </Fragment>
   </Hero>
@@ -54,7 +58,7 @@ const metadata = {
       {
         title: 'Mi az a tech lead?',
         description:
-          'Szakmai irányító, karmester, aki a csapatot mentálisan is vezeti — és garantálja, hogy a rendszer prod-ra is eljut.',
+          'Szakmai irányító, karmester, aki a csapatot emberileg is vezeti – és garantálja, hogy a rendszer prod-ra is eljut.',
         icon: 'tabler:route',
         callToAction: { text: 'Részletek →', href: getPermalink('/tech-lead-berles') },
       },
@@ -75,7 +79,7 @@ const metadata = {
     items={[
       {
         title: 'AI kerekasztal.',
-        description: 'Nem előadás, hanem kerekasztal — standup-os lazasággal, konkrét garanciával.',
+        description: 'Nem előadás, hanem kerekasztal – standup-os lazasággal, konkrét garanciával.',
         icon: 'tabler:message-circle',
         callToAction: { text: 'Részletek →', href: getPermalink('/ai-kerekasztal') },
       },
@@ -94,14 +98,27 @@ const metadata = {
   >
     <Fragment slot="content">
       <p>
-        Balázs Csaba vagyok, szabadúszó termékfejlesztő — a Ferihegy-1-es kezdetektől egy hazai ERP-cég alapításán át a
+        Balázs Csaba vagyok, szabadúszó termékfejlesztő – a Ferihegy 1-es kezdetektől egy hazai ERP-cég alapításán át a
         bankszektor legszigorúbb éveiig. 2026 óta azokat a cégeket segítem, akik komolyan gondolják a tech-lead munkát
-        és az AI bevezetést.
+        és az AI-bevezetést.
       </p>
     </Fragment>
   </Content>
 
-  <BlogLatestPosts isTinted title="Amiről mostanában írok" linkText="Összes bejegyzés megtekintése" count={3} />
+  <BlogLatestPosts isTinted title="Amiről mostanában írok" linkText="Összes bejegyzés megtekintése" count={3}>
+    <Fragment slot="information">
+      <OpenSourceNote short />
+      <br />
+      <a
+        class="underline hover:text-primary transition duration-150 ease-in-out"
+        href={mediumUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Nézd meg az írásaimat a medium.com-on
+      </a>
+    </Fragment>
+  </BlogLatestPosts>
 
   <ContactCta
     title="Kérj egy 15–30 perces online találkozót"

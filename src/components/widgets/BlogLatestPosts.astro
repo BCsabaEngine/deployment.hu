@@ -38,9 +38,9 @@ const posts = APP_BLOG.isEnabled ? await findLatestPosts({ count }) : [];
   <WidgetWrapper id={id} isDark={isDark} isTinted={isTinted} containerClass={classes?.container as string} bg={bg}>
     <div class="flex flex-col lg:justify-between lg:flex-row mb-8">
       {title && (
-        <div class:list={[information && 'md:max-w-sm']}>
+        <div class:list={[information && 'lg:shrink-0 lg:mr-8']}>
           <h2
-            class="text-3xl font-bold tracking-tight sm:text-4xl sm:leading-none group font-heading mb-2"
+            class="text-3xl font-bold tracking-tight sm:text-4xl sm:leading-none group font-heading mb-2 lg:whitespace-nowrap"
             set:html={title}
           />
           {APP_BLOG.list.isEnabled && linkText && linkUrl && (

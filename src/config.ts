@@ -89,11 +89,11 @@ export const I18N: I18NConfig = {
 
 export const METADATA: MetaDataConfig = {
   title: {
-    default: 'deployment.hu — Tech-Lead bérlés, Platform-építés, AI megoldások',
-    template: '%s — deployment.hu',
+    default: 'deployment.hu – Tech-Lead bérlés, Platform-építés, AI megoldások',
+    template: '%s – deployment.hu',
   },
   description:
-    'Tech-Lead bérlés, platform-építés és egyedi AI megoldások — Balázs Csaba szabadúszó termékfejlesztő oldala.',
+    'Tech-Lead bérlés, platform-építés és egyedi AI-megoldások – Balázs Csaba szabadúszó termékfejlesztő oldala.',
   robots: {
     index: true,
     follow: true,
@@ -139,7 +139,7 @@ export const UI: UIConfig = {
 };
 
 export const COMPANY: CompanyConfig = {
-  name: 'Balázs Csaba EV',
+  name: 'Balázs Csaba e.v.',
   legalForm: 'Egyéni vállalkozó',
   address: '2120 Dunakeszi, Szent László utca 3.',
   taxNumber: '92251108-2-33',
@@ -150,6 +150,7 @@ export const COMPANY: CompanyConfig = {
 export const SOCIALS: SocialLink[] = [
   { name: 'LinkedIn', href: 'https://www.linkedin.com/in/balazscsaba/', icon: 'tabler:brand-linkedin' },
   { name: 'Medium', href: 'https://medium.com/@balazs.csaba.diy', icon: 'tabler:brand-medium' },
+  { name: 'GitHub', href: 'https://github.com/BCsabaEngine', icon: 'tabler:brand-github' },
 ];
 
 export const ANALYTICS: AnalyticsConfig = {

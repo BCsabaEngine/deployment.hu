@@ -12,10 +12,14 @@ export interface Props {
   tagline: string;
   pageLinks: Array<Link>;
   secondaryLinks: Array<Link>;
+  openSourceLinks?: Array<Link>;
   theme?: string;
 }
 
-const { tagline, pageLinks = [], secondaryLinks = [], theme = 'light' } = Astro.props;
+const { tagline, pageLinks = [], secondaryLinks = [], openSourceLinks = [], theme = 'light' } = Astro.props;
+
+const startYear = 2025;
+const year = new Date().getFullYear();
 ---
 
 <footer
@@ -27,7 +31,7 @@ const { tagline, pageLinks = [], secondaryLinks = [], theme = 'light' } = Astro.
   <div class="dark:bg-dark absolute inset-0 pointer-events-none" aria-hidden="true"></div>
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 dark:text-slate-300 intersect-once intersect-quarter intersect-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
     <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
-      <div class="col-span-12 md:col-span-4">
+      <div class="col-span-12 sm:col-span-6 lg:col-span-3">
         <div class="mb-2">
           <a class="inline-block font-bold text-xl" href={getHomePermalink()}>
             {SITE?.name}
@@ -36,12 +40,12 @@ const { tagline, pageLinks = [], secondaryLinks = [], theme = 'light' } = Astro.
         <p class="text-sm text-muted dark:text-slate-400 leading-relaxed">{tagline}</p>
         <SocialLinks class="mt-4" />
       </div>
-      <div class="col-span-12 md:col-span-4">
+      <div class="col-span-12 sm:col-span-6 lg:col-span-3">
         <div class="dark:text-gray-300 font-medium mb-2">Információk</div>
         <ul class="text-sm text-muted dark:text-slate-400 space-y-1">
           <li>{COMPANY.name}</li>
           <li>
-            Email:
+            E-mail:
             <a
               class="hover:text-gray-700 dark:hover:text-gray-300 hover:underline transition duration-150 ease-in-out"
               href={`mailto:${COMPANY.email}`}
@@ -73,7 +77,7 @@ const { tagline, pageLinks = [], secondaryLinks = [], theme = 'light' } = Astro.
           ))}
         </ul>
       </div>
-      <div class="col-span-12 md:col-span-4">
+      <div class="col-span-12 sm:col-span-6 lg:col-span-3">
         <div class="dark:text-gray-300 font-medium mb-2">Oldalak</div>
         <ul class="text-sm space-y-1">
           {pageLinks.map(({ text, href }) => (
@@ -88,9 +92,26 @@ const { tagline, pageLinks = [], secondaryLinks = [], theme = 'light' } = Astro.
           ))}
         </ul>
       </div>
+      <div class="col-span-12 sm:col-span-6 lg:col-span-3">
+        <div class="dark:text-gray-300 font-medium mb-2">Nyílt forráskód</div>
+        <ul class="text-sm space-y-1">
+          {openSourceLinks.map(({ text, href }) => (
+            <li>
+              <a
+                class="text-muted hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out"
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {text}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
     <div class="py-6 md:py-8 text-sm text-center text-muted dark:text-slate-500">
-      © {new Date().getFullYear()} deployment.hu
+      © {year > startYear ? `${startYear}–${year}` : year} deployment.hu
     </div>
   </div>
 </footer>

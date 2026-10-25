@@ -1,0 +1,25 @@
+---
+import { SOCIALS } from '~/config';
+
+export interface Props {
+  short?: boolean;
+}
+
+const { short = false } = Astro.props;
+const githubUrl = SOCIALS.find(({ name }) => name === 'GitHub')?.href;
+const linkClass = 'underline hover:text-primary transition duration-150 ease-in-out';
+---
+
+{short ? (
+  <a class={linkClass} href={githubUrl} target="_blank" rel="noopener noreferrer">
+    A nyílt forráskódú közösség aktív tagja vagyok
+  </a>
+) : (
+  <>
+    A nyílt forráskódú közösség aktív tagja vagyok: ingyenes megoldásokkal és hibajavításokkal támogatom a munkáját.
+    Lásd:{' '}
+    <a class={linkClass} href={githubUrl} target="_blank" rel="noopener noreferrer">
+      GitHub
+    </a>
+  </>
+)}

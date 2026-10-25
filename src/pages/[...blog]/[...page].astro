@@ -22,8 +22,8 @@ const currentPage = page.currentPage ?? 1;
 // const allTags = await findTags();
 
 const metadata = {
-  title: `Blog${currentPage > 1 ? ` — ${currentPage}. oldal` : ''}`,
-  description: 'Amiről mostanában írok — tech-lead munka, platform-építés és AI a gyakorlatban.',
+  title: `Blog${currentPage > 1 ? ` – ${currentPage}. oldal` : ''}`,
+  description: 'Amiről mostanában írok – tech-lead munka, platform-építés és AI a gyakorlatban.',
   robots: {
     index: blogListRobots?.index && currentPage === 1,
     follow: blogListRobots?.follow,
@@ -36,7 +36,7 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <BlogListSection
-    subtitle="Amiről mostanában írok — tech-lead munka, platform-építés és AI a gyakorlatban."
+    subtitle="Amiről mostanában írok – tech-lead munka, platform-építés és AI a gyakorlatban."
     posts={page.data}
     prevUrl={page.url.prev}
     nextUrl={page.url.next}

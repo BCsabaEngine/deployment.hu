@@ -3,7 +3,7 @@ import Contact from '~/components/widgets/Contact.astro';
 
 const {
   title = 'Beszéljünk!',
-  subtitle = 'Vedd fel velem a kapcsolatot, hívj fel, vagy kérj egy időpontot egy 15–30 perces online egyeztetésre. Ismerjük meg egymást nulladik lépésben — utána hívj meg egy mélyebb beszélgetésre.',
+  subtitle = 'Vedd fel velem a kapcsolatot, hívj fel, vagy kérj egy időpontot egy 15–30 perces online egyeztetésre. Ismerjük meg egymást nulladik lépésben – utána hívj meg egy mélyebb beszélgetésre.',
   id,
 } = Astro.props;
 ---
@@ -14,7 +14,7 @@ const {
   subtitle={subtitle}
   inputs={[
     { type: 'text', name: 'name', label: 'Név', autocomplete: 'name' },
-    { type: 'email', name: 'email', label: 'Email', autocomplete: 'email' },
+    { type: 'email', name: 'email', label: 'E-mail', autocomplete: 'email' },
     {
       type: 'select',
       name: 'reason',
@@ -23,7 +23,7 @@ const {
         { value: 'tech-lead', label: 'Tech-Lead bérlés / mentorálás' },
         { value: 'platform', label: 'Platform-építés' },
         { value: 'kerekasztal', label: 'AI kerekasztal' },
-        { value: 'ai-megoldas', label: 'AI megoldás kialakítása (lokál/hibrid)' },
+        { value: 'ai-megoldas', label: 'AI-megoldás kialakítása (helyi/hibrid)' },
         { value: 'egyeb', label: 'Csak egy rövid beszélgetés / egyéb' },
       ],
     },
@@ -32,7 +32,7 @@ const {
   button="Küldés"
 />
 
-<!-- TODO: statikus oldal, nincs backend bekötve — a submit egyelőre nem küld sehova. -->
+<!-- TODO: statikus oldal, nincs backend bekötve – a submit egyelőre nem küld sehova. -->
 <script>
   document.querySelector('main form')?.addEventListener('submit', (event) => {
     event.preventDefault();
