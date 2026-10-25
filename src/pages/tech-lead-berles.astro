@@ -4,9 +4,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
 import Statement from '~/components/widgets/Statement.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
-
-import { getPermalink } from '~/utils/permalinks';
+import ContactCta from '~/components/widgets/ContactCta.astro';
 
 const metadata = {
   title: 'Tech-Lead bérlés',
@@ -16,10 +14,12 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <Hero stripe="alt" image={{ src: '~/assets/images/tech-lead.jpg', alt: 'Tech-Lead bérlés' }}>
-    <Fragment slot="title">Tech-Lead bérlés</Fragment>
-    <Fragment slot="subtitle">Szakmai irányító, aki nem ül a nyakadon — de garantálja, hogy célba érsz.</Fragment>
-  </Hero>
+  <Hero
+    stripe="alt"
+    image={{ src: '~/assets/images/tech-lead.jpg', alt: 'Tech-Lead bérlés' }}
+    title="Tech-Lead bérlés"
+    subtitle="Szakmai irányító, aki nem ül a nyakadon — de garantálja, hogy célba érsz."
+  />
 
   <Content image={{ src: '~/assets/images/tech-lead-miaz.jpg', alt: 'Mi az a tech lead, valójában?' }}>
     <Fragment slot="title">Mi az a tech lead, valójában?</Fragment>
@@ -117,8 +117,8 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <CallToAction actions={[{ variant: 'primary', text: 'Kérj egy online meetet', href: getPermalink('/kapcsolat') }]}>
-    <Fragment slot="title">Szeretnéd, hogy a Te rendszered is Prod-ra jusson — garantáltan?</Fragment>
-    <Fragment slot="subtitle">Beszéljünk arról, hol tart most a csapatod, és mi lenne az első lépés.</Fragment>
-  </CallToAction>
+  <ContactCta
+    title="Szeretnéd, hogy a Te rendszered is Prod-ra jusson — garantáltan?"
+    subtitle="Beszéljünk arról, hol tart most a csapatod, és mi lenne az első lépés."
+  />
 </Layout>

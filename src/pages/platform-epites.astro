@@ -4,10 +4,8 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
 import Statement from '~/components/widgets/Statement.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+import ContactCta from '~/components/widgets/ContactCta.astro';
 import ContentHeading from '~/components/ui/ContentHeading.astro';
-
-import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
   title: 'Platform-építés',
@@ -16,10 +14,12 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <Hero drift image={{ src: '~/assets/images/platform.jpg', alt: 'Platform-építés' }}>
-    <Fragment slot="title">Platform-építés</Fragment>
-    <Fragment slot="subtitle">Egy erős alap, amin minden csapat egyformán gyorsan halad.</Fragment>
-  </Hero>
+  <Hero
+    drift
+    image={{ src: '~/assets/images/platform.jpg', alt: 'Platform-építés' }}
+    title="Platform-építés"
+    subtitle="Egy erős alap, amin minden csapat egyformán gyorsan halad."
+  />
 
   <Content
     image={{ src: '~/assets/images/platform-kepesseg.jpg', alt: 'Mit ad egy jó platform képesség' }}
@@ -98,13 +98,9 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <CallToAction actions={[{ variant: 'primary', text: 'Kérj egy találkozót', href: getPermalink('/kapcsolat') }]}>
-    <Fragment slot="title">
-      Platform csapatra van szükséged, vagy csak szeretnéd tudni, hol tart most a tiétek?
-    </Fragment>
-    <Fragment slot="subtitle">
-      Együtt feltérképezzük, hol vagytok most, és mi lenne az első lépés, ami már a következő negyedévben mérhető
-      változást hoz.
-    </Fragment>
-  </CallToAction>
+  <ContactCta
+    title="Platform csapatra van szükséged, vagy csak szeretnéd tudni, hol tart most a tiétek?"
+    subtitle="Együtt feltérképezzük, hol vagytok most, és mi lenne az első lépés, ami már a következő negyedévben mérhető változást hoz."
+    button="Kérj egy találkozót"
+  />
 </Layout>

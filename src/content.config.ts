@@ -55,6 +55,7 @@ const postCollection = defineCollection({
     draft: z.boolean().optional(),
 
     title: z.string(),
+    subtitle: z.string().optional(),
     excerpt: z.string().optional(),
     image: z.string().optional(),
 

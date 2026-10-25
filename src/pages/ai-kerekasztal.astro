@@ -4,10 +4,8 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
 import Steps from '~/components/widgets/Steps.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+import ContactCta from '~/components/widgets/ContactCta.astro';
 import ContentHeading from '~/components/ui/ContentHeading.astro';
-
-import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
   title: 'AI kerekasztal',
@@ -16,10 +14,12 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <Hero stripe="alt" image={{ src: '~/assets/images/ai-kerekasztal.jpg', alt: 'AI kerekasztal' }}>
-    <Fragment slot="title">AI kerekasztal</Fragment>
-    <Fragment slot="subtitle">Nem előadás, hanem kerekasztal — standup-os lazasággal.</Fragment>
-  </Hero>
+  <Hero
+    stripe="alt"
+    image={{ src: '~/assets/images/ai-kerekasztal.jpg', alt: 'AI kerekasztal' }}
+    title="AI kerekasztal"
+    subtitle="Nem előadás, hanem kerekasztal — standup-os lazasággal."
+  />
 
   <Content image={{ src: '~/assets/images/ai-kerekasztal-nincs-szinpad.jpg', alt: 'Nincs színpad, nincs taps' }}>
     <Fragment slot="content">
@@ -77,12 +77,8 @@ const metadata = {
     ]}
   />
 
-  <CallToAction actions={[{ variant: 'primary', text: 'Kérj egy online meetet', href: getPermalink('/kapcsolat') }]}>
-    <Fragment slot="title">A garancia</Fragment>
-    <Fragment slot="subtitle">
-      Minden kerekasztalról legalább 3 folyamattal távoztok úgy, hogy pontosan tudjátok, hogyan oldható meg — és
-      legalább 1-ről együtt kimondjuk, ha nem éri meg automatizálni. Hozzatok 3-4 valódi, mindennapi folyamatot — a
-      többit onnantól én viszem.
-    </Fragment>
-  </CallToAction>
+  <ContactCta
+    title="A garancia"
+    subtitle="Minden kerekasztalról legalább 3 folyamattal távoztok úgy, hogy pontosan tudjátok, hogyan oldható meg — és legalább 1-ről együtt kimondjuk, ha nem éri meg automatizálni. Hozzatok 3-4 valódi, mindennapi folyamatot — a többit onnantól én viszem."
+  />
 </Layout>

@@ -9,7 +9,9 @@ export interface Props {
 const { posts } = Astro.props;
 ---
 
-<div class="grid gap-6 row-gap-5 md:grid-cols-2 lg:grid-cols-4 -mb-6">
+<div
+  class:list={['grid gap-6 row-gap-5 md:grid-cols-2 -mb-6', posts.length === 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-4']}
+>
   {posts.map((post) => (
     <Item post={post} />
   ))}

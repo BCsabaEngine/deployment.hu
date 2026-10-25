@@ -5,7 +5,7 @@ import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
 import Content from '~/components/widgets/Content.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+import ContactCta from '~/components/widgets/ContactCta.astro';
 
 import { getPermalink } from '~/utils/permalinks';
 
@@ -103,8 +103,9 @@ const metadata = {
 
   <BlogLatestPosts isTinted title="Amiről mostanában írok" linkText="Összes bejegyzés megtekintése" count={3} />
 
-  <CallToAction actions={[{ variant: 'primary', text: 'Foglalj időpontot', href: getPermalink('/kapcsolat') }]}>
-    <Fragment slot="title">Kérj egy 15–30 perces online találkozót</Fragment>
-    <Fragment slot="subtitle">Ismerjük meg egymást, mielőtt bármit is eldöntenénk.</Fragment>
-  </CallToAction>
+  <ContactCta
+    title="Kérj egy 15–30 perces online találkozót"
+    subtitle="Ismerjük meg egymást, mielőtt bármit is eldöntenénk."
+    button="Foglalj időpontot"
+  />
 </Layout>

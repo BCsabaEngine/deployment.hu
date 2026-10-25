@@ -4,11 +4,9 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
 import Steps from '~/components/widgets/Steps.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+import ContactForm from '~/components/widgets/ContactForm.astro';
 import ContentHeading from '~/components/ui/ContentHeading.astro';
 import SocialLinks from '~/components/ui/SocialLinks.astro';
-
-import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
   title: 'Rólam',
@@ -29,12 +27,9 @@ const metadata = {
       sizes: '(max-width: 767px) 400px, 448px',
       style: 'max-width:28rem',
     }}
-  >
-    <Fragment slot="title">Balázs Csaba</Fragment>
-    <Fragment slot="subtitle">
-      Nem egyenes vonalban jutottam el a tech-lead és AI munkáig — de visszanézve pontosan összeáll a kép.
-    </Fragment>
-  </Hero>
+    title="Balázs Csaba"
+    subtitle="Nem egyenes vonalban jutottam el a tech-lead és AI munkáig — de visszanézve pontosan összeáll a kép."
+  />
 
   <Content alignTop>
     <Fragment slot="content">
@@ -135,7 +130,5 @@ const metadata = {
     <Fragment slot="title">Amit ehhez hozok</Fragment>
   </Content>
 
-  <CallToAction actions={[{ variant: 'primary', text: 'Beszéljünk!', href: getPermalink('/kapcsolat') }]}>
-    <Fragment slot="title">Beszéljünk!</Fragment>
-  </CallToAction>
+  <ContactForm />
 </Layout>

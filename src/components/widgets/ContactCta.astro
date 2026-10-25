@@ -1,0 +1,18 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import { getPermalink } from '~/utils/permalinks';
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  button?: string;
+}
+
+const { title, subtitle, button = 'Kérj egy online meetet' } = Astro.props;
+---
+
+<CallToAction
+  title={title}
+  subtitle={subtitle}
+  actions={[{ variant: 'primary', text: button, href: getPermalink('/kapcsolat') }]}
+/>
