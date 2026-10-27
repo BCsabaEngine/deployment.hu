@@ -1,0 +1,31 @@
+---
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import type { Statement as Props } from '~/types';
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline = await Astro.slots.render('tagline'),
+
+  id,
+  classes = {},
+  drift = false,
+} = Astro.props;
+
+const blobs = drift
+  ? '<div class="statement-blob statement-blob-a"></div><div class="statement-blob statement-blob-b"></div>'
+  : '';
+const bg = `<div class="absolute inset-0 overflow-hidden bg-slate-900"><div class="absolute inset-0 bg-[radial-gradient(60rem_24rem_at_85%_0%,rgb(109_40_217/0.22),transparent)]"></div>${blobs}</div>`;
+---
+
+<WidgetWrapper id={id} isDark containerClass={`max-w-4xl py-16 md:py-24 lg:py-28 ${classes?.container ?? ''}`} bg={bg}>
+  {tagline && <p class="mb-6 text-sm font-medium uppercase tracking-[0.25em] text-blue-300" set:html={tagline} />}
+  {title && (
+    <h2
+      class="text-3xl font-bold leading-tight tracking-tight text-white font-heading md:text-5xl md:leading-[1.15]"
+      set:html={title}
+    />
+  )}
+  <div class="my-8 h-1 w-24 rounded-full bg-gradient-to-r from-primary to-accent" aria-hidden="true"></div>
+  {subtitle && <p class="max-w-2xl text-xl leading-relaxed text-slate-400" set:html={subtitle} />}
+</WidgetWrapper>

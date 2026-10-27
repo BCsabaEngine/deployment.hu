@@ -1,0 +1,56 @@
+---
+import Button from '~/components/ui/Button.astro';
+import type { CallToAction } from '~/types';
+
+export interface Props {
+  srLabel: string;
+  title: string;
+  message: string;
+  description?: string;
+  actions?: CallToAction[];
+  linksTitle?: string;
+  links?: { text: string; href: string }[];
+}
+
+const { srLabel, title, message, description, actions = [], linksTitle, links = [] } = Astro.props;
+---
+
+<section class="relative overflow-hidden md:-mt-[76px] not-prose">
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="absolute inset-0 hero-stripe hero-stripe-drift"></div>
+  </div>
+  <div class="relative max-w-3xl mx-auto px-4 sm:px-6 pt-16 pb-16 text-center md:pt-[calc(76px+5rem)] md:pb-24">
+    <h1 class="font-bold font-heading leading-none tracking-tighter text-8xl md:text-[11rem]">
+      <span class="sr-only">{srLabel}</span>
+      <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent" aria-hidden="true">
+        {title}
+      </span>
+    </h1>
+    <p class="mt-6 text-3xl font-bold tracking-tighter font-heading md:text-4xl dark:text-gray-200">{message}</p>
+    {description && <p class="mt-4 text-xl text-muted">{description}</p>}
+    {actions.length > 0 && (
+      <div class="flex flex-col justify-center gap-4 mt-8 sm:flex-row">
+        {actions.map((action) => (
+          <Button {...action} />
+        ))}
+      </div>
+    )}
+    {links.length > 0 && (
+      <div class="mt-14 md:mt-20">
+        {linksTitle && <p class="mb-4 text-sm eyebrow">{linksTitle}</p>}
+        <ul class="grid gap-3 text-left sm:grid-cols-2">
+          {links.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                class="block px-5 py-4 font-semibold transition card shadow-sm rounded-xl backdrop-blur hover:border-primary hover:text-primary motion-safe:hover:-translate-y-px"
+              >
+                {link.text}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+  </div>
+</section>

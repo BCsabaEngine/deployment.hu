@@ -1,0 +1,23 @@
+---
+import BlogHeadline from '~/components/blog/BlogHeadline.astro';
+import BlogList from '~/components/blog/List.astro';
+import Pagination from '~/components/blog/Pagination.astro';
+import type { Post } from '~/types';
+
+export interface Props {
+  subtitle?: string;
+  posts: Array<Post>;
+  prevUrl?: string;
+  nextUrl?: string;
+}
+
+const { subtitle, posts, prevUrl, nextUrl } = Astro.props;
+---
+
+<section class="px-4 md:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
+  <BlogHeadline subtitle={subtitle}>
+    <slot />
+  </BlogHeadline>
+  <BlogList posts={posts} />
+  <Pagination prevUrl={prevUrl} nextUrl={nextUrl} />
+</section>

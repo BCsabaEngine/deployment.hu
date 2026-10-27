@@ -1,0 +1,106 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Statement from '~/components/widgets/Statement.astro';
+import ContactCta from '~/components/widgets/ContactCta.astro';
+import ContentHeading from '~/components/ui/ContentHeading.astro';
+
+const metadata = {
+  title: 'Platform-építés',
+  description: 'Egy erős alap, amin minden csapat egyformán gyorsan halad.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    drift
+    image={{ src: '~/assets/images/platform.jpg', alt: 'Platform-építés' }}
+    title="Platform-építés"
+    subtitle="Egy erős alap, amin minden csapat egyformán gyorsan halad."
+  />
+
+  <Content
+    image={{ src: '~/assets/images/platform-kepesseg.jpg', alt: 'Mit ad egy jó platform képesség' }}
+    items={[
+      {
+        title: 'Elrejti, aminek nem kell látszania.',
+        description:
+          'Az üzleti fejlesztőnek nem kell ismernie a logolási szabályokat, nem kell találkoznia a DevOps csapattal, nem kell tudnia, pontosan hogyan kerül ki a kód prod-ra. Elég tudnia, melyik platformmodult kötelező használnia – a többit a platform intézi.',
+      },
+      {
+        title: 'Cserélhetővé teszi a bázist.',
+        description:
+          'Ha jogszabály változik, hiba derül ki, vagy egyszerűen jobb megoldás születik, az alkalmazásokat elég újrafordítani és újra kitelepíteni – a platform frissített verziója alatta már kompatibilis marad a környezettel.',
+      },
+      {
+        title: 'Nemcsak backend kérdés.',
+        description:
+          'Az egységes szín, forma és felhasználói élmény is platformelem: egy márkaváltás (új font, új színvilág) így fokozatosan és fájdalommentesen vezethető át a teljes rendszeren.',
+      },
+    ]}
+  >
+    <Fragment slot="title">Mit ad egy jó Platform Képesség</Fragment>
+    <Fragment slot="content">
+      <p>
+        Kevés cég épít ma már egyetlen terméket. A legtöbb rendszer microservice- vagy nanoservice-halmaz: önálló
+        forráskód, gyakran párhuzamos vagy időben nagyon eltolt fejlesztéssel. Mégis{' '}
+        <strong>közös nevezőre kell hozni</strong> őket – különben minden csapat a saját nyelvét beszéli, és a
+        fenntartás lassan ellehetetlenül.
+      </p>
+      <p class="mt-4">
+        A platform-építés erről szól: egy közös alap lerakásáról, amitől minden elkészült alkalmazás egyforma jellegű és
+        minőségű lesz. Ha ez megvan, bármely cross-functional csapat az üzleti leírás alapján{' '}
+        <strong>hozzá tud nyúlni egy másik csapat kódjához</strong>.
+      </p>
+    </Fragment>
+  </Content>
+
+  <Content
+    isReversed
+    isTinted
+    image={{ src: '~/assets/images/platform-sre.jpg', alt: 'Szoros kapcsolat a DevOps-szal' }}
+  >
+    <Fragment slot="title">Szoros kapcsolat a DevOps-szal</Fragment>
+    <Fragment slot="content">
+      <p>
+        A platform csapat gyakran átveszi a DevOps (SRE) feladatait is: irányítja a kitelepítést, felügyeli a rendszert,
+        reagál, ha valami elakad. Ez azt is jelenti, hogy nem elég <em>tudni</em>, mit kell csinálni – <em>érteni</em>{' '}
+        is kell, miért. A platform csapat ezért <strong>folyamatosan egyeztet a DevOps-szal</strong>, nemcsak akkor, ha
+        baj van, hanem a mindennapi működés részeként is.
+      </p>
+      <ContentHeading>Dokumentáció, ami a cég vagyona</ContentHeading>
+      <p>
+        A platform csapat szigorúbban dokumentál, mint egy fejlesztői csapat valaha is fog. Nemcsak a kód számít, hanem
+        az is, mikor, mit és miért döntöttek úgy, ahogy – hónapokkal vagy akár évekkel korábbi döntések indoklása is
+        visszakereshetőnek kell lennie. Ez a tudás és ez az artifact-állomány nem mellékes:{' '}
+        <strong>a cég tulajdona, és fontosabb, mint maga az üzleti forráskód</strong>.
+      </p>
+    </Fragment>
+  </Content>
+
+  <Statement drift>
+    <Fragment slot="tagline">Dokumentáció</Fragment>
+    <Fragment slot="title">A tudás a cég tulajdona, és fontosabb, mint maga az üzleti forráskód.</Fragment>
+    <Fragment slot="subtitle">Nemcsak a kód számít, hanem az is, mikor, mit és miért döntöttek úgy, ahogy.</Fragment>
+  </Statement>
+
+  <Content image={{ src: '~/assets/images/platform-guild.jpg', alt: 'A guild-modell' }}>
+    <Fragment slot="title">A guild-modell</Fragment>
+    <Fragment slot="content">
+      <p>
+        Egyre több platform csapat guild-ként működik: egy vezető irányítása alatt az üzleti csapatok 1–2 fejlesztőt
+        delegálnak 1–2 hónapra. Ez <strong>csökkenti a kiégést és a fluktuációt</strong>, az üzleti tapasztalat
+        visszaszivárog a platformba, a kollégák pedig testközelből tanulják meg, miért számít a low-level réteg. Aki
+        egyszer megélte ezt a rotációt, másképp tekint a saját csapata munkájára is.
+      </p>
+    </Fragment>
+  </Content>
+
+  <ContactCta
+    title="Platform csapatra van szükséged, vagy csak szeretnéd tudni, hol tart most a ti platformotok?"
+    subtitle="Együtt feltérképezzük, hol vagytok most, és mi lenne az első lépés, ami már a következő negyedévben mérhető változást hoz."
+    button="Kérj egy találkozót"
+  />
+</Layout>

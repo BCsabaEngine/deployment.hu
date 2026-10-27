@@ -1,0 +1,29 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import ContactForm from '~/components/widgets/ContactForm.astro';
+import Notice from '~/components/ui/Notice.astro';
+import PageGlow from '~/components/ui/PageGlow.astro';
+import ContactDetails from '~/components/ui/ContactDetails.astro';
+
+const metadata = {
+  title: 'Kapcsolat',
+  description: 'Vedd fel velem a kapcsolatot egy 15–30 perces online egyeztetésre.',
+};
+---
+
+<Layout metadata={metadata}>
+  <div class="relative isolate overflow-hidden">
+    <PageGlow />
+    <ContactForm />
+
+    <div class="max-w-xl mx-auto px-4 sm:px-6 -mt-4 mb-16">
+      <Notice>
+        Fenntartom a jogot, hogy a folyamatban lévő és a lejárt szerződéseimből eredő titoktartási kötelezettségeimre
+        tekintettel – az érdeklődő cég és tevékenységi körének megismerését követően – a megkeresést vagy a
+        szerződéskötést indoklás nélkül visszautasítsam.
+      </Notice>
+
+      <ContactDetails class="mt-8" />
+    </div>
+  </div>
+</Layout>

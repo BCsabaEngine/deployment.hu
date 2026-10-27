@@ -1,0 +1,100 @@
+---
+import { COMPANY, SITE } from '~/config';
+import SocialLinks from '~/components/ui/SocialLinks.astro';
+import { getHomePermalink } from '~/utils/permalinks';
+import { REVEAL_NO_QUEUE } from '~/utils/classes';
+
+interface Link {
+  text?: string;
+  href?: string;
+}
+
+export interface Props {
+  tagline: string;
+  pageLinks: Array<Link>;
+  secondaryLinks: Array<Link>;
+  openSourceLinks?: Array<Link>;
+  theme?: string;
+}
+
+const { tagline, pageLinks = [], secondaryLinks = [], openSourceLinks = [], theme = 'light' } = Astro.props;
+
+const startYear = 2025;
+const year = new Date().getFullYear();
+---
+
+<footer
+  class:list={[
+    { dark: theme === 'dark' },
+    'relative border-t border-gray-200 dark:border-slate-800 not-prose bg-gray-100',
+  ]}
+>
+  <div class="dark:bg-dark absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+  <div class={`relative max-w-7xl mx-auto px-4 sm:px-6 dark:text-slate-300 ${REVEAL_NO_QUEUE}`}>
+    <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
+      <div class="col-span-12 sm:col-span-6 lg:col-span-3">
+        <div class="mb-2">
+          <a class="inline-block font-bold text-xl" href={getHomePermalink()}>
+            {SITE?.name}
+          </a>
+        </div>
+        <p class="text-sm text-muted dark:text-slate-400 leading-relaxed">{tagline}</p>
+        <SocialLinks class="mt-4" />
+      </div>
+      <div class="col-span-12 sm:col-span-6 lg:col-span-3">
+        <div class="dark:text-gray-300 font-medium mb-2">Információk</div>
+        <ul class="text-sm text-muted dark:text-slate-400 space-y-1">
+          <li>{COMPANY.name}</li>
+          <li>
+            E-mail:
+            <a class="link-subtle" href={`mailto:${COMPANY.email}`}>
+              {COMPANY.email}
+            </a>
+          </li>
+          <li>
+            Telefon:
+            <a class="link-subtle" href={`tel:${COMPANY.phone.replace(/\s+/g, '')}`}>
+              {COMPANY.phone}
+            </a>
+          </li>
+          <li>Cím: {COMPANY.address}</li>
+          <li>Adószám: {COMPANY.taxNumber}</li>
+        </ul>
+        <ul class="text-sm text-muted dark:text-slate-400 space-y-1 mt-4">
+          {secondaryLinks.map(({ text, href }) => (
+            <li>
+              <a class="link-subtle" href={href} set:html={text} />
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="col-span-12 sm:col-span-6 lg:col-span-3">
+        <div class="dark:text-gray-300 font-medium mb-2">Oldalak</div>
+        <ul class="text-sm space-y-1">
+          {pageLinks.map(({ text, href }) => (
+            <li>
+              <a class="text-muted link-subtle" href={href}>
+                {text}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="col-span-12 sm:col-span-6 lg:col-span-3">
+        <div class="dark:text-gray-300 font-medium mb-2">Nyílt forráskód</div>
+        <ul class="text-sm space-y-1">
+          {openSourceLinks.map(({ text, href }) => (
+            <li>
+              <a class="text-muted link-subtle" href={href} target="_blank" rel="noopener noreferrer">
+                {text}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+    <div class="py-6 md:py-8 text-sm text-center text-muted dark:text-slate-500">
+      © {year > startYear ? `${startYear}–${year}` : year} deployment.hu
+    </div>
+  </div>
+</footer>

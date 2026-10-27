@@ -1,0 +1,21 @@
+---
+import SocialLinks from '~/components/ui/SocialLinks.astro';
+import { COMPANY } from '~/config';
+---
+
+<div class:list={['text-center text-muted dark:text-slate-400', Astro.props.class]}>
+  <p>
+    E-mail:{' '}
+    <a class="hover:text-primary hover:underline" href={`mailto:${COMPANY.email}`}>
+      {COMPANY.email}
+    </a>
+  </p>
+  <p class="mt-1">
+    Telefon:
+    <a class="hover:text-primary hover:underline" href={`tel:${COMPANY.phone.replace(/\s+/g, '')}`}>
+      {COMPANY.phone}
+    </a>
+  </p>
+  <p class="mt-1">Válaszidő: 2 munkanapon belül</p>
+  <SocialLinks class="mt-4 justify-center" withText />
+</div>

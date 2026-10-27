@@ -1,0 +1,299 @@
+@import 'tailwindcss';
+
+@plugin "@tailwindcss/typography";
+
+@variant dark (&:where(.dark, .dark *));
+
+@custom-variant intersect (&:not([no-intersect]));
+
+@theme {
+  --color-primary: var(--aw-color-primary);
+  --color-secondary: var(--aw-color-secondary);
+  --color-accent: var(--aw-color-accent);
+  --color-default: var(--aw-color-text-default);
+  --color-muted: var(--aw-color-text-muted);
+  --color-heading: var(--aw-color-text-heading);
+  --color-surface: var(--aw-color-surface);
+  --color-border: var(--aw-color-border);
+  --color-placeholder: var(--aw-color-placeholder);
+  --color-eyebrow: var(--aw-color-eyebrow);
+  --color-link: var(--aw-color-link);
+
+  --font-sans:
+    var(--aw-font-sans, ui-sans-serif), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-serif: var(--aw-font-serif, ui-serif), ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+  --font-heading: var(--aw-font-heading, ui-sans-serif), ui-sans-serif, system-ui, sans-serif;
+
+  --animate-fade: fadeInUp 1s both;
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(2rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes heroRotate {
+    0%,
+    45% {
+      opacity: 1;
+    }
+    50%,
+    95% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes heroImageRotate {
+    0%,
+    28.33% {
+      opacity: 1;
+    }
+    33.33%,
+    95% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+.hero-rotate-item {
+  opacity: 0;
+  animation: heroRotate 8s ease-in-out infinite;
+}
+.hero-rotate-item:nth-child(2) {
+  animation-delay: 4s;
+}
+
+.hero-image-rotate-item {
+  opacity: 0;
+  animation: heroImageRotate 10.5s ease-in-out infinite;
+}
+.hero-image-rotate-item:nth-child(2) {
+  animation-delay: 3.5s;
+}
+.hero-image-rotate-item:nth-child(3) {
+  animation-delay: 7s;
+}
+
+.hero-stripe {
+  background: linear-gradient(90deg, #8b5cf6 0%, #f43f5e 28%, #fb923c 50%, #fcd34d 66%, #38bdf8 84%, #8b5cf6 100%);
+  clip-path: polygon(0 66%, 100% 16%, 100% 40%, 0 94%);
+  opacity: 0.85;
+}
+.dark .hero-stripe {
+  opacity: 0.45;
+}
+@media (max-width: 767px) {
+  .hero-stripe {
+    clip-path: polygon(0 72%, 100% 48%, 100% 62%, 0 90%);
+  }
+}
+
+/* keskenyebb, ellenirányba dőlő, lejjebb ülő változat */
+.hero-stripe-alt {
+  background: linear-gradient(90deg, #2563eb 0%, #6366f1 25%, #06b6d4 55%, #34d399 80%, #a3e635 100%);
+  clip-path: polygon(0 74%, 100% 90%, 100% 96%, 0 80%);
+  opacity: 0.8;
+}
+.dark .hero-stripe-alt {
+  opacity: 0.4;
+}
+@media (max-width: 767px) {
+  .hero-stripe-alt {
+    clip-path: polygon(0 80%, 100% 90%, 100% 95%, 0 85%);
+  }
+}
+
+/* nagyon lassú sodródás: csak a gradiens csúszik, a clip-path marad */
+.hero-stripe-drift {
+  background-size: 300% 100%;
+}
+
+.statement-blob {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 36rem;
+  height: 36rem;
+  border-radius: 9999px;
+  pointer-events: none;
+  background: radial-gradient(circle, color-mix(in srgb, var(--aw-color-accent) 35%, transparent), transparent 65%);
+}
+.statement-blob-b {
+  width: 30rem;
+  height: 30rem;
+  background: radial-gradient(circle, color-mix(in srgb, var(--aw-color-primary) 30%, transparent), transparent 65%);
+}
+
+@keyframes heroStripeDrift {
+  from {
+    background-position: 0% 0;
+  }
+  to {
+    background-position: 300% 0;
+  }
+}
+@keyframes statementBlobA {
+  from {
+    transform: translate(-10vw, -20%);
+  }
+  to {
+    transform: translate(55vw, 25%);
+  }
+}
+@keyframes statementBlobB {
+  from {
+    transform: translate(60vw, 30%);
+  }
+  to {
+    transform: translate(5vw, -15%);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-stripe-drift {
+    animation: heroStripeDrift 37.5s linear infinite;
+  }
+  .statement-blob-a {
+    animation: statementBlobA 22.5s ease-in-out infinite alternate;
+  }
+  .statement-blob-b {
+    animation: statementBlobB 30s ease-in-out infinite alternate;
+  }
+}
+
+@utility bg-page {
+  background-color: var(--aw-color-bg-page);
+}
+
+@utility bg-dark {
+  background-color: var(--aw-color-bg-page-dark);
+}
+
+@utility text-page {
+  color: var(--aw-color-text-page);
+}
+
+@utility btn {
+  @apply inline-flex items-center justify-center rounded-full border-gray-400 border bg-transparent font-medium text-center text-base text-page leading-snug transition py-3.5 px-6 md:px-8 ease-in duration-200 focus:ring-blue-500 focus:ring-offset-blue-200 focus:ring-2 focus:ring-offset-2 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer;
+}
+
+@utility btn-primary {
+  @apply btn font-semibold shadow-md shadow-primary/25 motion-safe:hover:-translate-y-px bg-primary text-white border-primary hover:bg-secondary hover:border-secondary hover:text-white dark:text-white dark:hover:bg-secondary dark:hover:border-secondary;
+}
+
+@utility btn-secondary {
+  @apply btn;
+}
+
+@utility btn-tertiary {
+  @apply btn border-none shadow-none text-muted hover:text-gray-900 dark:text-gray-400 dark:hover:text-white;
+}
+
+#header.scroll > div:first-child {
+  @apply bg-gray-50 md:bg-gray-50/90 md:backdrop-blur-md;
+  box-shadow: 0 0.375rem 1.5rem 0 rgb(140 152 164 / 13%);
+}
+.dark #header.scroll > div:first-child,
+#header.scroll.dark > div:first-child {
+  @apply bg-page md:bg-[color-mix(in_srgb,var(--aw-color-bg-page-dark)_90%,transparent)] border-b border-gray-500/20;
+  box-shadow: none;
+}
+
+#header.expanded nav {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  bottom: 70px !important;
+  padding: 0 5px;
+}
+
+.dropdown:focus .dropdown-menu,
+.dropdown:focus-within .dropdown-menu,
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+[astro-icon].icon-light > * {
+  stroke-width: 1.2;
+}
+
+[astro-icon].icon-bold > * {
+  stroke-width: 2.4;
+}
+
+[data-aw-toggle-menu] path {
+  @apply transition;
+}
+[data-aw-toggle-menu].expanded g > path:first-child {
+  @apply -rotate-45 translate-y-[15px] translate-x-[-3px];
+}
+[data-aw-toggle-menu].expanded g > path:last-child {
+  @apply rotate-45 translate-y-[-8px] translate-x-[14px];
+}
+
+[data-aw-toggle-color-scheme] svg {
+  display: none;
+}
+:root[data-mode='auto'] [data-aw-toggle-color-scheme] .i-auto,
+:root[data-mode='light'] [data-aw-toggle-color-scheme] .i-light,
+:root[data-mode='dark'] [data-aw-toggle-color-scheme] .i-dark {
+  display: block;
+}
+
+.dd *:first-child {
+  margin-top: 0;
+}
+
+/* Named visual units: one definition, reused across widgets. Colors come from the semantic tokens in @theme. */
+@utility field {
+  @apply py-3 px-4 block w-full rounded-lg border border-border bg-surface;
+}
+
+@utility card {
+  @apply border border-border bg-surface;
+}
+
+@utility img-placeholder {
+  @apply bg-placeholder;
+}
+
+@utility eyebrow {
+  @apply font-bold tracking-wide uppercase text-eyebrow;
+}
+
+@utility card-title {
+  @apply text-xl sm:text-2xl font-bold leading-tight mb-2 font-heading text-heading;
+}
+
+@utility card-link {
+  @apply inline-block hover:text-link transition ease-in duration-200;
+}
+
+@utility media-frame {
+  @apply rounded-2xl w-full ring-1 ring-black/5 shadow-2xl shadow-primary/10 dark:ring-white/10;
+}
+
+@utility link-subtle {
+  @apply hover:text-link hover:underline transition duration-150 ease-in-out;
+}
+
+@utility menu-bar {
+  @apply h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition duration-200 opacity-80;
+}
+
+@utility prose-site {
+  @apply prose lg:prose-xl dark:prose-invert prose-headings:font-heading prose-headings:tracking-tighter prose-headings:font-bold prose-headings:text-heading prose-a:text-link;
+}

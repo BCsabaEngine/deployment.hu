@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+    <defs>
+        <linearGradient id="deploymentBadge" x1="0" y1="0" x2="128" y2="128" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#0161EF" />
+            <stop offset="1" stop-color="#123A8F" />
+        </linearGradient>
+    </defs>
+    <rect width="128" height="128" rx="26" fill="url(#deploymentBadge)" />
+    <g transform="translate(58,66) rotate(-32)">
+        <path d="M 36,0 L -30,-17 L -5,2 Z" fill="#fff" />
+        <path d="M 36,0 L -5,2 L -30,17 Z" fill="#fff" fill-opacity="0.62" />
+    </g>
+</svg>
