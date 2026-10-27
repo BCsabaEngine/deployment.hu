@@ -1,33 +1,58 @@
 ---
 import { UI } from '~/config';
-
-// TODO: This code is temporary
 ---
 
+<!-- Inline in <head> so the mode is applied before first paint. 'auto' follows the system, 'light'/'dark' are the visitor's choice. -->
 <script is:inline define:vars={{ defaultTheme: UI.theme || 'system' }}>
-  function applyTheme(theme) {
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-    const matches = document.querySelectorAll('[data-aw-toggle-color-scheme] > input');
+  (() => {
+    if (window.cycleTheme) return;
 
-    if (matches && matches.length) {
-      matches.forEach((elem) => {
-        elem.checked = theme !== 'dark';
+    const KEY = 'theme';
+    const MODES = ['auto', 'light', 'dark'];
+    const NAMES = { auto: 'Automatikus', light: 'Világos', dark: 'Sötét' };
+    const forced = defaultTheme.endsWith(':only');
+    const base = defaultTheme.replace(':only', '');
+    const defaultMode = base === 'light' || base === 'dark' ? base : 'auto';
+    const system = matchMedia('(prefers-color-scheme: dark)');
+
+    const read = () => {
+      if (forced) return defaultMode;
+      try {
+        const v = localStorage.getItem(KEY);
+        return MODES.includes(v) ? v : defaultMode;
+      } catch {
+        return defaultMode;
+      }
+    };
+
+    let mode = read();
+    const apply = (chosen) => {
+      mode = chosen;
+      const root = document.documentElement;
+      root.classList.toggle('dark', mode === 'dark' || (mode === 'auto' && system.matches));
+      root.dataset.mode = mode;
+      const label = `Téma: ${NAMES[mode]}. Váltás: ${NAMES[MODES[(MODES.indexOf(mode) + 1) % MODES.length]]}`;
+      document.querySelectorAll('[data-aw-toggle-color-scheme]').forEach((button) => {
+        button.setAttribute('aria-label', label);
+        button.title = label;
       });
-    }
-  }
+    };
 
-  if ((defaultTheme && defaultTheme.endsWith(':only')) || (!localStorage.theme && defaultTheme !== 'system')) {
-    applyTheme(defaultTheme.replace(':only', ''));
-  } else if (
-    localStorage.theme === 'dark' ||
-    (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-  ) {
-    applyTheme('dark');
-  } else {
-    applyTheme('light');
-  }
+    window.cycleTheme = () => {
+      if (forced) return;
+      const next = MODES[(MODES.indexOf(mode) + 1) % MODES.length];
+      try {
+        localStorage.setItem(KEY, next);
+      } catch {
+        // storage unavailable: the choice then lasts until the page is left
+      }
+      apply(next);
+    };
+
+    apply(mode);
+    system.addEventListener('change', () => apply(mode));
+    addEventListener('storage', (e) => e.key === KEY && apply(read()));
+    addEventListener('DOMContentLoaded', () => apply(mode));
+    document.addEventListener('astro:after-swap', () => apply(mode));
+  })();
 </script>

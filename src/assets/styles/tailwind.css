@@ -244,6 +244,15 @@
   @apply rotate-45 translate-y-[-8px] translate-x-[14px];
 }
 
+[data-aw-toggle-color-scheme] svg {
+  display: none;
+}
+:root[data-mode='auto'] [data-aw-toggle-color-scheme] .i-auto,
+:root[data-mode='light'] [data-aw-toggle-color-scheme] .i-light,
+:root[data-mode='dark'] [data-aw-toggle-color-scheme] .i-dark {
+  display: block;
+}
+
 .dd *:first-child {
   margin-top: 0;
 }
