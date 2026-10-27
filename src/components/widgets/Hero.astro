@@ -3,6 +3,7 @@ import Image from '~/components/common/Image.astro';
 import Button from '~/components/ui/Button.astro';
 
 import type { Hero as Props } from '~/types';
+import { REVEAL, REVEAL_NO_QUEUE } from '~/utils/classes';
 
 const {
   title = await Astro.slots.render('title'),
@@ -42,27 +43,19 @@ const {
     <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
     <div class="py-12 md:py-20">
       <div class="text-center pb-10 md:pb-16 max-w-5xl mx-auto">
-        {tagline && (
-          <p
-            class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
-            set:html={tagline}
-          />
-        )}
+        {tagline && <p class={`text-base eyebrow ${REVEAL}`} set:html={tagline} />}
         {title && (
           <h1
-            class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+            class={`text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200 ${REVEAL}`}
             set:html={title}
           />
         )}
         <div class="max-w-3xl mx-auto">
-          {subtitle && (
-            <p
-              class="text-xl text-muted mb-6 dark:text-slate-300 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
-              set:html={subtitle}
-            />
-          )}
+          {subtitle && <p class={`text-xl text-muted mb-6 dark:text-slate-300 ${REVEAL}`} set:html={subtitle} />}
           {actions && (
-            <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+            <div
+              class={`max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4 ${REVEAL}`}
+            >
               {Array.isArray(actions) ? (
                 actions.map((action) => (
                   <div class="flex w-full sm:w-auto">
@@ -77,7 +70,7 @@ const {
         </div>
         {content && <Fragment set:html={content} />}
       </div>
-      <div class="intersect-once intersect-no-queue intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+      <div class={REVEAL_NO_QUEUE}>
         {image && (
           <div class="relative m-auto max-w-5xl">
             {typeof image === 'string' ? (
@@ -86,7 +79,7 @@ const {
               <div class="grid *:col-start-1 *:row-start-1">
                 {image.map((img, index) => (
                   <Image
-                    class="hero-image-rotate-item mx-auto rounded-2xl w-full ring-1 ring-black/5 shadow-2xl shadow-primary/10 dark:ring-white/10"
+                    class="hero-image-rotate-item mx-auto media-frame"
                     widths={[400, 768, 1024, 2040]}
                     sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
                     loading={index === 0 ? 'eager' : 'lazy'}
@@ -100,7 +93,7 @@ const {
               </div>
             ) : (
               <Image
-                class="mx-auto rounded-2xl w-full ring-1 ring-black/5 shadow-2xl shadow-primary/10 dark:ring-white/10"
+                class="mx-auto media-frame"
                 widths={[400, 768, 1024, 2040]}
                 sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
                 loading="eager"

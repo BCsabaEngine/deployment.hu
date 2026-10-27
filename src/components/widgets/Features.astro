@@ -4,6 +4,7 @@ import Button from '~/components/ui/Button.astro';
 import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import type { Features as Props } from '~/types';
+import { REVEAL_ONCE } from '~/utils/classes';
 
 const {
   title = await Astro.slots.render('title'),
@@ -40,8 +41,8 @@ const columnsClass = columns ? (COLUMNS_CLASSES[columns] ?? '') : '';
   {items.length > 0 && (
     <div class:list={['grid mx-auto gap-8 md:gap-y-12', columnsClass]}>
       {items.map(({ title: itemTitle, description, icon, callToAction }) => (
-        <div class="intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
-          <div class="flex flex-row h-full rounded-2xl border border-gray-200/80 bg-white p-6 shadow-sm transition duration-200 motion-safe:hover:-translate-y-0.5 hover:shadow-lg hover:border-primary/30 dark:bg-slate-900/50 dark:border-slate-700/60">
+        <div class={REVEAL_ONCE}>
+          <div class="flex flex-row h-full rounded-2xl card p-6 shadow-sm transition duration-200 motion-safe:hover:-translate-y-0.5 hover:shadow-lg hover:border-primary/30">
             {(icon || defaultIcon) && (
               <div class="flex justify-center">
                 <Icon

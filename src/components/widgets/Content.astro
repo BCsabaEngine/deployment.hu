@@ -5,6 +5,7 @@ import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Image from '~/components/common/Image.astro';
 import type { Content as Props } from '~/types';
+import { REVEAL_ONCE } from '~/utils/classes';
 
 const {
   title = await Astro.slots.render('title'),
@@ -66,7 +67,7 @@ const columnsClass = columns ? (COLUMNS_CLASSES[columns] ?? '') : '';
         {items.length > 0 && (
           <div class:list={['grid mx-auto gap-y-4 md:gap-y-8 gap-8', columnsClass]}>
             {items.map(({ title: itemTitle, description, icon, callToAction }) => (
-              <div class="intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+              <div class={REVEAL_ONCE}>
                 <div class="flex flex-row max-w-none">
                   <div class="flex justify-center">
                     <Icon

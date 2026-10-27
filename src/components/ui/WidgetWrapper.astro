@@ -2,6 +2,7 @@
 import type { HTMLTag } from 'astro/types';
 import type { Widget } from '~/types';
 import { twMerge } from 'tailwind-merge';
+import { REVEAL_NO_QUEUE } from '~/utils/classes';
 
 export interface Props extends Widget {
   containerClass?: string;
@@ -32,7 +33,7 @@ const WrapperTag = as;
   <div
     class:list={[
       twMerge(
-        'relative mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-20 text-default intersect-once intersect-quarter intersect-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade',
+        `relative mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-20 text-default ${REVEAL_NO_QUEUE}`,
         containerClass
       ),
       { dark: isDark },

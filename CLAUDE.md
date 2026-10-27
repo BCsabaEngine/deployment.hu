@@ -64,6 +64,12 @@ Note: `src/data/` doesn't exist yet — there are currently zero posts, so blog 
 
 `src/components/common/Image.astro` wraps Astro's native `<Image />` (Sharp) for local images. Remote image hostnames, if ever used, must be added to `image.domains` in `astro.config.ts` (none configured currently). Keep source images in `src/assets/images/` at ≤ 2400 px on the long side (JPEG, ~q82): Astro resizes them per `widths`, so larger originals only bloat the repo and build time.
 
+### Class conventions
+
+- Colors: use the semantic tokens (`text-default`, `text-muted`, `text-heading`, `text-link`, `bg-surface`, `border-border`, `bg-placeholder`, `text-eyebrow`, `bg-page`) instead of raw `gray-*`/`slate-*` palette classes with manual `dark:` pairs. The values live in `CustomStyles.astro` (`--aw-color-*`, switched under `.dark`) and are mapped in `@theme` in `tailwind.css`.
+- Repeated visual units are named `@utility` classes at the bottom of `src/assets/styles/tailwind.css` (`field`, `card`, `img-placeholder`, `eyebrow`, `card-title`, `card-link`, `media-frame`, `link-subtle`, `menu-bar`, `prose-site`, `btn*`). Add a new one there when a class string appears in a second place.
+- Scroll-in animation classes are the exception: use `REVEAL` / `REVEAL_ONCE` / `REVEAL_NO_QUEUE` from `~/utils/classes`. They must stay literal class tokens because `BasicScripts.astro` finds elements by the `intersect:` class names.
+
 ### Fonts, scripts and styling
 
 Manrope Variable is self-hosted via `@fontsource-variable/manrope` (`src/assets/styles/manrope-fonts.css`); `CustomStyles.astro` preloads the latin subset. There is no UI component library (Flowbite was removed) — interactivity is the inline scripts in `BasicScripts.astro` (menu, theme toggle, scroll-in animations) and `CookieConsent.astro`, written around Astro's `ClientRouter` view transitions (`astro:after-swap`). Analytics is a plain gtag snippet in `Analytics.astro`, active only when `ANALYTICS.vendors.googleAnalytics.id` is set.

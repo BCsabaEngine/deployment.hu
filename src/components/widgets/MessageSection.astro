@@ -37,15 +37,13 @@ const { srLabel, title, message, description, actions = [], linksTitle, links = 
     )}
     {links.length > 0 && (
       <div class="mt-14 md:mt-20">
-        {linksTitle && (
-          <p class="mb-4 text-sm font-bold tracking-wide uppercase text-secondary dark:text-blue-200">{linksTitle}</p>
-        )}
+        {linksTitle && <p class="mb-4 text-sm eyebrow">{linksTitle}</p>}
         <ul class="grid gap-3 text-left sm:grid-cols-2">
           {links.map((link) => (
             <li>
               <a
                 href={link.href}
-                class="block px-5 py-4 font-semibold transition bg-white/80 border border-gray-200 shadow-sm rounded-xl backdrop-blur hover:border-primary hover:text-primary motion-safe:hover:-translate-y-px dark:border-slate-700 dark:bg-slate-900/70 dark:hover:border-primary"
+                class="block px-5 py-4 font-semibold transition card shadow-sm rounded-xl backdrop-blur hover:border-primary hover:text-primary motion-safe:hover:-translate-y-px"
               >
                 {link.text}
               </a>

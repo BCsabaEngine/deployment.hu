@@ -12,6 +12,12 @@
   --color-accent: var(--aw-color-accent);
   --color-default: var(--aw-color-text-default);
   --color-muted: var(--aw-color-text-muted);
+  --color-heading: var(--aw-color-text-heading);
+  --color-surface: var(--aw-color-surface);
+  --color-border: var(--aw-color-border);
+  --color-placeholder: var(--aw-color-placeholder);
+  --color-eyebrow: var(--aw-color-eyebrow);
+  --color-link: var(--aw-color-link);
 
   --font-sans:
     var(--aw-font-sans, ui-sans-serif), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
@@ -122,12 +128,12 @@
   height: 36rem;
   border-radius: 9999px;
   pointer-events: none;
-  background: radial-gradient(circle, rgb(109 40 217 / 0.35), transparent 65%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--aw-color-accent) 35%, transparent), transparent 65%);
 }
 .statement-blob-b {
   width: 30rem;
   height: 30rem;
-  background: radial-gradient(circle, rgb(1 97 239 / 0.3), transparent 65%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--aw-color-primary) 30%, transparent), transparent 65%);
 }
 
 @keyframes heroStripeDrift {
@@ -175,16 +181,8 @@
   background-color: var(--aw-color-bg-page-dark);
 }
 
-@utility bg-light {
-  background-color: var(--aw-color-bg-page);
-}
-
 @utility text-page {
   color: var(--aw-color-text-page);
-}
-
-@utility text-muted {
-  color: var(--aw-color-text-muted);
 }
 
 @utility btn {
@@ -192,7 +190,7 @@
 }
 
 @utility btn-primary {
-  @apply btn font-semibold shadow-md shadow-primary/25 motion-safe:hover:-translate-y-px bg-primary text-white border-primary hover:bg-secondary hover:border-secondary hover:text-white dark:text-white dark:bg-primary dark:border-primary dark:hover:border-secondary dark:hover:bg-secondary;
+  @apply btn font-semibold shadow-md shadow-primary/25 motion-safe:hover:-translate-y-px bg-primary text-white border-primary hover:bg-secondary hover:border-secondary hover:text-white dark:text-white dark:hover:bg-secondary dark:hover:border-secondary;
 }
 
 @utility btn-secondary {
@@ -209,7 +207,7 @@
 }
 .dark #header.scroll > div:first-child,
 #header.scroll.dark > div:first-child {
-  @apply bg-page md:bg-[#030621e6] border-b border-gray-500/20;
+  @apply bg-page md:bg-[color-mix(in_srgb,var(--aw-color-bg-page-dark)_90%,transparent)] border-b border-gray-500/20;
   box-shadow: none;
 }
 
@@ -248,4 +246,45 @@
 
 .dd *:first-child {
   margin-top: 0;
+}
+
+/* Named visual units: one definition, reused across widgets. Colors come from the semantic tokens in @theme. */
+@utility field {
+  @apply py-3 px-4 block w-full rounded-lg border border-border bg-surface;
+}
+
+@utility card {
+  @apply border border-border bg-surface;
+}
+
+@utility img-placeholder {
+  @apply bg-placeholder;
+}
+
+@utility eyebrow {
+  @apply font-bold tracking-wide uppercase text-eyebrow;
+}
+
+@utility card-title {
+  @apply text-xl sm:text-2xl font-bold leading-tight mb-2 font-heading text-heading;
+}
+
+@utility card-link {
+  @apply inline-block hover:text-link transition ease-in duration-200;
+}
+
+@utility media-frame {
+  @apply rounded-2xl w-full ring-1 ring-black/5 shadow-2xl shadow-primary/10 dark:ring-white/10;
+}
+
+@utility link-subtle {
+  @apply hover:text-link hover:underline transition duration-150 ease-in-out;
+}
+
+@utility menu-bar {
+  @apply h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition duration-200 opacity-80;
+}
+
+@utility prose-site {
+  @apply prose lg:prose-xl dark:prose-invert prose-headings:font-heading prose-headings:tracking-tighter prose-headings:font-bold prose-headings:text-heading prose-a:text-link;
 }
